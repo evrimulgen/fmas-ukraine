@@ -1,0 +1,209 @@
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/matas/!svn/ver/24/Sources/Modules/MatasLib
+END
+uResources.pas
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/matas/!svn/ver/5/Sources/Modules/MatasLib/uResources.pas
+END
+uMatasSystem.pas
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/matas/!svn/ver/5/Sources/Modules/MatasLib/uMatasSystem.pas
+END
+uShablonDoc.pas
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/matas/!svn/ver/5/Sources/Modules/MatasLib/uShablonDoc.pas
+END
+uSplash.dfm
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/matas/!svn/ver/5/Sources/Modules/MatasLib/uSplash.dfm
+END
+uMatasFilterParam.dfm
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/matas/!svn/ver/5/Sources/Modules/MatasLib/uMatasFilterParam.dfm
+END
+uMatasUtils.pas
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/matas/!svn/ver/5/Sources/Modules/MatasLib/uMatasUtils.pas
+END
+uMatasReportPreview.dfm
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/matas/!svn/ver/5/Sources/Modules/MatasLib/uMatasReportPreview.dfm
+END
+uMatasExport.dfm
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/matas/!svn/ver/5/Sources/Modules/MatasLib/uMatasExport.dfm
+END
+uWaitWindow.pas
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/matas/!svn/ver/5/Sources/Modules/MatasLib/uWaitWindow.pas
+END
+uShablonDoc.dfm
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/matas/!svn/ver/5/Sources/Modules/MatasLib/uShablonDoc.dfm
+END
+uMatasPrintForm.pas
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/matas/!svn/ver/5/Sources/Modules/MatasLib/uMatasPrintForm.pas
+END
+uShowFields.pas
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/matas/!svn/ver/5/Sources/Modules/MatasLib/uShowFields.pas
+END
+uMatasGetSumma.pas
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/matas/!svn/ver/5/Sources/Modules/MatasLib/uMatasGetSumma.pas
+END
+uMatasFilter.pas
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/matas/!svn/ver/5/Sources/Modules/MatasLib/uMatasFilter.pas
+END
+uWaitWindow.dfm
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/matas/!svn/ver/5/Sources/Modules/MatasLib/uWaitWindow.dfm
+END
+uProvEditForm.pas
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/matas/!svn/ver/5/Sources/Modules/MatasLib/uProvEditForm.pas
+END
+dmMain.pas
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/matas/!svn/ver/5/Sources/Modules/MatasLib/dmMain.pas
+END
+uMatasFilterGroupNomn.pas
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/matas/!svn/ver/5/Sources/Modules/MatasLib/uMatasFilterGroupNomn.pas
+END
+MDIChildFormsBar.pas
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/matas/!svn/ver/5/Sources/Modules/MatasLib/MDIChildFormsBar.pas
+END
+uPackageManager.pas
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/matas/!svn/ver/24/Sources/Modules/MatasLib/uPackageManager.pas
+END
+uMatasPrintForm.dfm
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/matas/!svn/ver/5/Sources/Modules/MatasLib/uMatasPrintForm.dfm
+END
+uSplash.pas
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/matas/!svn/ver/5/Sources/Modules/MatasLib/uSplash.pas
+END
+uShowFields.dfm
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/matas/!svn/ver/5/Sources/Modules/MatasLib/uShowFields.dfm
+END
+uMatasGetSumma.dfm
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/matas/!svn/ver/5/Sources/Modules/MatasLib/uMatasGetSumma.dfm
+END
+uMatasMDIFormsBar.pas
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/matas/!svn/ver/5/Sources/Modules/MatasLib/uMatasMDIFormsBar.pas
+END
+uMatasFilterParam.pas
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/matas/!svn/ver/5/Sources/Modules/MatasLib/uMatasFilterParam.pas
+END
+uZProc.pas
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/matas/!svn/ver/18/Sources/Modules/MatasLib/uZProc.pas
+END
+uMatasFilter.dfm
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/matas/!svn/ver/5/Sources/Modules/MatasLib/uMatasFilter.dfm
+END
+uMatasVars.pas
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/matas/!svn/ver/24/Sources/Modules/MatasLib/uMatasVars.pas
+END
+uProvEditForm.dfm
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/matas/!svn/ver/5/Sources/Modules/MatasLib/uProvEditForm.dfm
+END
+uMatasReportPreview.pas
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/matas/!svn/ver/5/Sources/Modules/MatasLib/uMatasReportPreview.pas
+END
+dmMain.dfm
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/matas/!svn/ver/5/Sources/Modules/MatasLib/dmMain.dfm
+END
+uMatasFilterGroupNomn.dfm
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/matas/!svn/ver/5/Sources/Modules/MatasLib/uMatasFilterGroupNomn.dfm
+END
+uMatasExport.pas
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/matas/!svn/ver/5/Sources/Modules/MatasLib/uMatasExport.pas
+END

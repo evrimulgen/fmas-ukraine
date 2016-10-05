@@ -1,0 +1,100 @@
+#------------------------------------------------------------------------------
+VERSION = BWS.01
+#------------------------------------------------------------------------------
+!ifndef ROOT
+ROOT = $(MAKEDIR)\..
+!endif
+#------------------------------------------------------------------------------
+MAKE = $(ROOT)\bin\make.exe -$(MAKEFLAGS) -f$**
+DCC = $(ROOT)\bin\dcc32.exe $**
+BRCC = $(ROOT)\bin\brcc32.exe $**
+#------------------------------------------------------------------------------
+PROJECTS = MatasLib.bpl MatasSpr.bpl SpNom.bpl SpUnitMeas.bpl MatasAnalize.bpl \
+  MatasAnalizeTMC.bpl MatasBSOKart.bpl MatasDoc.bpl MatasDragMet.bpl \
+  MatasFilter.bpl MatasFilterNomn.bpl MatasInvKart.bpl MatasInvObject.bpl \
+  MatasIstFin.bpl MatasIznosMNA.bpl MatasMain.bpl MatasMBook.bpl MatasMna.bpl \
+  MatasMO.bpl MatasOborot.bpl MatasOst.bpl MatasPereoc.bpl MatasRep.bpl \
+  MatasTools.bpl MatasWHKart.bpl Matas.exe
+#------------------------------------------------------------------------------
+default: $(PROJECTS)
+#------------------------------------------------------------------------------
+
+MatasAnalize.bpl: MatasAnalize.dpk
+  $(DCC)
+
+MatasAnalizeTMC.bpl: MatasAnalizeTMC.dpk
+  $(DCC)
+
+MatasDoc.bpl: MatasDoc.dpk
+  $(DCC)
+
+MatasDragMet.bpl: MatasDragMet.dpk
+  $(DCC)
+
+MatasFilter.bpl: MatasFilter.dpk
+  $(DCC)
+
+MatasIstFin.bpl: MatasIstFin.dpk
+  $(DCC)
+
+MatasLib.bpl: MatasLib.dpk
+  $(DCC)
+
+MatasMain.bpl: MatasMain.dpk
+  $(DCC)
+
+MatasMBook.bpl: MatasMBook.dpk
+  $(DCC)
+
+MatasMna.bpl: MatasMna.dpk
+  $(DCC)
+
+MatasMO.bpl: MatasMO.dpk
+  $(DCC)
+
+MatasOborot.bpl: MatasOborot.dpk
+  $(DCC)
+
+MatasOst.bpl: MatasOst.dpk
+  $(DCC)
+
+MatasPereoc.bpl: MatasPereoc.dpk
+  $(DCC)
+
+MatasRep.bpl: MatasRep.dpk
+  $(DCC)
+
+MatasSpr.bpl: MatasSpr.dpk
+  $(DCC)
+
+MatasTools.bpl: MatasTools.dpk
+  $(DCC)
+
+MatasWHKart.bpl: MatasWHKart.dpk
+  $(DCC)
+
+SpNom.bpl: SpNom.dpk
+  $(DCC)
+
+SpUnitMeas.bpl: SpUnitMeas.dpk
+  $(DCC)
+
+Matas.exe: Matas.dpr
+  $(DCC)
+
+MatasFilterNomn.bpl: MatasFilterNomn.dpk
+  $(DCC)
+
+MatasInvKart.bpl: MatasInvKart.dpk
+  $(DCC)
+
+MatasInvObject.bpl: MatasInvObject.dpk
+  $(DCC)
+
+MatasIznosMNA.bpl: MatasIznosMNA.dpk
+  $(DCC)
+
+MatasBSOKart.bpl: MatasBSOKart.dpk
+  $(DCC)
+
+

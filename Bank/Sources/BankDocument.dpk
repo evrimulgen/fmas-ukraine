@@ -1,0 +1,97 @@
+package BankDocument;
+
+{$R *.res}
+{$ALIGN 8}
+{$ASSERTIONS ON}
+{$BOOLEVAL OFF}
+{$DEBUGINFO ON}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS ON}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION ON}
+{$OVERFLOWCHECKS OFF}
+{$RANGECHECKS OFF}
+{$REFERENCEINFO ON}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES OFF}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST OFF}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$IMPLICITBUILD ON}
+
+requires
+  AccMgmtBpl,
+  Globals,
+  Kerneldpk,
+  LoadClBank,
+  rxctl7,
+  rxdb7,
+  AlBPLMyLoad,
+  dxBarD7,
+  dxComnD7,
+  dxBarExtItemsD7,
+  vcl,
+  rtl,
+  cxLibraryVCLD7,
+  dxThemeD7,
+  cxEditorsVCLD7,
+  cxDataD7,
+  dbrtl,
+  vcljpg,
+  vcldb,
+  cxExtEditorsVCLD7,
+  vclx,
+  fs7,
+  frx7,
+  frxDB7,
+  LoadDog,
+  cxGridUtilsVCLD7,
+  dxsbD7,
+  St_Loader,
+  FR7,
+  cn_Consts,
+  cn_Common,
+  cxGridVCLD7,
+  cxExportVCLD7,
+  cxTreeListVCLD7,
+  cxCommonEditingVCLD7,
+  tee,
+  fqb70,
+  bdertl,
+  fsDB7,
+  VclSmp,
+  Halcyon6D7,
+  visualclx,
+  designide,
+  vclactnband,
+  FIBPlus7,
+  visualdbclx;
+
+contains
+  BankSelectShablon in 'BankDoc\BankSelectShablon.pas' {fmBankSelectShablon},
+  BankAddChangeProv in 'BankDoc\BankAddChangeProv.pas' {fmBankAddChangeProv},
+  BankDocClass in 'BankDoc\BankDocClass.pas',
+  BankDocMainForm in 'BankDoc\BankDocMainForm.pas' {fmBankDocMainForm},
+  BankInputSumma in 'BankDoc\BankInputSumma.pas' {fmBankInputSumma},
+  BankOrder in 'BankDoc\BankOrder.pas' {fmBankOrder},
+  BankAddSelectDoc in 'BankDoc\BankAddSelectDoc.pas' {fmBankAddSelectDoc},
+  BankTypeKassa in 'BankDoc\BankTypeKassa.pas' {fmBankTypeKassa},
+  BankSelectDocProvVstrech in 'BankDoc\BankSelectDocProvVstrech.pas' {fmBankSelectDocProvVstrech},
+  BankSelectKomisDoc in 'BankDoc\BankSelectKomisDoc.pas' {fmBankSelectKomisDoc},
+  BankKomOrder in 'BankDoc\BankKomOrder.pas' {fmBankKomOrder},
+  BankSelectPrintVip in 'BankDoc\BankSelectPrintVip.pas' {fmBankSelectPrintVip},
+  BankExpertSysSch in 'BankDoc\BankExpertSysSch.pas' {frmExpertSchSys},
+  BankMoveToDay in 'BankDoc\BankMoveToDay.pas' {fmBankMoveToDay},
+  BankNich in 'bankdoc\BankNich.pas' {fmBankNich},
+  BankNichAdd in 'BankDoc\BankNichAdd.pas' {fmBankNichAdd},
+  BankNichAddSmt in 'BankDoc\BankNichAddSmt.pas' {BankNichAddSm},
+  BankPrihodRashod in 'BankDoc\BankPrihodRashod.pas' {fmBankPrihodRashod},
+  BankSelectKassa in 'BankDoc\BankSelectKassa.pas' {fmBankSelectKassa},
+  ProgressFormBankDoc in 'BankDoc\ProgressFormBankDoc.pas' {fmProgressFormBankDoc};
+
+end.
