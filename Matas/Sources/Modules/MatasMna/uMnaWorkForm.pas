@@ -13,7 +13,7 @@ uses
   cxDropDownEdit, StdCtrls, cxLookAndFeelPainters, cxCalendar, cxButtons,
   cxCurrencyEdit, cxButtonEdit, uMatasVars, uMatasUtils, uResources,
   uSpMatSch, uSpMatOtv, uPackageManager, cxCheckBox, ActnList, cxMemo, uMatasMnaMain,
-  FIBQuery, pFIBQuery, pFIBStoredProc, FIBDatabase, pFIBDatabase;
+  FIBQuery, pFIBQuery, pFIBStoredProc, FIBDatabase, pFIBDatabase, cxLabel;
 
 type
   TMnaWorkFrom = class(TForm)
@@ -62,6 +62,8 @@ type
     cxNumGen: TcxButton;
     StPrGenNum: TpFIBStoredProc;
     TrGenNum: TpFIBTransaction;
+    cxTextEditPlace: TcxTextEdit;
+    cxLabel1: TcxLabel;
     procedure FormKeyDown(Sender: TObject; var Key: Word;
       Shift: TShiftState);
     procedure FormCreate(Sender: TObject);

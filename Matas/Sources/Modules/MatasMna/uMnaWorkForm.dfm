@@ -1,9 +1,9 @@
 object MnaWorkFrom: TMnaWorkFrom
-  Left = 247
-  Top = 270
+  Left = 330
+  Top = 212
   BorderStyle = bsDialog
   Caption = 'MnaWorkFrom'
-  ClientHeight = 379
+  ClientHeight = 386
   ClientWidth = 732
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
@@ -150,7 +150,7 @@ object MnaWorkFrom: TMnaWorkFrom
   end
   object Label12: TLabel
     Left = 9
-    Top = 199
+    Top = 215
     Width = 46
     Height = 13
     Caption = #1052#1086#1076#1077#1083#1100
@@ -163,7 +163,7 @@ object MnaWorkFrom: TMnaWorkFrom
   end
   object Label13: TLabel
     Left = 396
-    Top = 201
+    Top = 217
     Width = 39
     Height = 13
     Caption = #1052#1072#1088#1082#1072
@@ -176,7 +176,7 @@ object MnaWorkFrom: TMnaWorkFrom
   end
   object Label16: TLabel
     Left = 6
-    Top = 280
+    Top = 296
     Width = 56
     Height = 13
     Caption = #1055#1088#1080#1084#1110#1090#1082#1072
@@ -202,7 +202,7 @@ object MnaWorkFrom: TMnaWorkFrom
   end
   object Label18: TLabel
     Left = 6
-    Top = 251
+    Top = 267
     Width = 139
     Height = 13
     Caption = #1047#1072#1087#1080#1089' '#1091' '#1079#1072#1083#1080#1096#1082#1072#1093' '#1058#1052#1062
@@ -215,7 +215,7 @@ object MnaWorkFrom: TMnaWorkFrom
   end
   object lblInvNum: TLabel
     Left = 8
-    Top = 167
+    Top = 183
     Width = 115
     Height = 13
     Caption = #1030#1085#1074#1077#1085#1090#1072#1088#1085#1080#1081' '#1085#1086#1084#1077#1088
@@ -228,7 +228,7 @@ object MnaWorkFrom: TMnaWorkFrom
   end
   object lbl1: TLabel
     Left = 427
-    Top = 168
+    Top = 184
     Width = 152
     Height = 13
     Caption = #1057#1091#1084#1072' '#1072#1084#1086#1088#1090#1080#1079#1072#1094#1110#1111' ('#1079#1085#1086#1089#1091')'
@@ -408,7 +408,7 @@ object MnaWorkFrom: TMnaWorkFrom
   end
   object OkButton: TcxButton
     Left = 221
-    Top = 339
+    Top = 355
     Width = 130
     Height = 25
     Caption = #1055#1088#1080#1081#1085#1103#1090#1080
@@ -476,7 +476,7 @@ object MnaWorkFrom: TMnaWorkFrom
   end
   object CancelButton: TcxButton
     Left = 365
-    Top = 339
+    Top = 355
     Width = 130
     Height = 25
     Caption = #1042#1110#1076#1084#1110#1085#1080#1090#1080
@@ -590,7 +590,7 @@ object MnaWorkFrom: TMnaWorkFrom
   end
   object cxModel: TcxTextEdit
     Left = 78
-    Top = 198
+    Top = 214
     Width = 281
     Height = 21
     BeepOnEnter = False
@@ -605,7 +605,7 @@ object MnaWorkFrom: TMnaWorkFrom
   end
   object cxMarka: TcxTextEdit
     Left = 446
-    Top = 197
+    Top = 213
     Width = 273
     Height = 21
     BeepOnEnter = False
@@ -620,7 +620,7 @@ object MnaWorkFrom: TMnaWorkFrom
   end
   object cxNote: TcxTextEdit
     Left = 78
-    Top = 278
+    Top = 294
     Width = 641
     Height = 49
     AutoSize = False
@@ -667,7 +667,7 @@ object MnaWorkFrom: TMnaWorkFrom
   end
   object cxOstLink: TcxButtonEdit
     Left = 150
-    Top = 246
+    Top = 262
     Width = 569
     Height = 21
     ParentFont = False
@@ -688,7 +688,7 @@ object MnaWorkFrom: TMnaWorkFrom
   end
   object cxCheckOst: TcxCheckBox
     Left = 6
-    Top = 219
+    Top = 235
     Width = 241
     Height = 21
     ParentFont = False
@@ -704,7 +704,7 @@ object MnaWorkFrom: TMnaWorkFrom
   end
   object InvNum: TcxTextEdit
     Left = 145
-    Top = 166
+    Top = 182
     Width = 113
     Height = 21
     BeepOnEnter = False
@@ -720,7 +720,7 @@ object MnaWorkFrom: TMnaWorkFrom
   end
   object Iznos: TcxCurrencyEdit
     Left = 591
-    Top = 165
+    Top = 181
     Width = 129
     Height = 21
     BeepOnEnter = False
@@ -740,7 +740,7 @@ object MnaWorkFrom: TMnaWorkFrom
   end
   object cxMemo1: TcxMemo
     Left = 78
-    Top = 279
+    Top = 295
     Width = 640
     Height = 48
     TabOrder = 21
@@ -781,9 +781,30 @@ object MnaWorkFrom: TMnaWorkFrom
       00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF}
     UseSystemPaint = False
   end
+  object cxTextEditPlace: TcxTextEdit
+    Left = 136
+    Top = 155
+    Width = 201
+    Height = 21
+    TabOrder = 23
+  end
+  object cxLabel1: TcxLabel
+    Left = 8
+    Top = 155
+    Width = 120
+    Height = 17
+    ParentFont = False
+    Style.Font.Charset = DEFAULT_CHARSET
+    Style.Font.Color = clWindowText
+    Style.Font.Height = -11
+    Style.Font.Name = 'MS Sans Serif'
+    Style.Font.Style = [fsBold]
+    TabOrder = 24
+    Caption = #1084#1110#1089#1094#1077#1079#1085#1072#1093#1086#1076#1078#1077#1085#1085#1103
+  end
   object ActionList1: TActionList
     Left = 550
-    Top = 341
+    Top = 357
     object acSave: TAction
       Caption = 'acSave'
       ShortCut = 16419
@@ -807,6 +828,6 @@ object MnaWorkFrom: TMnaWorkFrom
     DefaultDatabase = MnaKartMainForm.MnaKartDatabase
     TimeoutAction = TARollback
     Left = 300
-    Top = 160
+    Top = 176
   end
 end

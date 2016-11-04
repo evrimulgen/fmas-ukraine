@@ -1,6 +1,6 @@
 object MnaKartMainForm: TMnaKartMainForm
-  Left = 295
-  Top = 282
+  Left = 378
+  Top = 129
   Width = 779
   Height = 556
   Color = clBtnFace
@@ -18,8 +18,8 @@ object MnaKartMainForm: TMnaKartMainForm
   object PanelMain: TPanel
     Left = 0
     Top = 43
-    Width = 771
-    Height = 484
+    Width = 763
+    Height = 475
     Align = alClient
     BevelOuter = bvNone
     TabOrder = 0
@@ -32,15 +32,15 @@ object MnaKartMainForm: TMnaKartMainForm
     end
     object PanelData: TPanel
       Left = 0
-      Top = 290
-      Width = 771
+      Top = 281
+      Width = 763
       Height = 194
       Align = alBottom
       TabOrder = 0
       object PageControl1: TPageControl
         Left = 1
         Top = 1
-        Width = 769
+        Width = 761
         Height = 192
         ActivePage = TabSheet3
         Align = alClient
@@ -56,7 +56,7 @@ object MnaKartMainForm: TMnaKartMainForm
           object cxGridOper: TcxGrid
             Left = 0
             Top = 0
-            Width = 761
+            Width = 753
             Height = 164
             Align = alClient
             Font.Charset = DEFAULT_CHARSET
@@ -341,7 +341,7 @@ object MnaKartMainForm: TMnaKartMainForm
           object cxGrid1: TcxGrid
             Left = 137
             Top = 0
-            Width = 624
+            Width = 616
             Height = 164
             Align = alClient
             PopupMenu = PopupMenuDragMetOper
@@ -581,6 +581,13 @@ object MnaKartMainForm: TMnaKartMainForm
             Height = 13
             Caption = #1057#1091#1084#1072' '#1072#1084#1086#1088#1090#1080#1079#1072#1094#1110#1111' ('#1079#1085#1086#1089#1091') '#1074#1089#1100#1086#1075#1086
           end
+          object Label2: TLabel
+            Left = 280
+            Top = 104
+            Width = 119
+            Height = 13
+            Caption = #1052#1110#1089#1094#1077#1088#1086#1079#1090#1072#1096#1091#1074#1072#1085#1085#1103
+          end
           object cxDBTextEdit1: TcxDBTextEdit
             Left = 152
             Top = 78
@@ -644,6 +651,15 @@ object MnaKartMainForm: TMnaKartMainForm
             DataBinding.DataSource = KartDataSource
             TabOrder = 6
           end
+          object cxDBTextEdit6: TcxDBTextEdit
+            Left = 488
+            Top = 104
+            Width = 121
+            Height = 21
+            DataBinding.DataField = 'PLACE'
+            DataBinding.DataSource = KartDataSource
+            TabOrder = 7
+          end
         end
         object TabSheet4: TTabSheet
           Caption = #1030#1085#1074'. '#1090#1072' '#1079#1072#1074'. '#1085#1086#1084#1077#1088#1080
@@ -698,8 +714,8 @@ object MnaKartMainForm: TMnaKartMainForm
     end
     object cxSplitter1: TcxSplitter
       Left = 0
-      Top = 282
-      Width = 771
+      Top = 273
+      Width = 763
       Height = 8
       HotZoneClassName = 'TcxSimpleStyle'
       HotZone.SizePercent = 100
@@ -709,8 +725,8 @@ object MnaKartMainForm: TMnaKartMainForm
     object z: TcxGrid
       Left = 0
       Top = 0
-      Width = 771
-      Height = 282
+      Width = 763
+      Height = 273
       Align = alClient
       PopupMenu = PopupMenuOper
       TabOrder = 2
@@ -1057,7 +1073,7 @@ object MnaKartMainForm: TMnaKartMainForm
   object ToolBar1: TToolBar
     Left = 0
     Top = 0
-    Width = 771
+    Width = 763
     Height = 43
     ButtonHeight = 36
     ButtonWidth = 66
@@ -1085,33 +1101,33 @@ object MnaKartMainForm: TMnaKartMainForm
       Style = tbsDropDown
     end
     object ToolButton3: TToolButton
-      Left = 145
+      Left = 147
       Top = 0
       Action = acEdit
     end
     object ToolButton4: TToolButton
-      Left = 211
+      Left = 213
       Top = 0
       Action = acDel
     end
     object ToolButton5: TToolButton
-      Left = 277
+      Left = 279
       Top = 0
       Action = acRefresh
     end
     object ToolButton6: TToolButton
-      Left = 343
+      Left = 345
       Top = 0
       Action = acPrint
     end
     object ToolButton9: TToolButton
-      Left = 409
+      Left = 411
       Top = 0
       Action = acNum
       Caption = #1053#1086#1084#1077#1088#1080
     end
     object ToolButton8: TToolButton
-      Left = 475
+      Left = 477
       Top = 0
       Width = 38
       Caption = 'ToolButton8'
@@ -1119,7 +1135,7 @@ object MnaKartMainForm: TMnaKartMainForm
       Style = tbsSeparator
     end
     object ToolButton7: TToolButton
-      Left = 513
+      Left = 515
       Top = 0
       Action = acExit
     end
@@ -1338,281 +1354,6 @@ object MnaKartMainForm: TMnaKartMainForm
     OnCalcFields = KartDataSetCalcFields
     Left = 8
     Top = 181
-    object KartDataSetID_MNA_KART: TFIBBCDField
-      FieldName = 'ID_MNA_KART'
-      Size = 0
-      RoundByScale = True
-    end
-    object KartDataSetTIP_MNA_KART: TFIBIntegerField
-      FieldName = 'TIP_MNA_KART'
-    end
-    object KartDataSetID_MO: TFIBBCDField
-      FieldName = 'ID_MO'
-      Size = 0
-      RoundByScale = True
-    end
-    object KartDataSetFIO: TFIBStringField
-      FieldName = 'FIO'
-      Size = 62
-      EmptyStrToNull = True
-    end
-    object KartDataSetSFIO: TFIBStringField
-      FieldName = 'SFIO'
-      Size = 50
-      EmptyStrToNull = True
-    end
-    object KartDataSetID_SPODR: TFIBIntegerField
-      FieldName = 'ID_SPODR'
-    end
-    object KartDataSetNAME_DEPARTMENT: TFIBStringField
-      FieldName = 'NAME_DEPARTMENT'
-      Size = 255
-      EmptyStrToNull = True
-    end
-    object KartDataSetIS_SKLAD: TFIBSmallIntField
-      FieldName = 'IS_SKLAD'
-    end
-    object KartDataSetBAL_ID_SCH: TFIBBCDField
-      FieldName = 'BAL_ID_SCH'
-      Size = 0
-      RoundByScale = True
-    end
-    object KartDataSetBAL_SCH_NUMBER: TFIBStringField
-      FieldName = 'BAL_SCH_NUMBER'
-      Size = 30
-      EmptyStrToNull = True
-    end
-    object KartDataSetBAL_SCH_TITLE: TFIBStringField
-      FieldName = 'BAL_SCH_TITLE'
-      Size = 60
-      EmptyStrToNull = True
-    end
-    object KartDataSetID_SCH: TFIBBCDField
-      FieldName = 'ID_SCH'
-      Size = 0
-      RoundByScale = True
-    end
-    object KartDataSetSCH_NUMBER: TFIBStringField
-      FieldName = 'SCH_NUMBER'
-      Size = 30
-      EmptyStrToNull = True
-    end
-    object KartDataSetSCH_TITLE: TFIBStringField
-      FieldName = 'SCH_TITLE'
-      Size = 60
-      EmptyStrToNull = True
-    end
-    object KartDataSetNNUM: TFIBIntegerField
-      FieldName = 'NNUM'
-    end
-    object KartDataSetGNUM: TFIBSmallIntField
-      FieldName = 'GNUM'
-    end
-    object KartDataSetINUM: TFIBIntegerField
-      FieldName = 'INUM'
-    end
-    object KartDataSetID_NOMN: TFIBBCDField
-      FieldName = 'ID_NOMN'
-      Size = 0
-      RoundByScale = True
-    end
-    object KartDataSetNOMN: TFIBStringField
-      FieldName = 'NOMN'
-      Size = 30
-      EmptyStrToNull = True
-    end
-    object KartDataSetNAME: TFIBStringField
-      FieldName = 'NAME'
-      Size = 100
-      EmptyStrToNull = True
-    end
-    object KartDataSetID_OST: TFIBBCDField
-      FieldName = 'ID_OST'
-      Size = 0
-      RoundByScale = True
-    end
-    object KartDataSetID_UNIT: TFIBBCDField
-      FieldName = 'ID_UNIT'
-      Size = 0
-      RoundByScale = True
-    end
-    object KartDataSetUNIT: TFIBStringField
-      FieldName = 'UNIT'
-      Size = 10
-      EmptyStrToNull = True
-    end
-    object KartDataSetPRICE: TFIBBCDField
-      FieldName = 'PRICE'
-      Size = 4
-      RoundByScale = True
-    end
-    object KartDataSetKOL_MAT: TFIBBCDField
-      FieldName = 'KOL_MAT'
-      Size = 4
-      RoundByScale = True
-    end
-    object KartDataSetSUMMA: TFIBBCDField
-      FieldName = 'SUMMA'
-      Size = 2
-      RoundByScale = True
-    end
-    object KartDataSetSUMMA_OST: TFIBBCDField
-      FieldName = 'SUMMA_OST'
-      Size = 2
-      RoundByScale = True
-    end
-    object KartDataSetDATE_OST: TFIBDateField
-      FieldName = 'DATE_OST'
-    end
-    object KartDataSetSUMMA_AMORT: TFIBBCDField
-      FieldName = 'SUMMA_AMORT'
-      Size = 2
-      RoundByScale = True
-    end
-    object KartDataSetDATE_OPR: TFIBDateField
-      FieldName = 'DATE_OPR'
-    end
-    object KartDataSetID_OPER_OPR: TFIBBCDField
-      FieldName = 'ID_OPER_OPR'
-      Size = 0
-      RoundByScale = True
-    end
-    object KartDataSetDATE_EXPL: TFIBDateField
-      FieldName = 'DATE_EXPL'
-    end
-    object KartDataSetID_OPER_EXPL: TFIBBCDField
-      FieldName = 'ID_OPER_EXPL'
-      Size = 0
-      RoundByScale = True
-    end
-    object KartDataSetDATE_OUT: TFIBDateField
-      FieldName = 'DATE_OUT'
-    end
-    object KartDataSetID_OPER_OUT: TFIBBCDField
-      FieldName = 'ID_OPER_OUT'
-      Size = 0
-      RoundByScale = True
-    end
-    object KartDataSetYEAR_EXPL: TFIBIntegerField
-      FieldName = 'YEAR_EXPL'
-    end
-    object KartDataSetMONTH_EXPL: TFIBIntegerField
-      FieldName = 'MONTH_EXPL'
-    end
-    object KartDataSetDATE_CREATE: TFIBDateField
-      FieldName = 'DATE_CREATE'
-    end
-    object KartDataSetMODEL: TFIBStringField
-      FieldName = 'MODEL'
-      Size = 50
-      EmptyStrToNull = True
-    end
-    object KartDataSetMARKA: TFIBStringField
-      FieldName = 'MARKA'
-      Size = 50
-      EmptyStrToNull = True
-    end
-    object KartDataSetZAVNUM: TFIBStringField
-      FieldName = 'ZAVNUM'
-      Size = 30
-      EmptyStrToNull = True
-    end
-    object KartDataSetPASSNUM: TFIBStringField
-      FieldName = 'PASSNUM'
-      Size = 30
-      EmptyStrToNull = True
-    end
-    object KartDataSetNOTE: TFIBStringField
-      FieldName = 'NOTE'
-      Size = 255
-      EmptyStrToNull = True
-    end
-    object KartDataSetIS_AMORT: TFIBIntegerField
-      FieldName = 'IS_AMORT'
-    end
-    object KartDataSetAMOR_METHOD: TFIBIntegerField
-      FieldName = 'AMOR_METHOD'
-    end
-    object KartDataSetAMORT_PERCENT: TFIBFloatField
-      FieldName = 'AMORT_PERCENT'
-    end
-    object KartDataSetDB_ID_SCH_AMORT: TFIBBCDField
-      FieldName = 'DB_ID_SCH_AMORT'
-      Size = 0
-      RoundByScale = True
-    end
-    object KartDataSetDB_ID_SM_AMORT: TFIBBCDField
-      FieldName = 'DB_ID_SM_AMORT'
-      Size = 0
-      RoundByScale = True
-    end
-    object KartDataSetDB_ID_RZ_AMORT: TFIBBCDField
-      FieldName = 'DB_ID_RZ_AMORT'
-      Size = 0
-      RoundByScale = True
-    end
-    object KartDataSetDB_ID_ST_AMORT: TFIBBCDField
-      FieldName = 'DB_ID_ST_AMORT'
-      Size = 0
-      RoundByScale = True
-    end
-    object KartDataSetDB_ID_KEKV_AMORT: TFIBBCDField
-      FieldName = 'DB_ID_KEKV_AMORT'
-      Size = 0
-      RoundByScale = True
-    end
-    object KartDataSetKR_ID_SCH_AMORT: TFIBBCDField
-      FieldName = 'KR_ID_SCH_AMORT'
-      Size = 0
-      RoundByScale = True
-    end
-    object KartDataSetKR_ID_SM_AMORT: TFIBBCDField
-      FieldName = 'KR_ID_SM_AMORT'
-      Size = 0
-      RoundByScale = True
-    end
-    object KartDataSetKR_ID_RZ_AMORT: TFIBBCDField
-      FieldName = 'KR_ID_RZ_AMORT'
-      Size = 0
-      RoundByScale = True
-    end
-    object KartDataSetKR_ID_ST_AMORT: TFIBBCDField
-      FieldName = 'KR_ID_ST_AMORT'
-      Size = 0
-      RoundByScale = True
-    end
-    object KartDataSetKR_ID_KEKV_AMORT: TFIBBCDField
-      FieldName = 'KR_ID_KEKV_AMORT'
-      Size = 0
-      RoundByScale = True
-    end
-    object KartDataSetINV_NUM_FULL: TFIBStringField
-      FieldName = 'INV_NUM_FULL'
-      Size = 10
-      EmptyStrToNull = True
-    end
-    object KartDataSetNNUM_EXT: TFIBStringField
-      FieldName = 'NNUM_EXT'
-      Size = 10
-      EmptyStrToNull = True
-    end
-    object KartDataSetNNUM_FULL: TFIBStringField
-      FieldName = 'NNUM_FULL'
-      Size = 25
-      EmptyStrToNull = True
-    end
-    object KartDataSetOST_INFO: TFIBStringField
-      FieldName = 'OST_INFO'
-      Size = 255
-      EmptyStrToNull = True
-    end
-    object KartDataSetAMORT_ALL: TCurrencyField
-      FieldKind = fkCalculated
-      FieldName = 'AMORT_ALL'
-      DisplayFormat = '0.00'
-      EditFormat = '0.00'
-      Calculated = True
-    end
   end
   object KartDataSource: TDataSource
     DataSet = KartDataSet

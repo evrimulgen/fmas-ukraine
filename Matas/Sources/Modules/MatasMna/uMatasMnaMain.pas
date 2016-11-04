@@ -240,66 +240,6 @@ type
     ToolButton8: TToolButton;
     frxHTMLExport1: TfrxHTMLExport;
     frxPDFExport1: TfrxPDFExport;
-    KartDataSetID_MNA_KART: TFIBBCDField;
-    KartDataSetTIP_MNA_KART: TFIBIntegerField;
-    KartDataSetID_MO: TFIBBCDField;
-    KartDataSetFIO: TFIBStringField;
-    KartDataSetSFIO: TFIBStringField;
-    KartDataSetID_SPODR: TFIBIntegerField;
-    KartDataSetNAME_DEPARTMENT: TFIBStringField;
-    KartDataSetIS_SKLAD: TFIBSmallIntField;
-    KartDataSetBAL_ID_SCH: TFIBBCDField;
-    KartDataSetBAL_SCH_NUMBER: TFIBStringField;
-    KartDataSetBAL_SCH_TITLE: TFIBStringField;
-    KartDataSetID_SCH: TFIBBCDField;
-    KartDataSetSCH_NUMBER: TFIBStringField;
-    KartDataSetSCH_TITLE: TFIBStringField;
-    KartDataSetNNUM: TFIBIntegerField;
-    KartDataSetGNUM: TFIBSmallIntField;
-    KartDataSetINUM: TFIBIntegerField;
-    KartDataSetID_NOMN: TFIBBCDField;
-    KartDataSetNOMN: TFIBStringField;
-    KartDataSetNAME: TFIBStringField;
-    KartDataSetID_OST: TFIBBCDField;
-    KartDataSetID_UNIT: TFIBBCDField;
-    KartDataSetUNIT: TFIBStringField;
-    KartDataSetPRICE: TFIBBCDField;
-    KartDataSetKOL_MAT: TFIBBCDField;
-    KartDataSetSUMMA: TFIBBCDField;
-    KartDataSetSUMMA_OST: TFIBBCDField;
-    KartDataSetDATE_OST: TFIBDateField;
-    KartDataSetSUMMA_AMORT: TFIBBCDField;
-    KartDataSetDATE_OPR: TFIBDateField;
-    KartDataSetID_OPER_OPR: TFIBBCDField;
-    KartDataSetDATE_EXPL: TFIBDateField;
-    KartDataSetID_OPER_EXPL: TFIBBCDField;
-    KartDataSetDATE_OUT: TFIBDateField;
-    KartDataSetID_OPER_OUT: TFIBBCDField;
-    KartDataSetYEAR_EXPL: TFIBIntegerField;
-    KartDataSetMONTH_EXPL: TFIBIntegerField;
-    KartDataSetDATE_CREATE: TFIBDateField;
-    KartDataSetMODEL: TFIBStringField;
-    KartDataSetMARKA: TFIBStringField;
-    KartDataSetZAVNUM: TFIBStringField;
-    KartDataSetPASSNUM: TFIBStringField;
-    KartDataSetNOTE: TFIBStringField;
-    KartDataSetIS_AMORT: TFIBIntegerField;
-    KartDataSetAMOR_METHOD: TFIBIntegerField;
-    KartDataSetAMORT_PERCENT: TFIBFloatField;
-    KartDataSetDB_ID_SCH_AMORT: TFIBBCDField;
-    KartDataSetDB_ID_SM_AMORT: TFIBBCDField;
-    KartDataSetDB_ID_RZ_AMORT: TFIBBCDField;
-    KartDataSetDB_ID_ST_AMORT: TFIBBCDField;
-    KartDataSetDB_ID_KEKV_AMORT: TFIBBCDField;
-    KartDataSetKR_ID_SCH_AMORT: TFIBBCDField;
-    KartDataSetKR_ID_SM_AMORT: TFIBBCDField;
-    KartDataSetKR_ID_RZ_AMORT: TFIBBCDField;
-    KartDataSetKR_ID_ST_AMORT: TFIBBCDField;
-    KartDataSetKR_ID_KEKV_AMORT: TFIBBCDField;
-    KartDataSetINV_NUM_FULL: TFIBStringField;
-    KartDataSetNNUM_EXT: TFIBStringField;
-    KartDataSetNNUM_FULL: TFIBStringField;
-    KartDataSetOST_INFO: TFIBStringField;
     TabSheet4: TTabSheet;
     cxGrid2: TcxGrid;
     cxGridDBTableView2: TcxGridDBTableView;
@@ -331,11 +271,12 @@ type
     cxDBTextEdit2: TcxDBTextEdit;
     lbl1: TLabel;
     cxDBTextEdit4: TcxDBTextEdit;
-    KartDataSetAMORT_ALL: TCurrencyField;
     frxDBDataset_mna_kart: TfrxDBDataset;
     frxDBDataset_oper: TfrxDBDataset;
     ds_kart: TpFIBDataSet;
     ds_prh_rsh: TpFIBDataSet;
+    Label2: TLabel;
+    cxDBTextEdit6: TcxDBTextEdit;
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
     procedure FormShow(Sender: TObject);
 //    procedure cxLookupSchPropertiesButtonClick(Sender: TObject;
@@ -730,6 +671,7 @@ begin
     StoredProc.ParamByName('TIP_MNA_KART').AsInteger:=T.cxTip.ItemIndex;
     StoredProc.ParamByName('ID_MO').AsInteger:=T.ID_MO;
     StoredProc.ParamByName('ID_SCH').AsInteger:=T.ID_SCH;
+    StoredProc.ParamByName('PLACE').AsString := T.cxTextEditPlace.Text;
 
      if T.cxNNum.Text=''
     then StoredProc.ParamByName('NNUM').Value:= null
@@ -845,6 +787,15 @@ begin
  T.InvNum.Text:=KartDataSet.FieldByName('INV_NUM_FULL').AsString;
  T.Iznos.EditValue:=KartDataSet.FieldByName('SUMMA_AMORT').AsFloat;
  T.ID_OST:=ID_OST;
+ if (KartDataSet['PLACE'] = null) then
+ begin
+   T.cxTextEditPlace.Text := '';
+ end
+ else
+ begin
+   T.cxTextEditPlace.Text := KartDataSet.FieldByName('PLACE').AsString;
+ end;  
+
  if ID_OST>0 then
   T.cxCheckOst.Enabled:=false;
  if T.ShowModal=mrOk then
@@ -921,6 +872,7 @@ begin
     StoredProc.Transaction.StartTransaction;
     StoredProc.StoredProcName:='MAT_DT_MNA_KART_EDIT';
     StoredProc.Prepare;
+    StoredProc.ParamByName('PLACE').AsString:=T.cxTextEditPlace.Text;
     StoredProc.ParamByName('ID_MNA_KART').AsInteger:=ID_MNA_KART;
     StoredProc.ParamByName('TIP_MNA_KART').AsInteger:=T.cxTip.ItemIndex;
     StoredProc.ParamByName('ID_MO').AsInteger:=T.ID_MO;
@@ -1052,14 +1004,14 @@ begin
      ds_kart.SelectSQL.Clear;
      ds_kart.SelectSQL.Add('select * from MAT_DT_MNA_KART_SEL_FOR_ONE(:id_kart)');
      ds_kart.Prepare;
-     ds_kart.ParamByName('id_kart').AsInteger:=KartDataSetID_MNA_KART.AsInteger;
+     ds_kart.ParamByName('id_kart').AsInteger:=KartDataSet['ID_MNA_KART'].AsInteger;
      ds_kart.CloseOpen(False);
 
      ds_prh_rsh.Close;
      ds_prh_rsh.SelectSQL.Clear;
      ds_prh_rsh.SelectSQL.Add('select * from MAT_DT_MNA_OPER_SEL_PR_RSH(:id_kart)');
      ds_prh_rsh.Prepare;
-     ds_prh_rsh.ParamByName('id_kart').AsInteger:=KartDataSetID_MNA_KART.AsInteger;
+     ds_prh_rsh.ParamByName('id_kart').AsInteger:=KartDataSet['ID_MNA_KART'].AsInteger;
      ds_prh_rsh.CloseOpen(False);
    end;
     frReport.Variables['ORG_NAME']:=''''+_ORG_FULL_NAME+'''';
@@ -1444,7 +1396,7 @@ end;
 
 procedure TMnaKartMainForm.KartDataSetCalcFields(DataSet: TDataSet);
 begin
-KartDataSetAMORT_ALL.Value:= KartDataSetKOL_MAT.AsInteger*KartDataSetSUMMA_AMORT.AsCurrency;
+//KartDataSet['AMORT_ALL'].Value:= KartDataSet['KOL_MAT'].AsInteger*KartDataSet['SUMMA_AMORT'].AsCurrency;
 end;
 
 end.
