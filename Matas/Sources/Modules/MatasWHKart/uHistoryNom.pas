@@ -4,7 +4,7 @@ interface
 
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
-  Dialogs, cxLookAndFeelPainters, cxStyles, cxCustomData, cxGraphics, Math,
+  Dialogs, cxLookAndFeelPainters, cxStyles, cxCustomData, cxGraphics,
   cxFilter, cxData, cxDataStorage, cxEdit, DB, cxDBData, FIBDatabase,
   pFIBDatabase, FIBQuery, pFIBQuery, pFIBStoredProc, FIBDataSet,
   pFIBDataSet, cxGridTableView, cxGridLevel, cxClasses, cxControls,
@@ -12,7 +12,7 @@ uses
   StdCtrls, cxButtons, cxContainer, cxTextEdit, ExtCtrls, ibase, cxSplitter,
   cxMaskEdit, cxDropDownEdit, cxCalendar, cxCheckBox, DateUtils,
   cxButtonEdit, uSpMatOtv, uMatasUtils, ActnList, frxClass, frxDBSet,
-  frxDesgn, uSpMatSchMulti, uMatasVars, uPackageManager;
+  frxDesgn, uMatasVars, uPackageManager;
 
 type
   THistoryNomForm = class(TForm)
@@ -45,6 +45,7 @@ type
     ds2: TDataSource;
     pFIBDataSet: TpFIBDataSet;
     ds3: TDataSource;
+    DS_HistoryNAME: TFIBStringField;
     lblMol: TLabel;
     cxMatOtv: TcxButtonEdit;
     pFIBDataSetFIO_IN: TFIBStringField;
@@ -69,6 +70,7 @@ type
     ForReport: TpFIBDataSet;
     DS_PosID_DOC: TFIBBCDField;
     pFIBDataSetID_DOC: TFIBBCDField;
+    DS_HistoryID_MO: TFIBBCDField;
     cxButton2: TcxButton;
     act3: TAction;
     pnl2: TPanel;
@@ -109,10 +111,6 @@ type
     lbl4: TLabel;
     cxDateEnd: TcxDateEdit;
     cxPeriod: TcxCheckBox;
-    cxLookupSch: TcxButtonEdit;
-    Label1: TLabel;
-    cxGrid1DBTableView1DBColumn1: TcxGridDBColumn;
-    frxUserDataSet1: TfrxUserDataSet;
     procedure FormShow(Sender: TObject);
     procedure cxGrid1DBTableView1FocusedRecordChanged(
       Sender: TcxCustomGridTableView; APrevFocusedRecord,
@@ -127,10 +125,6 @@ type
     procedure cxGrid2DBTableView1DblClick(Sender: TObject);
     procedure cxGrid3DBTableView1DblClick(Sender: TObject);
     procedure cxPeriodPropertiesChange(Sender: TObject);
-    procedure cxLookupSchKeyDown(Sender: TObject; var Key: Word;
-      Shift: TShiftState);
-    procedure cxLookupSchPropertiesButtonClick(Sender: TObject;
-      AButtonIndex: Integer);
   private
 
   public
@@ -140,8 +134,6 @@ type
     WORK_PERIOD: TDateTime;
     DateBeg, DateEnd: TDateTime;
     Year, Month, Day: Word;
-    F_SCH: boolean;
-    FILTER_ID_SESSION: integer;
     constructor Create(AOwner:TComponent; DBHANDLE : TISC_DB_HANDLE; ID_USER: int64; PERIOD: TDateTime);overload;
   end;
 
@@ -181,8 +173,6 @@ begin
    cxDateEnd.Enabled:=False;
    cxDateBeg.EditValue:=PERIOD;
    cxDateEnd.EditValue:=PERIOD;
-   F_SCH:=false;
-   FILTER_ID_SESSION:=0;
  end;
 end;
 
@@ -232,75 +222,68 @@ end;
 procedure THistoryNomForm.act1Execute(Sender: TObject);
 var  w: TForm;
 begin
-  if cxMatOtv.Text = '' then begin ShowMessage('¬Ë·Â≥Ú¸ Ã¬Œ!'); Exit; cxMatOtv.SetFocus;end;
+  if cxMatOtv.Text = '' then begin ShowMessage('«‡ÔÓ‚Ì≥Ú¸ ÃŒÀ‡!'); Exit; cxMatOtv.SetFocus;end;
   NOMN_NAME:=AnsiUpperCase(cxName.Text);
-  Application.ProcessMessages;
-  w:=ShowWaitWindow(self);
-  with DS_History do
-  begin
-    Close;
-    SelectSQL.Clear;
-    SelectSQL.Add(' SELECT * FROM MAT_HISTORY_NOMN_SELECT(:ID_MO)');
-    SelectSQL.Add(' WHERE NAME like :NOMN');
-    if F_SCH then
-    begin
-      SelectSQL.Add('AND ( ID_SCH IN (SELECT ID_KEY FROM MAT_TMP_FILTER WHERE ID_OBJECT=2 AND ID_SESSION='+IntToStr(FILTER_ID_SESSION)+')');
-      SelectSQL.Add('OR BAL_ID_SCH IN (SELECT ID_KEY FROM MAT_TMP_FILTER WHERE ID_OBJECT=3 AND ID_SESSION='+IntToStr(FILTER_ID_SESSION)+'))');
-    end;
-    if cxPeriod.Checked=True then
-      SelectSQL.Add(' AND A.DATE_DOC between :date_beg and :date_end');
-    SelectSQL.Add(' ORDER BY NAME');
-    Prepare;
-    ParamByName('ID_MO').Value:=IntToStr(ID_MO);
-    ParamByName('NOMN').AsString:='%'+AnsiUpperCase(cxName.Text)+'%';
-    if cxPeriod.Checked=True then
-    begin
-      ParamByName('DATE_BEG').AsDate:=cxDateBeg.EditValue;
-      ParamByName('DATE_END').AsDate:=cxDateEnd.EditValue;
-    end;
-    CloseOpen(False);
-  end;
-  DS_History.First;
-
-  DS_Pos.Close;
-  DS_POS.SelectSql.clear;
-  Ds_pos.selectSql.Add ('SELECT * from MAT_HISTORY_SP_NOM_POS(:ID_NOMN, :ID_MO, 1)');
-  if cxPeriod.Checked = True then
-    Ds_pos.selectSql.Add (' WHERE Date_Doc between :date_beg and :date_end');
-  Ds_pos.selectSql.Add ('Order by Date_Doc, Num_Doc');
-  Ds_pos.Prepare;
+Application.ProcessMessages;
+w:=ShowWaitWindow(self);
+ with DS_History do
+ begin
+  Close;
+  SelectSQL.Clear;
+  SelectSQL.Add(' SELECT DISTINCT C.NAME, A.ID_MO_IN AS ID_MO');
+  SelectSQL.Add(' FROM MAT_DT_DOC A INNER JOIN MAT_DT_DOC_POS B');
+  SelectSQL.Add(' ON A.ID_DOC = B.ID_DOC');
+  SelectSQL.Add(' INNER JOIN MAT_SP_NOM_BASE C ON B.ID_NOMN = C.ID_NOMN');
+  SelectSQL.Add(' WHERE a.id_mo_in = '+IntToStr(ID_MO)+' AND C.NAME like :NOMN');
   if cxPeriod.Checked=True then
+  SelectSQL.Add(' AND A.DATE_DOC between :date_beg and :date_end');
+  SelectSQL.Add(' ORDER BY NAME');
+  Prepare;
+  ParamByName('NOMN').AsString:='%'+AnsiUpperCase(cxName.Text)+'%';
+  if cxPeriod.Checked=True then
+  begin
+    ParamByName('DATE_BEG').AsDate:=cxDateBeg.EditValue;
+    ParamByName('DATE_END').AsDate:=cxDateEnd.EditValue;
+  end;
+  CloseOpen(False);
+ end;
+ DS_History.First;
+
+DS_Pos.Close;
+DS_POS.SelectSql.clear;
+Ds_pos.selectSql.Add ('SELECT * from MAT_HISTORY_SP_NOM_POS(:NAME, :ID_MO, 1)');
+if cxPeriod.Checked = True then
+Ds_pos.selectSql.Add (' WHERE Date_Doc between :date_beg and :date_end');
+Ds_pos.selectSql.Add ('Order by Date_Doc, Num_Doc');
+Ds_pos.Prepare;
+if cxPeriod.Checked=True then
   begin
     DS_Pos.ParamByName('DATE_BEG').AsDate:=cxDateBeg.EditValue;
     DS_Pos.ParamByName('DATE_END').AsDate:=cxDateEnd.EditValue;
   end;
-  DS_Pos.CloseOpen(False);
+DS_Pos.CloseOpen(False);
 
-  pFIBDataSet.Close;
-  pFIBDataSet.SelectSql.clear;
-  pFIBDataSet.selectSql.Add ('SELECT * from MAT_HISTORY_SP_NOM_POS(:ID_NOMN, :ID_MO, 0)');
-  if cxPeriod.Checked = True then
-  pFIBDataSet.selectSql.Add (' WHERE Date_Doc between :date_beg and :date_end');
-  pFIBDataSet.selectSql.Add ('Order by Date_Doc, Num_Doc');
-  pFIBDataSet.Prepare;
-  if cxPeriod.Checked=True then
+pFIBDataSet.Close;
+pFIBDataSet.SelectSql.clear;
+pFIBDataSet.selectSql.Add ('SELECT * from MAT_HISTORY_SP_NOM_POS(:NAME, :ID_MO, 0)');
+if cxPeriod.Checked = True then
+pFIBDataSet.selectSql.Add (' WHERE Date_Doc between :date_beg and :date_end');
+pFIBDataSet.selectSql.Add ('Order by Date_Doc, Num_Doc');
+pFIBDataSet.Prepare;
+if cxPeriod.Checked=True then
   begin
     pFIBDataSet.ParamByName('DATE_BEG').AsDate:=cxDateBeg.EditValue;
     pFIBDataSet.ParamByName('DATE_END').AsDate:=cxDateEnd.EditValue;
   end;
-  pFIBDataSet.CloseOpen(False);
-  CloseWaitWindow(w);
-  cxGrid1.SetFocus;
+pFIBDataSet.CloseOpen(False);
+
+ CloseWaitWindow(w);
+ cxGrid1.SetFocus;
 end;
 
 procedure THistoryNomForm.act2Execute(Sender: TObject);
-var
-  fp: TOborotPrintForm;
-  zapros:string;
-  pages, lines, cnt: integer;
-const
-  FPL = 33; //lines on first page
-  LPP = 52; //lines per page
+var  fp: TOborotPrintForm;
+ zapros:string;
 begin
   if DS_History.IsEmpty then Exit;
  fp:=TOborotPrintform.Create(self);
@@ -320,7 +303,7 @@ begin
      SelectSQL.Add(zapros);
      Prepare;
      ParamByName('ID_DOC').AsInt64:=DS_PosID_DOC.AsInt64;
-     ParamByName('ID_NOMN').AsInt64:=DS_History.FieldByName('ID_NOMN').AsInteger;
+     ParamByName('ID_NOMN').AsString:=DS_HistoryNAME.AsString;
      ParamByName('ID_MO').AsInteger:=id_mo;
      ParamByName('PKOL_MAT').Value:=DS_PosKOL_MAT.Value;
      ParamByName('PRICE').Value:=DS_PosPRICE.Value;
@@ -332,21 +315,12 @@ begin
      Open;
    end;
    frxReport1.LoadFromFile(ExtractFilePath(Application.ExeName)+ _PATH_REPORTS+'\sklad_kart.fr3');
-   frxReport1.Variables['NOMN_NAME']:= QuotedStr(DS_History.FieldByName('NAME').AsString);
-   frxReport1.Variables['ORG_NAME']:= QuotedStr(_ORG_FULL_NAME);
-   //frxReport1.Variables['ORG_NAME']:=_ORG_FULL_NAME;
-   //frxReport1.Variables['ORG_SHORT_NAME']:=_ORG_SHORT_NAME;
-   frxReport1.Variables['ORG_KOD_OKPO']:=''''+_ORG_KOD_OKPO+'''';
-   ForReport.FetchAll;
-   cnt:=ForReport.RecordCount;
-   pages:=Ceil((cnt-FPL)*1.0/LPP)+1;
-   if (pages mod 2) = 1 then pages:=pages+1;
-   lines:=FPL+(pages-1)*LPP-1;
-   frxUserDataSet1.RangeEndCount:=lines-cnt;
-   if fp.cxCheckEdit.Checked = True then
-    frxReport1.DesignReport
+   frxReport1.Variables['NOMN_NAME']:= ''''+DS_HistoryNAME.AsString+'''';
+   frxReport1.Variables['ORG_NAME']:= ''''+_ORG_FULL_NAME+'''';
+  if fp.cxCheckEdit.Checked = True then
+   frxReport1.DesignReport
    else
-    frxReport1.ShowReport;
+   frxReport1.ShowReport;
  end;
 end;
 
@@ -381,51 +355,6 @@ begin
  cxDateBeg.Enabled:=True;
  cxDateEnd.Enabled:=True;
 end;
-end;
-
-procedure THistoryNomForm.cxLookupSchKeyDown(Sender: TObject;
-  var Key: Word; Shift: TShiftState);
-begin
-  if (Key=VK_BACK) or (Key=VK_DELETE) then
-  begin
-    cxLookupSch.Text:='';
-    F_SCH:=false;
-    FILTER_ID_SESSION:=0;
-  end
-end;
-
-procedure THistoryNomForm.cxLookupSchPropertiesButtonClick(Sender: TObject;
-  AButtonIndex: Integer);
-var
-  Res : Variant;
-  mr: boolean;
-  VarDimCnt: integer;
-  i: integer;
-  s: string;
-begin
-  mr:=false;
-  if FILTER_ID_SESSION=0 then FILTER_ID_SESSION:=DB_History.Gen_Id('MAT_ID_SESSION',1, TR_History);
-  Res:=uSpMatSchMulti.GetMatSchMulti(self, DBHandle, 0, FILTER_ID_SESSION, mr);
-  if mr then
-  begin
-    if  VarType(Res) <> varEmpty then
-    begin
-      VarDimCnt:=VarArrayHighBound(Res,  1);
-      s:='';
-      for i:=0 to VarDimCnt do
-      begin
-        s:=s+VarToStr(Res[i][1])+';';
-      end;
-      cxLookupSch.Text := s;
-      F_SCH:=true;
-    end
-  end
-  else
-  begin
-    F_SCH:=false;
-    FILTER_ID_SESSION:=0;
-    cxLookupSch.Text:='';
-  end;
 end;
 
 end.

@@ -90,7 +90,7 @@ contains
   uDocWorkHistoryForm in 'Modules\MatasDoc\uDocWorkHistoryForm.pas' {DocWorkViewHistoryForm},
   uDocWorkOstInvKart in 'Modules\MatasDoc\uDocWorkOstInvKart.pas' {DocWorkOstInvKartForm},
   uDocWorkReestr in 'Modules\MatasDoc\uDocWorkReestr.pas' {DocWorkReestr},
-  uDocWorkReestrNew in 'Modules\MatasDoc\uDocWorkReestrNew.pas' {DocWorkReestrNew},
+  uDocWorkReestrCreate in 'Modules\MatasDoc\uDocWorkReestrCreate.pas' {DocWorkReestrCreate},
   uDocWorkReestrView in 'Modules\MatasDoc\uDocWorkReestrView.pas' {DocWorkReestrView},
   uDocWorkFilterSch in 'Modules\MatasDoc\uDocWorkFilterSch.pas' {DocWorkFilterSchForm},
   uDocWorkPrintMatRep in 'Modules\MatasDoc\uDocWorkPrintMatRep.pas' {DocWorkPrintMatRep},
@@ -104,7 +104,6 @@ contains
   uViewMnaKart in 'Modules\MatasDoc\uViewMnaKart.pas' {MNAViewForm},
   uPrintWorkedDoc in 'Modules\MatasDoc\uPrintWorkedDoc.pas' {PrintWorkedForm},
   uDocWorkMessage in 'Modules\MatasDoc\uDocWorkMessage.pas' {MessageForm},
-  uDocFilterNomn in 'Modules\MatasDoc\uDocFilterNomn.pas' {FilterNomnForm},
-  uDocWorkReestrCreate in 'Modules\MatasDoc\uDocWorkReestrCreate.pas' {DocWorkReestrCreate};
+  uDocFilterNomn in 'Modules\MatasDoc\uDocFilterNomn.pas' {FilterNomnForm};
 
 end.

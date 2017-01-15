@@ -1,10 +1,10 @@
 object fmPrintDoc: TfmPrintDoc
-  Left = 397
-  Top = 454
+  Left = 462
+  Top = 342
   BorderStyle = bsDialog
   Caption = 'fmPrintDoc'
-  ClientHeight = 192
-  ClientWidth = 410
+  ClientHeight = 191
+  ClientWidth = 405
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -4271,5 +4271,19 @@ object fmPrintDoc: TfmPrintDoc
     DataSet = ds_modern
     Left = 16
     Top = 80
+  end
+  object dSetAmort: TpFIBDataSet
+    Database = fmMainIvKartForm.DatabaseMain
+    Transaction = fmMainIvKartForm.TransactionRead
+    Left = 408
+    Top = 160
+    poSQLINT64ToBCD = True
+  end
+  object frxDBDSetAmort: TfrxDBDataset
+    UserName = 'frxDBDSetAmort'
+    CloseDataSource = False
+    DataSet = dSetAmort
+    Left = 408
+    Top = 40
   end
 end

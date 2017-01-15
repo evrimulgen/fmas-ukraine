@@ -23,7 +23,7 @@ uses
   uPackageManager, uSpOper, uSpTipDoc, uMatasUtils, uDocWorkForm,
   uDocWorkFilter, uDocWorkOstB, uDocWorkProv, uDocWorkMolOborot,
   uDocWorkPrintMatGrp, uDocWorkPrintMatRep, uDocWorkReestr, SIBEABase,
-  SIBFIBEA, uPrintWorkedDoc, uDocFilterNomn, uDocWorkReestrNew;
+  SIBFIBEA, uPrintWorkedDoc, uDocFilterNomn;
 
 type
 
@@ -231,7 +231,6 @@ type
     acDocClone: TAction;
     acDocClone1: TMenuItem;
     actFiltrNomn: TAction;
-    acDocReestrNew: TAction;
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
     procedure acDocExitExecute(Sender: TObject);
     procedure acDocAddExecute(Sender: TObject);
@@ -271,7 +270,6 @@ type
     procedure actPrintWorkedExecute(Sender: TObject);
     procedure acDocCloneExecute(Sender: TObject);
     procedure actFiltrNomnExecute(Sender: TObject);
-    procedure acDocReestrNewExecute(Sender: TObject);
   private
     DBHANDLE : TISC_DB_HANDLE;
     FMode: TFMode;
@@ -1459,18 +1457,6 @@ begin
  rep.ShowModal;
  rep.free;
 
-end;
-
-procedure TDocWorkForm.acDocReestrNewExecute(Sender: TObject);
-var
- rep: TDocWorkReestrNew;
-begin
- rep:=TDocWorkReestrNew.Create(self);
- rep.DBHANDLE:=DBHANDLE;
- rep.pFIBDatabase1.Handle:=DBHANDLE;
- rep.pFIBDatabase1.Open;
- rep.ShowModal;
- rep.free;
 end;
 
 end.

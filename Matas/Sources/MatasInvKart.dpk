@@ -54,12 +54,12 @@ requires
   Kerneldpk,
   rxdb7,
   dxBarD7,
-  MatasLib,
   fs7,
   frxDB7,
   frx7,
-  MatasSpr,
-  frxe7;
+  frxe7,
+  MatasLib,
+  MatasSpr;
 
 contains
   AddInvKartForm in 'InvKart\AddInvKartForm.pas' {fmInvKartAdd},

@@ -1,6 +1,6 @@
 object fmMainIvKartForm: TfmMainIvKartForm
-  Left = 181
-  Top = 22
+  Left = 232
+  Top = 391
   Width = 1044
   Height = 545
   Color = clBtnFace
@@ -178,7 +178,7 @@ object fmMainIvKartForm: TfmMainIvKartForm
         Top = 1
         Width = 821
         Height = 210
-        ActivePage = TabSheet1
+        ActivePage = TabSheet6
         Align = alClient
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
@@ -526,7 +526,7 @@ object fmMainIvKartForm: TfmMainIvKartForm
           Caption = 'TabSheet2'
           ImageIndex = 1
           object cxGroupBoxNal: TcxGroupBox
-            Left = 564
+            Left = 581
             Top = 0
             Width = 232
             Height = 182
@@ -921,7 +921,7 @@ object fmMainIvKartForm: TfmMainIvKartForm
             end
           end
           object cxSplitter3: TcxSplitter
-            Left = 556
+            Left = 573
             Top = 0
             Width = 8
             Height = 182
@@ -935,7 +935,7 @@ object fmMainIvKartForm: TfmMainIvKartForm
           object cxGroupBoxBuh: TcxGroupBox
             Left = 0
             Top = 0
-            Width = 556
+            Width = 573
             Height = 182
             Align = alClient
             Alignment = alTopLeft
@@ -1328,7 +1328,7 @@ object fmMainIvKartForm: TfmMainIvKartForm
             Left = 119
             Top = 112
             Width = 576
-            Height = 65
+            Height = 41
             ParentFont = False
             Properties.ReadOnly = True
             Style.Font.Charset = DEFAULT_CHARSET
@@ -1379,6 +1379,23 @@ object fmMainIvKartForm: TfmMainIvKartForm
             Style.Font.Name = 'MS Sans Serif'
             Style.Font.Style = [fsBold]
             TabOrder = 7
+          end
+          object cxLabelPlace: TcxLabel
+            Left = 0
+            Top = 157
+            Width = 121
+            Height = 17
+            AutoSize = False
+            Properties.Transparent = True
+            TabOrder = 8
+            Caption = #1052#1110#1089#1094#1077#1079#1085#1072#1093#1086#1076#1078#1077#1085#1085#1103
+          end
+          object cxTextEditPlace: TcxTextEdit
+            Left = 120
+            Top = 157
+            Width = 576
+            Height = 21
+            TabOrder = 9
           end
         end
         object TabSheet4: TTabSheet
@@ -1813,7 +1830,7 @@ object fmMainIvKartForm: TfmMainIvKartForm
           object cxGrid1: TcxGrid
             Left = 134
             Top = 0
-            Width = 662
+            Width = 679
             Height = 182
             Align = alClient
             TabOrder = 1

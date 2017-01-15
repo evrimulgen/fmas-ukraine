@@ -138,6 +138,9 @@ type
     cxTextEditOstPrice: TcxCurrencyEdit;
     cxTextEditBegIznos: TcxCurrencyEdit;
     cxTextEditOstIznos: TcxCurrencyEdit;
+    cxTextEditPlace: TcxTextEdit;
+    cxLabelPlace: TcxLabel;
+    cxCheckBoxIsFourNum: TcxCheckBox;
     procedure cxButtonCloseClick(Sender: TObject);
     procedure cxButtonEditSelMOLPropertiesButtonClick(Sender: TObject;
       AButtonIndex: Integer);
@@ -281,6 +284,7 @@ begin
     myform    := mform;
     FlagNaAdd := flag;
     Is_check  := check;
+    cxCheckBoxIsFourNum.Checked:=True;
 
     //cxButtonEditID_Am_grp.Text      := '2';
     //cxComboBoxMethod.Text           := '21';
@@ -480,6 +484,7 @@ begin
         cxComboBoxTipKrt.Text             := myform.DataSetOsn.FieldByName('TIP_KRT').AsString;
         cxTextEditInvNum.Text             := myform.DataSetKart.FieldByName('INV_NUM').AsString;
         cxTextEditZavNum.Text             := myform.DataSetOsn.FieldByName('ZAV_NUM').AsString;
+        cxTextEditPlace.Text              := myform.DataSetOsn.FieldByName('PLACE').AsString;
         cxTextEditPasNum.Text             := myform.DataSetOsn.FieldByName('PASS_NUM').AsString;
         cxTextEditKartNum.Text            := myform.DataSetOsn.FieldByName('KART_NUM').AsString;
         cxTextEditBegPrice.Text           := myform.DataSetOsn.FieldByName('BEG_PRICE').AsString;
@@ -929,6 +934,7 @@ begin
         cxTextEditInvNum.Text             := myform.DataSetKart.FieldByName('INV_NUM').AsString;
         cxTextEditFullInvNum.Text         := myform.DataSetKart.FieldByName('FULL_INV').AsString;
         cxTextEditZavNum.Text             := myform.DataSetOsn.FieldByName('ZAV_NUM').AsString;
+        cxTextEditPlace.Text              := myform.DataSetOsn.FieldByName('PLACE').AsString;
         cxTextEditPasNum.Text             := myform.DataSetOsn.FieldByName('PASS_NUM').AsString;
         cxTextEditKartNum.Text            := myform.DataSetOsn.FieldByName('KART_NUM').AsString;
         cxTextEditBegPrice.Text           := myform.DataSetOsn.FieldByName('BEG_PRICE').AsString;
@@ -1469,7 +1475,6 @@ begin
 
     If FlagNaAdd = 1 then
     begin
-
         if Is_check = 1 then
         begin
                 cxCheckBox1.Checked := true;
@@ -1499,8 +1504,14 @@ begin
         cxTextEditGrpNum.Text             := myform.DataSetKart.FieldByName('GRP_NUM').AsString;
         cxComboBoxTipKrt.Text             := myform.DataSetOsn.FieldByName('TIP_KRT').AsString;
         cxTextEditInvNum.Text             := myform.DataSetKart.FieldByName('INV_NUM').AsString;
+        //старый номер - четырехзначный 
+        if Length(cxTextEditInvNum.Text)=4 then
+          cxCheckBoxIsFourNum.Checked := True
+        else
+          cxCheckBoxIsFourNum.Checked := False;
         cxTextEditFullInvNum.Text         := myform.DataSetKart.FieldByName('FULL_INV').AsString;
         cxTextEditZavNum.Text             := myform.DataSetOsn.FieldByName('ZAV_NUM').AsString;
+        cxTextEditPlace.Text              := myform.DataSetOsn.FieldByName('PLACE').AsString;
         cxTextEditPasNum.Text             := myform.DataSetOsn.FieldByName('PASS_NUM').AsString;
         cxTextEditKartNum.Text            := myform.DataSetOsn.FieldByName('KART_NUM').AsString;
         cxTextEditBegPrice.Text           := myform.DataSetOsn.FieldByName('BEG_PRICE').AsString;
@@ -2110,6 +2121,12 @@ begin
                    StoredProcWorkWithFullInv.ExecProc;
                    cxTextEditFullInvNum.Text             := StoredProcWorkWithFullInv.ParamByName('INV_NUM_FULL').AsString;
                    cxTextEditInvNum.Text                 := StoredProcWorkWithFullInv.ParamByName('INV_NUM').AsString;
+
+                   if (Length(cxTextEditInvNum.Text)=4) then
+                     cxCheckBoxIsFourNum.checked:=True
+                   else
+                     cxCheckBoxIsFourNum.checked:=False;
+
                    cxTextEditGrpNum.Text                 := StoredProcWorkWithFullInv.ParamByName('GRP_NUM').AsString;
 
                    inv_full                              := cxTextEditFullInvNum.Text;
@@ -2193,6 +2210,10 @@ begin
                    cxTextEditFullInvNum.Text             := StoredProcWorkWithFullInv.ParamByName('INV_NUM_FULL').AsString;
                    cxTextEditInvNum.Text                 := StoredProcWorkWithFullInv.ParamByName('INV_NUM').AsString;
                    cxTextEditGrpNum.Text                 := StoredProcWorkWithFullInv.ParamByName('GRP_NUM').AsString;
+                   if (Length(cxTextEditInvNum.Text)=4) then
+                     cxCheckBoxIsFourNum.checked:=True
+                   else
+                     cxCheckBoxIsFourNum.checked:=False;
 
                    inv_full                              := cxTextEditFullInvNum.Text;
                 except on E : Exception do
@@ -3333,6 +3354,7 @@ begin
   if (cxDateEditDateExpl.Text<>'') and (cxDateEditDateOut.Text = '') then is_expl:=1 else is_expl:=0;
 if (((FlagNaAdd = 1) or (FlagNaAdd = 0) or (FlagNaAdd = 3))and (is_expl=0)) then
 begin
+    //showmessage('Action1Execute inv_old_num '+inv_old_num);
     If cxTextEditInvNum.Text <> inv_old_num then
     begin
     //**********  Определение полного инвентарного номера    ***********************
@@ -3350,6 +3372,17 @@ begin
            StoredProcWorkWithFullInv.ParamByName('INUM').AsString     := cxTextEditInvNum.Text;
            StoredProcWorkWithFullInv.ParamByName('ID_NOMN').AsInt64   := id_nomn;
            StoredProcWorkWithFullInv.ParamByName('IS_SKLAD').AsInt64  := IS_SKLAD;
+
+           //при размерности 3/2/5 подправить номер старый (с размерностью 3/2/4)
+           if (cxCheckBoxIsFourNum.Checked = True) then
+           begin
+             StoredProcWorkWithFullInv.ParamByName('IS_FOUR_NUM').AsInt64   := 1;
+           end
+           else // при размерности 3/2/5 сгенерировать 3/2/5
+           begin
+             StoredProcWorkWithFullInv.ParamByName('IS_FOUR_NUM').AsInt64   := 0;
+           end;
+
            StoredProcWorkWithFullInv.ExecProc;
            cxTextEditFullInvNum.Text             := StoredProcWorkWithFullInv.ParamByName('INV_NUM_FULL').AsString;
            cxTextEditInvNum.Text                 := StoredProcWorkWithFullInv.ParamByName('INV_NUM').AsString;
@@ -3499,7 +3532,7 @@ begin
             if cxTextEditOstPriceNal.Text='' then cxTextEditOstPriceNal.Text:='0';
             if cxTextEditBegIznosNal.Text='' then cxTextEditBegIznosNal.Text:='0';
             if cxTextEditOstIznosNal.Text='' then cxTextEditOstIznosNal.Text:='0';
-
+            
             j := AddKartochku(id, id_man, id_nomn, id_sch, cxTextEditGrpNum.Text, cxComboBoxTipKrt.text, cxTextEditInvNum.Text,
                                cxTextEditZavNum.Text, cxTextEditPasNum.Text, cxTextEditKartNum.EditValue, cxTextEditBegPrice.EditValue,
                                cxTextEditBegIznos.EditValue, cxTextEditOstPrice.EditValue,
@@ -3510,7 +3543,8 @@ begin
                                StringReplace(cxCurrencyEditMinPrice.Text,',','.',[]), StrToInt(cxTextEditYear.Text), StrToInt(cxComboBoxMonth.Text), id_sch_db, id_sch_kr,
                                flajok, StringReplace(cxCurrencyEdit_Nal_Percent.text,',','.',[]), StringReplace(cxCurrencyEdit_Nal_Min_Price.Text,',','.',[]),
                                StrToInt(cxTextEdit_Nal_Year.Text), StrToInt(cxComboBox_Nal_month.Text), nal_sch_db, nal_sch_kr, 1, inv_full, is_buhg_acc,IS_SEL_OST, id_ost, is_inv_obj, name_full,
-                               StringReplace(cxTextEditBegPriceNal.Text,',','.',[]), StringReplace(cxTextEditBegIznosNal.Text,',','.',[]), StringReplace(cxTextEditOstPriceNal.Text,',','.',[]), StringReplace(cxTextEditOstIznosNal.Text,',','.',[]));
+                               StringReplace(cxTextEditBegPriceNal.Text,',','.',[]), StringReplace(cxTextEditBegIznosNal.Text,',','.',[]), StringReplace(cxTextEditOstPriceNal.Text,',','.',[]),
+                               StringReplace(cxTextEditOstIznosNal.Text,',','.',[]), cxTextEditPlace.text);
             If j > 0 then
             begin
                 if (cxDateEditOpr.Text <> '') then oprihod := 1 else oprihod := 0;
@@ -3696,7 +3730,8 @@ begin
                             StringReplace(cxCurrencyEditMinPrice.Text,',','.',[]), StrToInt(cxTextEditYear.Text), StrToInt(cxComboBoxMonth.Text), id_sch_db, id_sch_kr,
                             flajok, StringReplace(cxCurrencyEdit_Nal_Percent.text,',','.',[]), StringReplace(cxCurrencyEdit_Nal_Min_Price.Text,',','.',[]),
                             StrToInt(cxTextEdit_Nal_Year.Text), StrToInt(cxComboBox_Nal_month.Text), nal_sch_db, nal_sch_kr, inv_full, is_buhg_acc, IS_SEL_OST, id_ost, is_inv_obj,_CURRENT_USER_ID , _CURRENT_USER_NAME, name_full,
-                            StringReplace(cxTextEditBegPriceNal.Text,',','.',[]), StringReplace(cxTextEditBegIznosNal.Text,',','.',[]), StringReplace(cxTextEditOstPriceNal.Text,',','.',[]), StringReplace(cxTextEditOstIznosNal.Text,',','.',[]));
+                            StringReplace(cxTextEditBegPriceNal.Text,',','.',[]), StringReplace(cxTextEditBegIznosNal.Text,',','.',[]), StringReplace(cxTextEditOstPriceNal.Text,',','.',[]),
+                            StringReplace(cxTextEditOstIznosNal.Text,',','.',[]),cxTextEditPlace.text);
             //--DecimalSeparator := ',';
             //--myform.Special_actionExecute(Sender);
             //--myform.DataSetKart.Open;
@@ -3746,7 +3781,7 @@ begin
             if cxTextEditOstPriceNal.Text='' then cxTextEditOstPriceNal.Text:='0';
             if cxTextEditBegIznosNal.Text='' then cxTextEditBegIznosNal.Text:='0';
             if cxTextEditOstIznosNal.Text='' then cxTextEditOstIznosNal.Text:='0';
-
+            
             j := AddKartochku(id, id_man, id_nomn, id_sch, cxTextEditGrpNum.Text, cxComboBoxTipKrt.text, cxTextEditInvNum.Text,
                                cxTextEditZavNum.Text, cxTextEditPasNum.Text, cxTextEditKartNum.EditValue, cxTextEditBegPrice.EditValue,
                                cxTextEditBegIznos.EditValue, cxTextEditOstPrice.EditValue,
@@ -3757,7 +3792,8 @@ begin
                                StringReplace(cxCurrencyEditMinPrice.Text,',','.',[]), StrToInt(cxTextEditYear.Text), StrToInt(cxComboBoxMonth.Text), id_sch_db, id_sch_kr,
                                flajok, StringReplace(cxCurrencyEdit_Nal_Percent.text,',','.',[]), StringReplace(cxCurrencyEdit_Nal_Min_Price.Text,',','.',[]),
                                StrToInt(cxTextEdit_Nal_Year.Text), StrToInt(cxComboBox_Nal_month.Text), nal_sch_db, nal_sch_kr, 1, inv_full, is_buhg_acc, IS_SEL_OST, id_ost, is_inv_obj, name_full,
-                               StringReplace(cxTextEditBegPriceNal.Text,',','.',[]), StringReplace(cxTextEditBegIznosNal.Text,',','.',[]), StringReplace(cxTextEditOstPriceNal.Text,',','.',[]), StringReplace(cxTextEditOstIznosNal.Text,',','.',[]));
+                               StringReplace(cxTextEditBegPriceNal.Text,',','.',[]), StringReplace(cxTextEditBegIznosNal.Text,',','.',[]),
+                               StringReplace(cxTextEditOstPriceNal.Text,',','.',[]), StringReplace(cxTextEditOstIznosNal.Text,',','.',[]),cxTextEditPlace.text);
             If j > 0 then
             begin
                 DecimalSeparator := ',';
@@ -3906,7 +3942,8 @@ begin
                             StringReplace(cxCurrencyEditMinPrice.Text,',','.',[]), StrToInt(cxTextEditYear.Text), StrToInt(cxComboBoxMonth.Text), id_sch_db, id_sch_kr,
                             flajok, StringReplace(cxCurrencyEdit_Nal_Percent.text,',','.',[]), StringReplace(cxCurrencyEdit_Nal_Min_Price.Text,',','.',[]),
                             StrToInt(cxTextEdit_Nal_Year.Text), StrToInt(cxComboBox_Nal_month.Text), nal_sch_db, nal_sch_kr, inv_full, is_buhg_acc, IS_SEL_OST, id_ost, is_inv_obj,_CURRENT_USER_ID , _CURRENT_USER_NAME, name_full,
-                            StringReplace(cxTextEditBegPriceNal.Text,',','.',[]), StringReplace(cxTextEditBegIznosNal.Text,',','.',[]), StringReplace(cxTextEditOstPriceNal.Text,',','.',[]), StringReplace(cxTextEditOstIznosNal.Text,',','.',[]));
+                            StringReplace(cxTextEditBegPriceNal.Text,',','.',[]), StringReplace(cxTextEditBegIznosNal.Text,',','.',[]),
+                            StringReplace(cxTextEditOstPriceNal.Text,',','.',[]), StringReplace(cxTextEditOstIznosNal.Text,',','.',[]),cxTextEditPlace.text);
             DecimalSeparator := ',';
             //--myform.Special_actionExecute(Sender);
             //--myform.DataSetPapka.Locate('ID_INV_GRP', id, []);
@@ -3956,6 +3993,7 @@ begin
             if cxTextEditOstPriceNal.Text='' then cxTextEditOstPriceNal.Text:='0';
             if cxTextEditBegIznosNal.Text='' then cxTextEditBegIznosNal.Text:='0';
             if cxTextEditOstIznosNal.Text='' then cxTextEditOstIznosNal.Text:='0';
+
             j := AddKartochku(id, id_man, id_nomn, id_sch, cxTextEditGrpNum.Text, cxComboBoxTipKrt.text, cxTextEditInvNum.Text,
                                cxTextEditZavNum.Text, cxTextEditPasNum.Text, cxTextEditKartNum.EditValue, cxTextEditBegPrice.EditValue,
                                cxTextEditBegIznos.EditValue, cxTextEditOstPrice.EditValue,
@@ -3966,7 +4004,8 @@ begin
                                StringReplace(cxCurrencyEditMinPrice.Text,',','.',[]), StrToInt(cxTextEditYear.Text), StrToInt(cxComboBoxMonth.Text), id_sch_db, id_sch_kr,
                                flajok, StringReplace(cxCurrencyEdit_Nal_Percent.text,',','.',[]), StringReplace(cxCurrencyEdit_Nal_Min_Price.Text,',','.',[]),
                                StrToInt(cxTextEdit_Nal_Year.Text), StrToInt(cxComboBox_Nal_month.Text), nal_sch_db, nal_sch_kr, 1, inv_full, is_buhg_acc, IS_SEL_OST, id_ost, is_inv_obj, name_full,
-                               StringReplace(cxTextEditBegPriceNal.Text,',','.',[]), StringReplace(cxTextEditBegIznosNal.Text,',','.',[]), StringReplace(cxTextEditOstPriceNal.Text,',','.',[]), StringReplace(cxTextEditOstIznosNal.Text,',','.',[]));
+                               StringReplace(cxTextEditBegPriceNal.Text,',','.',[]), StringReplace(cxTextEditBegIznosNal.Text,',','.',[]),
+                               StringReplace(cxTextEditOstPriceNal.Text,',','.',[]), StringReplace(cxTextEditOstIznosNal.Text,',','.',[]),cxTextEditPlace.text);
             If j > 0 then
             begin
                 DecimalSeparator := ',';
@@ -4109,7 +4148,8 @@ begin
                             StringReplace(cxCurrencyEditMinPrice.Text,',','.',[]), StrToInt(cxTextEditYear.Text), StrToInt(cxComboBoxMonth.Text), id_sch_db, id_sch_kr,
                             flajok, StringReplace(cxCurrencyEdit_Nal_Percent.text,',','.',[]), StringReplace(cxCurrencyEdit_Nal_Min_Price.Text,',','.',[]),
                             StrToInt(cxTextEdit_Nal_Year.Text), StrToInt(cxComboBox_Nal_month.Text), nal_sch_db, nal_sch_kr, inv_full, is_buhg_acc, IS_SEL_OST, id_ost, is_inv_obj,_CURRENT_USER_ID , _CURRENT_USER_NAME, name_full,
-                            StringReplace(cxTextEditBegPriceNal.Text,',','.',[]), StringReplace(cxTextEditBegIznosNal.Text,',','.',[]), StringReplace(cxTextEditOstPriceNal.Text,',','.',[]), StringReplace(cxTextEditOstIznosNal.Text,',','.',[]));
+                            StringReplace(cxTextEditBegPriceNal.Text,',','.',[]), StringReplace(cxTextEditBegIznosNal.Text,',','.',[]),
+                            StringReplace(cxTextEditOstPriceNal.Text,',','.',[]), StringReplace(cxTextEditOstIznosNal.Text,',','.',[]),cxTextEditPlace.text);
             DecimalSeparator := ',';
             //--myform.Special_actionExecute(Sender);
             //--myform.DataSetPapka.Locate('ID_INV_GRP', id, []);
@@ -4199,6 +4239,8 @@ begin
   if (cxDateEditDateExpl.Text<>'') and (cxDateEditDateOut.Text = '') then is_expl:=1 else is_expl:=0;
 if (((FlagNaAdd = 1) or (FlagNaAdd = 0) or (FlagNaAdd = 3))and (is_expl=0)) then
 begin
+    //showmessage('cxTextEditGrpNumExit inv_old_num '+inv_old_num);
+    //showmessage('cxTextEditGrpNumExit grp_old_num '+grp_old_num);
     If cxTextEditGrpNum.Text <> grp_old_num then
     begin
     //**********  Определение полного инвентарного номера    ***********************
@@ -4213,6 +4255,15 @@ begin
            StoredProcWorkWithFullInv.ParamByName('GRPN').AsString     := cxTextEditGrpNum.Text;
            StoredProcWorkWithFullInv.ParamByName('INUM').AsString     := '0';
            StoredProcWorkWithFullInv.ParamByName('ID_NOMN').AsInt64   := id_nomn;
+           //при размерности 3/2/5 подправить номер старый (с размерностью 3/2/4)
+           if (cxCheckBoxIsFourNum.Checked = True) then
+           begin
+             StoredProcWorkWithFullInv.ParamByName('IS_FOUR_NUM').AsInt64   := 1;
+           end
+           else // при размерности 3/2/5 сгенерировать 3/2/5
+           begin
+             StoredProcWorkWithFullInv.ParamByName('IS_FOUR_NUM').AsInt64   := 0;
+           end;
            StoredProcWorkWithFullInv.ExecProc;
            cxTextEditFullInvNum.Text             := StoredProcWorkWithFullInv.ParamByName('INV_NUM_FULL').AsString;
            cxTextEditInvNum.Text                 := StoredProcWorkWithFullInv.ParamByName('INV_NUM').AsString;
@@ -4263,6 +4314,7 @@ procedure TfmInvKartAdd.cxTextEditInvNumExit(Sender: TObject);
 begin
 if ((FlagNaAdd = 1) or (FlagNaAdd = 0) or (FlagNaAdd = 3)) then
 begin
+    //showmessage('cxTextEditInvNumExit inv_old_num '+inv_old_num);
     If VarToStr(cxTextEditInvNum.Value) <> inv_old_num then
     begin
     //**********  Определение полного инвентарного номера    ***********************
@@ -4280,6 +4332,15 @@ begin
            StoredProcWorkWithFullInv.ParamByName('INUM').AsString     := VarToStr(cxTextEditInvNum.Value);
            StoredProcWorkWithFullInv.ParamByName('ID_NOMN').AsInt64   := id_nomn;
            StoredProcWorkWithFullInv.ParamByName('IS_SKLAD').AsInt64  := IS_SKLAD;
+           //при размерности 3/2/5 подправить номер старый (с размерностью 3/2/4)
+           if (cxCheckBoxIsFourNum.Checked = True) then
+           begin
+             StoredProcWorkWithFullInv.ParamByName('IS_FOUR_NUM').AsInt64   := 1;
+           end
+           else // при размерности 3/2/5 сгенерировать 3/2/5
+           begin
+             StoredProcWorkWithFullInv.ParamByName('IS_FOUR_NUM').AsInt64   := 0;
+           end;
            StoredProcWorkWithFullInv.ExecProc;
            cxTextEditFullInvNum.Text             := StoredProcWorkWithFullInv.ParamByName('INV_NUM_FULL').AsString;
            cxTextEditInvNum.Text                 := StoredProcWorkWithFullInv.ParamByName('INV_NUM').AsString;
@@ -4375,7 +4436,7 @@ begin
            cxTextEditBegIznos.SetFocus;
        end else
        begin
-       ShowMessage(CurrToStr(StrToCurr(cxTextEditBegPrice.Text)-sexy));
+       //ShowMessage(CurrToStr(StrToCurr(cxTextEditBegPrice.Text)-sexy));
            cxTextEditOstPrice.Text:=CurrToStr(StrToCurr(cxTextEditBegPrice.Text)-sexy);
            cxTextEditOstIznos.Text:=cxTextEditBegIznos.Text;
        end;

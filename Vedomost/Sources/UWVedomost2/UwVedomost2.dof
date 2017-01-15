@@ -101,7 +101,7 @@ DebugSourceDirs=
 UsePackages=0
 [Parameters]
 RunParams=D:\FMAS-WIN\
-HostApplication=D:\FMAS-WIN\AvanseOtchet.exe
+HostApplication=E:\WORK_FMAS\FMAS Ukraine\2015-10-27 Application\Application\AvanseOtchet.exe
 Launcher=
 UseLauncher=0
 DebugCWD=D:\FMAS-WIN

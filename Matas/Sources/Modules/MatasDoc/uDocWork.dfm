@@ -21,7 +21,7 @@ object DocWorkForm: TDocWorkForm
     Left = 0
     Top = 75
     Width = 1054
-    Height = 234
+    Height = 235
     Align = alClient
     BevelOuter = bvNone
     Caption = 'PanelDocWork'
@@ -30,7 +30,7 @@ object DocWorkForm: TDocWorkForm
       Left = 0
       Top = 0
       Width = 1054
-      Height = 234
+      Height = 235
       Align = alClient
       PopupMenu = DocMainPopupMenu
       TabOrder = 0
@@ -123,7 +123,7 @@ object DocWorkForm: TDocWorkForm
   end
   object cxSplitter1: TcxSplitter
     Left = 0
-    Top = 309
+    Top = 310
     Width = 1054
     Height = 8
     HotZoneClassName = 'TcxSimpleStyle'
@@ -363,7 +363,7 @@ object DocWorkForm: TDocWorkForm
   end
   object PanelPos: TPanel
     Left = 0
-    Top = 317
+    Top = 318
     Width = 1054
     Height = 144
     Align = alBottom
@@ -2006,10 +2006,6 @@ object DocWorkForm: TDocWorkForm
               item
                 Action = actFiltrNomn
                 ImageIndex = 1
-              end
-              item
-                Action = acDocReestrNew
-                ImageIndex = 1
               end>
             Action = acDocPrint
             Caption = 'acDoc&Print'
@@ -2152,11 +2148,6 @@ object DocWorkForm: TDocWorkForm
       Caption = #1060#1110#1083#1100#1090#1088' '#1079#1072' '#1085#1086#1084#1077#1085#1082#1083#1072#1090#1091#1088#1086#1102
       ImageIndex = 1
       OnExecute = actFiltrNomnExecute
-    end
-    object acDocReestrNew: TAction
-      Caption = #1056#1077#1108#1089#1090#1088' '#1076#1086#1082#1091#1084#1077#1085#1090#1110#1074' '#1079#1072' '#1087#1077#1088#1110#1086#1076
-      ImageIndex = 1
-      OnExecute = acDocReestrNewExecute
     end
   end
   object ErrorDataSet: TpFIBDataSet

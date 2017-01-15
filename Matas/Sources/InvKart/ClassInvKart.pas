@@ -25,7 +25,7 @@ function AddKartochku(id, MOL, nomn, sch : int64; grp_num, tip_kart : string; in
                       date_reg : string; note, model, marka : string; buh_id_grp, buh_id_metod, nal_id_grp, nal_id_metod, update_child : Int64;
                       buh_percent, buh_min_price : variant; buh_Year, buh_month : integer; buh_db_sch, buh_kr_sch, is_check : int64;
                       nal_percent, nal_min_price : variant; nal_Year, nal_month : integer; nal_db_sch, nal_kr_sch, work: integer; inv_full : string; is_buhg_acc, is_ost : integer; id_ost : int64; is_inv_obj : Integer; name_full:string;
-                      bal_price_nal:string; bal_iznos_nal:string; ost_price_nal:string; ost_iznos_nal:string):int64;
+                      bal_price_nal:string; bal_iznos_nal:string; ost_price_nal:string; ost_iznos_nal:string; place:string):int64;
 procedure ChangeKartochku(GRP_ID, id, MOL, nomn, sch : int64; grp_num, tip_kart : string; inv_num : string; zav_num, pas_num : string;
                       kart_num : int64; beg_price, beg_iznos, ost_price, ost_iznos : Variant; date_ost, date_opr : string;
                       id_oper_opr : int64; date_expl : string; id_oper_expl : int64; date_update : string; id_oper_update : int64;
@@ -33,7 +33,7 @@ procedure ChangeKartochku(GRP_ID, id, MOL, nomn, sch : int64; grp_num, tip_kart 
                       date_reg : string; note, model, marka : string; buh_id_grp, buh_id_metod, nal_id_grp, nal_id_metod : Int64;
                       buh_percent, buh_min_price : variant; buh_Year, buh_month : integer; buh_db_sch, buh_kr_sch, is_check : int64;
                       nal_percent, nal_min_price : variant; nal_Year, nal_month  : integer; nal_db_sch, nal_kr_sch : integer; inv_full : string; is_buhg_acc, is_ost : integer; id_ost : int64; is_inv_obj : Integer; id_user:Int64; user_name:string; name_full:string;
-                      bal_price_nal:string; bal_iznos_nal:string; ost_price_nal:string; ost_iznos_nal:string);
+                      bal_price_nal:string; bal_iznos_nal:string; ost_price_nal:string; ost_iznos_nal:string;place:string);
 procedure DeleteKartochku(id : int64);
 
 function AddMetall(id, name : int64; kol : Variant):int64;
@@ -239,10 +239,11 @@ function AddKartochku(id, MOL, nomn, sch : int64; grp_num, tip_kart : string; in
                       date_reg : string; note, model, marka : string; buh_id_grp, buh_id_metod, nal_id_grp, nal_id_metod, update_child : Int64;
                       buh_percent, buh_min_price : variant; buh_Year, buh_month : integer; buh_db_sch, buh_kr_sch, is_check : int64;
                       nal_percent, nal_min_price : variant; nal_Year, nal_month : integer; nal_db_sch, nal_kr_sch, work : integer; inv_full : string;  is_buhg_acc, is_ost : integer; id_ost : int64; is_inv_obj : Integer;name_full:string;
-                      bal_price_nal:string; bal_iznos_nal:string; ost_price_nal:string; ost_iznos_nal:string):int64;
+                      bal_price_nal:string; bal_iznos_nal:string; ost_price_nal:string; ost_iznos_nal:string; place:string):int64;
 VAR
     ID_KARTA : INT64;
 begin
+
     Class_DataSet.Transaction := Class_Transaction_Wr;
     Class_DataSet.Transaction.StartTransaction;
     Class_DataSet.Close;
@@ -272,16 +273,14 @@ begin
     Class_StoredProc.ParamByName('KART_NUM').AsInt64            := kart_num;
     Class_StoredProc.ParamByName('BEG_PRICE').AsString          := beg_price;
     Class_StoredProc.ParamByName('BEG_IZNOS').AsString          := beg_iznos;
+    if (ost_price = null) then ost_price:='0';
+    if (ost_iznos = null) then ost_iznos:='0';
     Class_StoredProc.ParamByName('OST_PRICE').AsString          := ost_price;
     Class_StoredProc.ParamByName('OST_IZNOS').AsString          := ost_iznos;
     Class_StoredProc.ParamByName('DATE_OST').AsString           := date_ost;
-//    Class_StoredProc.ParamByName('DATE_OPR').AsString           := date_opr;
     Class_StoredProc.ParamByName('ID_OPER_OPR').AsInt64         := id_oper_opr;
-//    Class_StoredProc.ParamByName('DATE_EXPL').AsString          := date_expl;
     Class_StoredProc.ParamByName('ID_OPER_EXPL').AsInt64        := id_oper_expl;
-//    Class_StoredProc.ParamByName('DATE_UPDATE').AsString        := date_update;
     Class_StoredProc.ParamByName('ID_OPER_UPDATE').AsInt64      := id_oper_update;
-//    Class_StoredProc.ParamByName('DATE_OUT').AsString           := date_out;
     Class_StoredProc.ParamByName('ID_OPER_OUT').AsInt64         := id_oper_out;
     Class_StoredProc.ParamByName('DATE_CREATE').AsString        := date_create;
     Class_StoredProc.ParamByName('ID_CUSTOMER').AsInt64         := id_cust;
@@ -319,8 +318,10 @@ begin
     Class_StoredProc.ParamByName('BEG_IZNOS_NAL').AsString      := bal_iznos_nal;
     Class_StoredProc.ParamByName('OST_PRICE_NAL').AsString      := ost_price_nal;
     Class_StoredProc.ParamByName('OST_IZNOS_NAL').AsString      := ost_iznos_nal;
+    Class_StoredProc.ParamByName('PLACE').AsString              := place;
     Class_StoredProc.ExecProc;
         Class_Transaction_Wr.Commit;
+
     except on E:Exception do begin
         Class_Transaction_Wr.Rollback;
         ShowMessage(E.Message);
@@ -338,7 +339,7 @@ procedure ChangeKartochku(GRP_ID, id, MOL, nomn, sch : int64; grp_num, tip_kart 
                       date_reg : string; note, model, marka : string; buh_id_grp, buh_id_metod, nal_id_grp, nal_id_metod : Int64;
                       buh_percent, buh_min_price : variant; buh_Year, buh_month : integer; buh_db_sch, buh_kr_sch, is_check : int64;
                       nal_percent, nal_min_price : variant; nal_Year, nal_month  : integer; nal_db_sch, nal_kr_sch : integer; inv_full : string; is_buhg_acc, is_ost : integer; id_ost : int64; is_inv_obj : Integer; id_user:Int64; user_name:string; name_full:string;
-                      bal_price_nal:string; bal_iznos_nal:string; ost_price_nal:string; ost_iznos_nal:string);
+                      bal_price_nal:string; bal_iznos_nal:string; ost_price_nal:string; ost_iznos_nal:string; place:string);
 begin
     Class_StoredProc.Transaction:=Class_Transaction_Wr;
     Class_StoredProc.Transaction.StartTransaction;
@@ -410,6 +411,7 @@ begin
     Class_StoredProc.ParamByName('BEG_IZNOS_NAL').AsString      := bal_iznos_nal;
     Class_StoredProc.ParamByName('OST_PRICE_NAL').AsString      := ost_price_nal;
     Class_StoredProc.ParamByName('OST_IZNOS_NAL').AsString      := ost_iznos_nal;
+    Class_StoredProc.ParamByName('PLACE').AsString              := place;
         Class_StoredProc.ExecProc;
         Class_Transaction_Wr.Commit;
     except on E:Exception do begin

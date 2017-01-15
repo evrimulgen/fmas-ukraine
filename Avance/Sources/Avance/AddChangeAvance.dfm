@@ -1,6 +1,6 @@
 object fmAddChangeAvance: TfmAddChangeAvance
-  Left = 144
-  Top = 179
+  Left = 269
+  Top = 75
   Width = 1090
   Height = 582
   Color = clInactiveBorder
@@ -552,6 +552,18 @@ object fmAddChangeAvance: TfmAddChangeAvance
                 Format = ',0.00'#39#39';-,0.00'#39#39
                 Kind = skSum
                 Column = cxGrid3DBTableView1DBColumn3
+              end
+              item
+                Format = ',0.00'#39#39';-,0.00'#39#39
+                Kind = skSum
+                FieldName = 'RxMemoryDataCostSumBaza'
+                Column = cxGrid3DBTableView1DBColumn5
+              end
+              item
+                Format = ',0.00'#39#39';-,0.00'#39#39
+                Kind = skSum
+                FieldName = 'RxMemoryDataCostSumBazaPersent'
+                Column = cxGrid3DBTableView1DBColumn6
               end>
             DataController.Summary.SummaryGroups = <>
             NavigatorButtons.ConfirmDelete = False
@@ -559,6 +571,7 @@ object fmAddChangeAvance: TfmAddChangeAvance
             OptionsView.ColumnAutoWidth = True
             OptionsView.Footer = True
             OptionsView.GroupByBox = False
+            OptionsView.HeaderAutoHeight = True
             Styles.Background = cxStyleYellow
             Styles.Content = cxStyleYellow
             Styles.ContentEven = cxStyleYellow
@@ -576,30 +589,58 @@ object fmAddChangeAvance: TfmAddChangeAvance
             Styles.Preview = cxStyleYellow
             object cxGrid3DBTableView1DBColumn1: TcxGridDBColumn
               Caption = #1053#1072#1079#1074#1072' '#1074#1080#1090#1088#1072#1090
+              HeaderAlignmentHorz = taCenter
+              HeaderAlignmentVert = vaCenter
               Options.Filtering = False
-              Width = 496
+              Width = 284
               DataBinding.FieldName = 'RxMemoryDataCostName'
             end
             object cxGrid3DBTableView1DBColumn2: TcxGridDBColumn
               Caption = #1057#1091#1084#1072
               PropertiesClassName = 'TcxCurrencyEditProperties'
               Properties.DisplayFormat = ',0.00'#39#39';-,0.00'#39#39
+              HeaderAlignmentHorz = taCenter
+              HeaderAlignmentVert = vaCenter
               Options.Filtering = False
-              Width = 170
+              Width = 120
               DataBinding.FieldName = 'RxMemoryDataCostSum'
             end
             object cxGrid3DBTableView1DBColumn3: TcxGridDBColumn
               Caption = #1091' '#1090'.'#1095'. '#1055#1044#1042
               PropertiesClassName = 'TcxCurrencyEditProperties'
               Properties.DisplayFormat = ',0.00'#39#39';-,0.00'#39#39
+              HeaderAlignmentHorz = taCenter
+              HeaderAlignmentVert = vaCenter
               Options.Filtering = False
-              Width = 142
+              Width = 105
               DataBinding.FieldName = 'RxMemoryDataCostSumPDV'
+            end
+            object cxGrid3DBTableView1DBColumn5: TcxGridDBColumn
+              Caption = #1041#1072#1079#1072' "'#1089#1091#1084#1072' '#1091' '#1090'.'#1095'. '#1055#1044#1042'" - '#1089#1091#1084#1072' '#1055#1044#1042
+              PropertiesClassName = 'TcxCurrencyEditProperties'
+              Properties.DisplayFormat = ',0.00'#39#39';-,0.00'#39#39
+              HeaderAlignmentHorz = taCenter
+              HeaderAlignmentVert = vaCenter
+              Options.Filtering = False
+              Width = 197
+              DataBinding.FieldName = 'RxMemoryDataCostSumBaza'
+            end
+            object cxGrid3DBTableView1DBColumn6: TcxGridDBColumn
+              Caption = #1041#1072#1079#1072' '#1055#1044#1042' '#1088#1086#1079#1088#1072#1093#1091#1085#1082#1086#1074#1072' '#1074#1110#1076' % '#1055#1044#1042
+              PropertiesClassName = 'TcxCurrencyEditProperties'
+              Properties.DisplayFormat = ',0.00'#39#39';-,0.00'#39#39
+              HeaderAlignmentHorz = taCenter
+              HeaderAlignmentVert = vaCenter
+              Options.Filtering = False
+              Width = 202
+              DataBinding.FieldName = 'RxMemoryDataCostSumBazaPersent'
             end
             object cxGrid3DBTableView1DBColumn4: TcxGridDBColumn
               Caption = #1055#1088#1080#1084#1110#1090#1082#1072
+              HeaderAlignmentHorz = taCenter
+              HeaderAlignmentVert = vaCenter
               Options.Filtering = False
-              Width = 254
+              Width = 154
               DataBinding.FieldName = 'RxMemoryDataCostComment'
             end
           end
@@ -1890,6 +1931,14 @@ object fmAddChangeAvance: TfmAddChangeAvance
       item
         Name = 'RxMemoryDataCostId'
         DataType = ftVariant
+      end
+      item
+        Name = 'RxMemoryDataCostSumBaza'
+        DataType = ftCurrency
+      end
+      item
+        Name = 'RxMemoryDataCostSumBazaPersent'
+        DataType = ftCurrency
       end>
     Left = 837
     Top = 370

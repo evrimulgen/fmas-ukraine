@@ -1,6 +1,6 @@
 object HistoryNomForm: THistoryNomForm
-  Left = 300
-  Top = 233
+  Left = 153
+  Top = 237
   Width = 1042
   Height = 628
   Caption = #1030#1089#1090#1086#1088#1110#1103
@@ -65,17 +65,10 @@ object HistoryNomForm: THistoryNomForm
       Height = 13
       Caption = #1087#1086
     end
-    object Label1: TLabel
-      Left = 485
-      Top = 36
-      Width = 49
-      Height = 13
-      Caption = #1056#1072#1093#1091#1085#1086#1082
-    end
     object cxName: TcxTextEdit
       Left = 67
       Top = 31
-      Width = 406
+      Width = 725
       Height = 21
       Properties.ReadOnly = False
       Style.Color = clInfoBk
@@ -203,7 +196,7 @@ object HistoryNomForm: THistoryNomForm
       UseSystemPaint = False
     end
     object cxMatOtv: TcxButtonEdit
-      Left = 69
+      Left = 67
       Top = 7
       Width = 725
       Height = 21
@@ -344,36 +337,19 @@ object HistoryNomForm: THistoryNomForm
       Properties.Caption = ''
       TabOrder = 7
     end
-    object cxLookupSch: TcxButtonEdit
-      Left = 544
-      Top = 31
-      Width = 250
-      Height = 21
-      ParentFont = False
-      Properties.Buttons = <
-        item
-          Default = True
-          Kind = bkEllipsis
-        end>
-      Properties.ReadOnly = True
-      Properties.OnButtonClick = cxLookupSchPropertiesButtonClick
-      Style.Color = clInfoBk
-      TabOrder = 8
-      OnKeyDown = cxLookupSchKeyDown
-    end
   end
   object pnl2: TPanel
     Left = 0
     Top = 85
     Width = 1026
-    Height = 310
+    Height = 311
     Align = alClient
     TabOrder = 1
     object cxGrid1: TcxGrid
       Left = 1
       Top = 1
       Width = 1024
-      Height = 308
+      Height = 309
       Align = alClient
       TabOrder = 0
       object cxGrid1DBTableView1: TcxGridDBTableView
@@ -397,16 +373,7 @@ object HistoryNomForm: THistoryNomForm
           Caption = #1053#1072#1079#1074#1072
           Options.Editing = False
           Options.Filtering = False
-          Width = 928
           DataBinding.FieldName = 'NAME'
-        end
-        object cxGrid1DBTableView1DBColumn1: TcxGridDBColumn
-          Caption = #1056#1072#1093#1091#1085#1086#1082
-          Options.Editing = False
-          Options.Filtering = False
-          Options.Grouping = False
-          Width = 94
-          DataBinding.FieldName = 'SCH_NUMBER'
         end
       end
       object cxGrid1Level1: TcxGridLevel
@@ -416,7 +383,7 @@ object HistoryNomForm: THistoryNomForm
   end
   object pnl3: TPanel
     Left = 0
-    Top = 403
+    Top = 404
     Width = 1026
     Height = 186
     Align = alBottom
@@ -609,7 +576,7 @@ object HistoryNomForm: THistoryNomForm
   end
   object cxSplitter1: TcxSplitter
     Left = 0
-    Top = 395
+    Top = 396
     Width = 1026
     Height = 8
     HotZoneClassName = 'TcxSimpleStyle'
@@ -764,7 +731,6 @@ object HistoryNomForm: THistoryNomForm
     DefaultTransaction = TR_History
     SQLDialect = 3
     Timeout = 0
-    SaveDBParams = False
     WaitForRestoreConnect = 0
     Left = 65
     Top = 128
@@ -781,6 +747,16 @@ object HistoryNomForm: THistoryNomForm
     Left = 104
     Top = 128
     poSQLINT64ToBCD = True
+    object DS_HistoryNAME: TFIBStringField
+      FieldName = 'NAME'
+      Size = 100
+      EmptyStrToNull = True
+    end
+    object DS_HistoryID_MO: TFIBBCDField
+      FieldName = 'ID_MO'
+      Size = 0
+      RoundByScale = True
+    end
   end
   object SP_History: TpFIBStoredProc
     Database = DB_History
@@ -978,13 +954,5 @@ object HistoryNomForm: THistoryNomForm
     Left = 398
     Top = 128
     poSQLINT64ToBCD = True
-  end
-  object frxUserDataSet1: TfrxUserDataSet
-    RangeEnd = reCount
-    UserName = 'frxUserDataSet1'
-    Fields.Strings = (
-      'title')
-    Left = 584
-    Top = 173
   end
 end

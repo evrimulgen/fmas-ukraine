@@ -655,6 +655,8 @@ type
     frxDBDataset: TfrxDBDataset;
     btn1: TToolButton;
     dsCheckOper: TpFIBDataSet;
+    cxLabelPlace: TcxLabel;
+    cxTextEditPlace: TcxTextEdit;
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
     procedure ActionCloseExecute(Sender: TObject);
     procedure ActionAddExecute(Sender: TObject);
@@ -1518,8 +1520,10 @@ begin
       (cxTextEdit_Inv_num.Text          <> null) and
       (cxTextEdit_grp_num.Text          <> null) and
       (cxCurrencyEditBal.Text           <> null) and
-      (cxMemoNote.Text                  <> null) then
+      (cxMemoNote.Text                  <> null) and
+      (cxTextEditPlace.Text             <> null) then
     begin
+        cxTextEditPlace.Text                :=DataSetOsn.FieldByName('Place').AsString;
         cxTextEditKartNum.Text              :=DataSetOsn.FieldByName('KART_NUM').AsString;
         cxTextEditStartPrice.Text           :=DataSetOsn.FieldByName('BEG_PRICE').AsString;
         cxTextEditStartIznos.Text           :=DataSetOsn.FieldByName('BEG_IZNOS').AsString;

@@ -37,11 +37,11 @@ type
     frxDesigner1: TfrxDesigner;
     DataSetAvance: TpFIBDataSet;
     DataSetProv: TpFIBDataSet;
-    DataSetCostPDV: TpFIBDataSet;
     frxDBDatasetAvance: TfrxDBDataset;
     frxDBDatasetProv: TfrxDBDataset;
-    frxDBDatasetCostPDV: TfrxDBDataset;
     DataSourceAvanse: TDataSource;
+    DataSetSvod: TpFIBDataSet;
+    frxDBDatasetSvod: TfrxDBDataset;
     procedure ButtonCloseClick(Sender: TObject);
     procedure ButtonPrintClick(Sender: TObject);
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
@@ -74,8 +74,10 @@ begin
     DataSetAvance.Transaction    := Transaction;
     DataSetProv.Database         := Database;
     DataSetProv.Transaction      := Transaction;
-    DataSetCostPDV.Database      := Database;
-    DataSetCostPDV.Transaction   := Transaction;
+    //DataSetCostPDV.Database      := Database;
+    //DataSetCostPDV.Transaction   := Transaction;
+    DataSetSvod.Database         := Database;
+    DataSetSvod.Transaction      := Transaction;
 
     DateEditFrom.Date            := myform.cxDateBegin.date;
     DateEditTo.Date              := myform.cxDateEnd.date;
@@ -104,6 +106,12 @@ begin
       ''', '+IntToStr(myform.id_system) + ')';
     DataSetAvance.Open;
 
+    DataSetSvod.Close;
+    DataSetSvod.SQLs.SelectSQL.Text  := 'SELECT * FROM J4_DT_SELECT_SVOD_COST_AO('''+
+      DateToStr(DateEditFrom.Date)+''', '''+DateToStr(DateEditTo.Date)+
+      ''', '+IntToStr(myform.id_system) + ')';
+    DataSetSvod.Open;
+
     ReportReestr.LoadFromFile(ExtractFilePath(Application.ExeName)+ 'Reports\Avance\AvanceCostPDV.fr3');
     ReportReestr.Variables['name_machine']        := QuotedStr(GetComputerNetName);
     ReportReestr.Variables['fio']                 := QuotedStr(GetUserFIO);
@@ -113,7 +121,7 @@ begin
     ReportReestr.Variables['date_end']            := QuotedStr(DateEditTo.Text);
 
    // ReportReestr.PrepareReport(true);
-   // ReportReestr.DesignReport;
+    //ReportReestr.DesignReport;
     ReportReestr.ShowReport(true);
 end;
 

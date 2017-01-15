@@ -1,8 +1,8 @@
 object InvRepForm: TInvRepForm
-  Left = 357
-  Top = 149
+  Left = 454
+  Top = 147
   BorderStyle = bsDialog
-  ClientHeight = 238
+  ClientHeight = 258
   ClientWidth = 489
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
@@ -72,7 +72,7 @@ object InvRepForm: TInvRepForm
   end
   object Label4: TLabel
     Left = 248
-    Top = 141
+    Top = 165
     Width = 91
     Height = 13
     Caption = #1050#1110#1083#1100#1082#1110#1089#1090#1100' '#1082#1086#1087#1110#1081
@@ -159,7 +159,7 @@ object InvRepForm: TInvRepForm
   end
   object OkButton: TcxButton
     Left = 275
-    Top = 202
+    Top = 226
     Width = 101
     Height = 25
     Caption = #1044#1088#1091#1082
@@ -205,7 +205,7 @@ object InvRepForm: TInvRepForm
   end
   object CancelButton: TcxButton
     Left = 380
-    Top = 202
+    Top = 226
     Width = 101
     Height = 25
     Caption = #1042#1110#1076#1084#1110#1085#1080#1090#1080
@@ -346,7 +346,7 @@ object InvRepForm: TInvRepForm
   end
   object cxCheckOnPrinter: TcxCheckBox
     Left = 64
-    Top = 138
+    Top = 162
     Width = 169
     Height = 21
     ParentFont = False
@@ -361,7 +361,7 @@ object InvRepForm: TInvRepForm
   end
   object cxSelectPrinter: TcxCheckBox
     Left = 64
-    Top = 162
+    Top = 186
     Width = 153
     Height = 21
     ParentFont = False
@@ -376,7 +376,7 @@ object InvRepForm: TInvRepForm
   end
   object cxCopies: TcxSpinEdit
     Left = 344
-    Top = 138
+    Top = 162
     Width = 49
     Height = 21
     BeepOnEnter = False
@@ -394,7 +394,7 @@ object InvRepForm: TInvRepForm
   end
   object cxPrintKol: TcxCheckBox
     Left = 243
-    Top = 154
+    Top = 178
     Width = 222
     Height = 21
     ParentFont = False
@@ -409,7 +409,7 @@ object InvRepForm: TInvRepForm
   end
   object cxButton1: TcxButton
     Left = 6
-    Top = 202
+    Top = 226
     Width = 125
     Height = 25
     Action = actShablon
@@ -454,7 +454,7 @@ object InvRepForm: TInvRepForm
   end
   object cxButton2: TcxButton
     Left = 135
-    Top = 202
+    Top = 226
     Width = 136
     Height = 25
     Action = actShPrint
@@ -547,7 +547,7 @@ object InvRepForm: TInvRepForm
   end
   object cxDates: TcxCheckBox
     Left = 242
-    Top = 174
+    Top = 198
     Width = 222
     Height = 21
     ParentFont = False
@@ -561,9 +561,9 @@ object InvRepForm: TInvRepForm
     TabOrder = 16
   end
   object cxNASetting: TcxComboBox
-    Left = 112
+    Left = 128
     Top = 115
-    Width = 369
+    Width = 353
     Height = 21
     BeepOnEnter = False
     ParentFont = False
@@ -578,6 +578,29 @@ object InvRepForm: TInvRepForm
     Style.Font.Name = 'MS Sans Serif'
     Style.Font.Style = [fsBold]
     TabOrder = 17
+  end
+  object cxTextEditPlace: TcxTextEdit
+    Left = 128
+    Top = 140
+    Width = 353
+    Height = 21
+    TabOrder = 18
+    Text = 'cxTextEditPlace'
+  end
+  object cxLabelPlace: TcxLabel
+    Left = 8
+    Top = 140
+    Width = 121
+    Height = 17
+    AutoSize = False
+    ParentFont = False
+    Style.Font.Charset = DEFAULT_CHARSET
+    Style.Font.Color = clWindowText
+    Style.Font.Height = -11
+    Style.Font.Name = 'MS Sans Serif'
+    Style.Font.Style = [fsBold]
+    TabOrder = 19
+    Caption = #1052#1110#1089#1094#1077#1079#1085#1072#1093#1086#1076#1078#1077#1085#1085#1103
   end
   object WorkDatabase: TpFIBDatabase
     DBParams.Strings = (
@@ -630,7 +653,6 @@ object InvRepForm: TInvRepForm
     Version = '3.15'
     DotMatrixReport = False
     IniFile = '\Software\Fast Reports'
-    PreviewOptions.AllowEdit = False
     PreviewOptions.Buttons = [pbPrint, pbLoad, pbSave, pbExport, pbZoom, pbFind, pbOutline, pbPageSetup, pbTools, pbEdit, pbNavigator]
     PreviewOptions.DoubleBuffered = False
     PreviewOptions.MDIChild = True
@@ -1470,5 +1492,14 @@ object InvRepForm: TInvRepForm
     Left = 360
     Top = 32
     poSQLINT64ToBCD = True
+  end
+  object frxDesigner2: TfrxDesigner
+    Restrictions = []
+    Left = 8
+    Top = 160
+  end
+  object frxBarCodeObject1: TfrxBarCodeObject
+    Left = 448
+    Top = 160
   end
 end

@@ -1,6 +1,6 @@
 object fmInvKartAdd: TfmInvKartAdd
-  Left = 244
-  Top = 218
+  Left = 402
+  Top = 178
   HorzScrollBar.Color = 16776176
   HorzScrollBar.ParentColor = False
   VertScrollBar.Color = 16776176
@@ -71,7 +71,7 @@ object fmInvKartAdd: TfmInvKartAdd
       end
       object cxLabelTipKrt: TLabel
         Left = 3
-        Top = 74
+        Top = 82
         Width = 78
         Height = 13
         Caption = 'cxLabelTipKrt'
@@ -188,7 +188,7 @@ object fmInvKartAdd: TfmInvKartAdd
       end
       object cxLabelSelMOL: TLabel
         Left = 180
-        Top = 74
+        Top = 82
         Width = 88
         Height = 13
         Caption = 'cxLabelSelMOL'
@@ -348,7 +348,7 @@ object fmInvKartAdd: TfmInvKartAdd
       end
       object cxButtonEditSelMOL: TcxButtonEdit
         Left = 235
-        Top = 71
+        Top = 79
         Width = 438
         Height = 23
         BeepOnEnter = False
@@ -392,7 +392,7 @@ object fmInvKartAdd: TfmInvKartAdd
       end
       object cxComboBoxTipKrt: TcxComboBox
         Left = 83
-        Top = 71
+        Top = 79
         Width = 65
         Height = 23
         BeepOnEnter = False
@@ -754,6 +754,15 @@ object fmInvKartAdd: TfmInvKartAdd
         TabOrder = 29
         OnExit = cxTextEditOstIznosExit
         OnKeyPress = cxTextEditOstIznosKeyPress
+      end
+      object cxCheckBoxIsFourNum: TcxCheckBox
+        Left = 304
+        Top = 56
+        Width = 153
+        Height = 21
+        Properties.DisplayUnchecked = 'False'
+        Properties.Caption = '4 '#1094#1080#1092#1088#1080' '#1091' '#1110#1085#1074'.'#1085#1086#1084#1077#1088#1110
+        TabOrder = 30
       end
     end
     object TabSheet2: TTabSheet
@@ -1538,7 +1547,7 @@ object fmInvKartAdd: TfmInvKartAdd
         Left = 139
         Top = 238
         Width = 543
-        Height = 101
+        Height = 91
         ParentFont = False
         Properties.MaxLength = 500
         Style.Font.Charset = DEFAULT_CHARSET
@@ -1547,6 +1556,22 @@ object fmInvKartAdd: TfmInvKartAdd
         Style.Font.Name = 'Microsoft Sans Serif'
         Style.Font.Style = []
         TabOrder = 8
+      end
+      object cxTextEditPlace: TcxTextEdit
+        Left = 139
+        Top = 336
+        Width = 543
+        Height = 21
+        TabOrder = 9
+      end
+      object cxLabelPlace: TcxLabel
+        Left = 4
+        Top = 336
+        Width = 121
+        Height = 17
+        Properties.Transparent = True
+        TabOrder = 10
+        Caption = #1052#1110#1089#1094#1077#1079#1085#1072#1093#1086#1076#1078#1077#1085#1085#1103
       end
     end
   end

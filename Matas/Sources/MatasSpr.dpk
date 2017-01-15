@@ -48,8 +48,8 @@ requires
   FR7,
   MatasLib,
   CommonSp,
-  Globals,
-  LoadDog;
+  LoadDog,
+  Globals;
 
 contains
   uSpMatOtv in 'Modules\MatasSpr\SpMatOtv\uSpMatOtv.pas' {fmSpMatOtv},

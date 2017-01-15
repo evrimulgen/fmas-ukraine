@@ -14,7 +14,8 @@ uses
   cxDropDownEdit, DB, FIBDataSet, pFIBDataSet, FR_Class, FR_DSet, FR_DBSet,
   cxCheckBox, FIBDatabase, pFIBDatabase, ibase, cxButtonEdit,
   uSpMatOtv, uSpMatSchEx, uMatasVars, GlobalSPR, uMatasUtils, ActnList,
-  frxClass, frxDBSet, frxDesgn, frxExportXLS, frxExportRTF;
+  frxClass, frxDBSet, frxDesgn, frxExportXLS, frxExportRTF, cxLabel,
+  frxBarcode;
 
 procedure ShowRepInv(AOwner:TComponent; DBHANDLE : TISC_DB_HANDLE; aID_USER : INT64; aPERIOD: TDateTime);stdcall;
 
@@ -62,6 +63,10 @@ type
     cxDates: TcxCheckBox;
     lblNASetting: TLabel;
     cxNASetting: TcxComboBox;
+    cxTextEditPlace: TcxTextEdit;
+    cxLabelPlace: TcxLabel;
+    frxDesigner2: TfrxDesigner;
+    frxBarCodeObject1: TfrxBarCodeObject;
     procedure OkButtonClick(Sender: TObject);
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
     procedure CancelButtonClick(Sender: TObject);
@@ -148,6 +153,7 @@ var
  w: TForm;
  nRepKod: integer;
  cRepTemplate, period_str, period_end: string;
+ sql_text :string;
 begin
  w:=ShowWaitWindow(self);
  MatasYear:=cxYear.Value;
@@ -266,10 +272,25 @@ begin
 }
    Add('SELECT * FROM MAT_MAKE_INV_VED_FULL_EX(:PDATE, :PID_MO, :PID_SCH, :PBAL_ID_SCH)');
    if cxNASetting.ItemIndex = 1 then
+   begin
      Add(' WHERE OST_PRICE = 0 ');
+     if ((cxTextEditPlace.Enabled = True) and (cxTextEditPlace.Text<>'')) then
+     Add(' and upper(PLACE) CONTAINING ''' + UpperCase(Trim(cxTextEditPlace.Text))+''' ');
+   end
+   else
    if cxNASetting.ItemIndex = 2 then
+   begin
      Add(' WHERE OST_PRICE <> 0 ');
-   Add('ORDER BY ID_MO, GROUP_SCH_NUMBER, NAME, ID_OST, INVNOM, NUM_BSO');
+     if ((cxTextEditPlace.Enabled = True) and (cxTextEditPlace.Text<>'')) then
+     Add(' and upper(PLACE) CONTAINING ''' + UpperCase(Trim(cxTextEditPlace.Text))+''' ');
+   end
+   else
+   if ((cxTextEditPlace.Enabled = True) and (cxTextEditPlace.Text<>''))then
+   begin
+     Add(' where upper(PLACE) CONTAINING ''' + UpperCase(Trim(cxTextEditPlace.Text))+''' ');
+   end;
+
+   Add(' ORDER BY ID_MO, GROUP_SCH_NUMBER, NAME, ID_OST, INVNOM, NUM_BSO');
   end;
   ReportDataSet.Prepare;
   ReportDataSet.ParamByName('PDATE').Value:=DBEG;
@@ -384,6 +405,7 @@ begin
  cxCheckBox1.Visible := IntToBool(_ALLOW_EDIT_TEMPLATE);
  WorkTransaction.StartTransaction;
  cxNASetting.ItemIndex :=0;
+ cxTextEditPlace.Text:='';
 end;
 
 procedure TInvRepForm.cxMatOtvPropertiesButtonClick(Sender: TObject;
@@ -511,11 +533,15 @@ if (aReports[cxReport.ItemIndex][1] = 40) or
 begin
   cxNASetting.Enabled:=True;
   lblNASetting.Enabled :=True;
+  cxLabelPlace.Enabled :=True;
+  cxTextEditPlace.Enabled :=True;
 end
 else
 begin
   cxNASetting.Enabled:=False;
   lblNASetting.Enabled :=False;
+  cxLabelPlace.Enabled :=False;
+  cxTextEditPlace.Enabled :=False;
 end;
 end;
 

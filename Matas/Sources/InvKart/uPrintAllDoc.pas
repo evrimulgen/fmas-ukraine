@@ -354,6 +354,8 @@ type
     ds_modernDATE_DOC: TFIBDateField;
     ds_modernNUM_DOC: TFIBStringField;
     Ds_Moderniz: TfrxDBDataset;
+    dSetAmort: TpFIBDataSet;
+    frxDBDSetAmort: TfrxDBDataset;
     procedure FormCreate(Sender: TObject);
     procedure cxButtonCloseClick(Sender: TObject);
     procedure ActionPrintExecute(Sender: TObject);
@@ -534,6 +536,10 @@ begin
     DSdop_info_oz_6.SQLs.SelectSQL.Text := 'select * from MAT_INV_PRINT_DOP_DATA('+IntToStr(id_kartki)+') where TIPOK_OPER in(5,21,22,23,24)';
     DSdop_info_oz_6.CloseOpen(False);
  end;
+
+    dSetAmort.Close;
+    dSetAmort.SQLs.SelectSQL.Text := 'select * from MAT_INV_PRINT_DOP_DATA('+IntToStr(id_kartki)+') where TIPOK_OPER in(15)';
+    dSetAmort.CloseOpen(False);
 
    // frDBDataSetShab.close;
    // frxDBDatasetShab.Close;

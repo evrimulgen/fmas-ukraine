@@ -420,7 +420,7 @@ begin
   end;
    if fp.cxPrintForm.ItemIndex=8 then
    begin
-    pFIBDataSetForReport.SelectSql.Add('SELECT FOND_NUMBER, FOND_TITLE, ID_RZ, RZ_KOD, RZ_TITLE,  SUM(SUMMA) FROM MAT_GET_OST_BASE_MAT_BY_ISTFIN(:PERIOD, :PID_SESSION, :ID_MO)');
+    pFIBDataSetForReport.SelectSql.Add('SELECT FOND_NUMBER, FOND_TITLE, ID_RZ, RZ_KOD, RZ_TITLE,  SUM(SUMMA) FROM MAT_GET_OST_MAT_BY_ISTFIN(:PERIOD, :PID_SESSION, :ID_MO)');
     pFIBDataSetForReport.SelectSql.Add('GROUP BY FOND_NUMBER, FOND_TITLE, ID_RZ, RZ_KOD, RZ_TITLE Order by FOND_NUMBER, RZ_KOD ');
     frxReport.LoadFromFile(ExtractFilePath(Application.ExeName)+ _PATH_REPORTS+'\byut_ist_fin_fond_cross_table.fr3');
     frxReport.Variables['SCH']:=''''+cxLookupSch.Text+'''';

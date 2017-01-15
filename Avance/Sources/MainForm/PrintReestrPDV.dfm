@@ -2,7 +2,7 @@ object frmPrintReestrPDV: TfrmPrintReestrPDV
   Left = 506
   Top = 279
   Width = 391
-  Height = 158
+  Height = 157
   Caption = 'frmPrintReestrPDV'
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
@@ -696,14 +696,6 @@ object frmPrintReestrPDV: TfrmPrintReestrPDV
     Top = 168
     poSQLINT64ToBCD = True
   end
-  object DataSetCostPDV: TpFIBDataSet
-    Database = Database
-    Transaction = Transaction
-    DataSource = DataSourceAvanse
-    Left = 32
-    Top = 200
-    poSQLINT64ToBCD = True
-  end
   object frxDBDatasetAvance: TfrxDBDataset
     UserName = 'frxDBDatasetAvance'
     CloseDataSource = False
@@ -718,16 +710,23 @@ object frmPrintReestrPDV: TfrmPrintReestrPDV
     Left = 104
     Top = 168
   end
-  object frxDBDatasetCostPDV: TfrxDBDataset
-    UserName = 'frxDBDatasetCostPDV'
-    CloseDataSource = False
-    DataSet = DataSetCostPDV
-    Left = 104
-    Top = 200
-  end
   object DataSourceAvanse: TDataSource
     DataSet = DataSetAvance
     Left = 64
     Top = 136
+  end
+  object DataSetSvod: TpFIBDataSet
+    Database = Database
+    Transaction = Transaction
+    Left = 32
+    Top = 232
+    poSQLINT64ToBCD = True
+  end
+  object frxDBDatasetSvod: TfrxDBDataset
+    UserName = 'frxDBDatasetSvod'
+    CloseDataSource = False
+    DataSet = DataSetSvod
+    Left = 104
+    Top = 232
   end
 end

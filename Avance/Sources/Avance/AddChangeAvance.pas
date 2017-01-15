@@ -166,6 +166,8 @@ type
     cxPlaceMissionButton: TcxButton;
     cxPlaceMissionLabel1: TcxLabel;
     cxPlaceMissionLabel2: TcxLabel;
+    cxGrid3DBTableView1DBColumn5: TcxGridDBColumn;
+    cxGrid3DBTableView1DBColumn6: TcxGridDBColumn;
     procedure cxButtonCloseClick(Sender: TObject);
     procedure cxDateEditAoPropertiesChange(Sender: TObject);
     procedure cxEditNumber2KeyPress(Sender: TObject; var Key: Char);
@@ -839,6 +841,8 @@ begin
                RxMemoryDataCost.FieldByName('RxMemoryDataCostName').AsString    := DataSetChange.FieldByName('NAME').AsString;
                RxMemoryDataCost.FieldByName('RxMemoryDataCostSum').AsFloat      := DataSetChange.FieldByName('SUMMA').AsFloat;
                RxMemoryDataCost.FieldByName('RxMemoryDataCostSumPDV').AsFloat   := DataSetChange.FieldByName('SUMMA_PDV').AsFloat;
+               RxMemoryDataCost.FieldByName('RxMemoryDataCostSumBaza').AsFloat      := DataSetChange.FieldByName('SUMMA_BAZA').AsFloat;
+               RxMemoryDataCost.FieldByName('RxMemoryDataCostSumBazaPersent').AsFloat   := DataSetChange.FieldByName('SUMMA_BAZA_PERSENT').AsFloat;
                RxMemoryDataCost.FieldByName('RxMemoryDataCostComment').AsString := DataSetChange.FieldByName('COMMENT').AsString;
                RxMemoryDataCost.FieldByName('RxMemoryDataCostId').AsInteger     := DataSetChange.FieldByName('ID_SP_AO_COST').AsInteger;
                RxMemoryDataCost.Post;
@@ -1052,6 +1056,8 @@ begin
                RxMemoryDataCost.FieldByName('RxMemoryDataCostName').AsString    := DataSetChange.FieldByName('NAME').AsString;
                RxMemoryDataCost.FieldByName('RxMemoryDataCostSum').AsFloat      := DataSetChange.FieldByName('SUMMA').AsFloat;
                RxMemoryDataCost.FieldByName('RxMemoryDataCostSumPDV').AsFloat   := DataSetChange.FieldByName('SUMMA_PDV').AsFloat;
+               RxMemoryDataCost.FieldByName('RxMemoryDataCostSumBaza').AsFloat      := DataSetChange.FieldByName('SUMMA_BAZA').AsFloat;
+               RxMemoryDataCost.FieldByName('RxMemoryDataCostSumBazaPersent').AsFloat   := DataSetChange.FieldByName('SUMMA_BAZA_PERSENT').AsFloat;
                RxMemoryDataCost.FieldByName('RxMemoryDataCostComment').AsString := DataSetChange.FieldByName('COMMENT').AsString;
                RxMemoryDataCost.FieldByName('RxMemoryDataCostId').AsInteger     := DataSetChange.FieldByName('ID_SP_AO_COST').AsInteger;
                RxMemoryDataCost.Post;
@@ -1535,6 +1541,8 @@ begin
                         RxMemoryDataCost.FieldByName('RxMemoryDataCostName').value       := NAME;
                         RxMemoryDataCost.FieldByName('RxMemoryDataCostSum').value        := summaCost;
                         RxMemoryDataCost.FieldByName('RxMemoryDataCostSumPDV').Value     := summaPDVCost;
+                        RxMemoryDataCost.FieldByName('RxMemoryDataCostSumBaza').Value    := summaCost - summaPDVCost;
+                        RxMemoryDataCost.FieldByName('RxMemoryDataCostSumBazaPersent').Value    := summaCost/(100 + 20) *100;
                         RxMemoryDataCost.FieldByName('RxMemoryDataCostComment').Value    := comment;
                         RxMemoryDataCost.FieldByName('RxMemoryDataCostId').AsInteger     := ID;
                         RxMemoryDataCost.Post;
@@ -2889,7 +2897,7 @@ var
     num, main, i, kod_neos : integer;
     id_raspred, id_prov, id_pprr, loc_id_last,id : int64;
     ssum : Currency;
-    summaCost,summaPDVCost :Currency; //для витрат
+    summaCost,summaPDVCost, summaBaza, summaBazaPersent :Currency; //для витрат
     name, s,comment : string;
 begin
     flag_na_aftoscroll := false;
@@ -3157,6 +3165,8 @@ begin
                    id           := RxMemoryDataCost.FieldByName('RxMemoryDataCostId').AsInteger;
                    summaCost    := RxMemoryDataCost.FieldByName('RxMemoryDataCostSum').Value;
                    summaPDVCost := RxMemoryDataCost.FieldByName('RxMemoryDataCostSumPDV').Value;
+                   summaBaza    := RxMemoryDataCost.FieldByName('RxMemoryDataCostSumBaza').Value;
+                   summaBazaPersent := RxMemoryDataCost.FieldByName('RxMemoryDataCostSumBazaPersent').Value;
                    comment      := RxMemoryDataCost.FieldByName('RxMemoryDataCostComment').asstring;
 
                     if Show_Cost(self, myform.DatabaseMain, myform.TransactionRead,
@@ -3168,6 +3178,8 @@ begin
                         RxMemoryDataCost.FieldByName('RxMemoryDataCostSum').value        := summaCost;
                         RxMemoryDataCost.FieldByName('RxMemoryDataCostSumPDV').Value     := summaPDVCost;
                         RxMemoryDataCost.FieldByName('RxMemoryDataCostComment').Value    := comment;
+                        RxMemoryDataCost.FieldByName('RxMemoryDataCostSumBaza').AsFloat      := summaCost - summaPDVCost;
+                        RxMemoryDataCost.FieldByName('RxMemoryDataCostSumBazaPersent').AsFloat   := summaCost/(100 + 20)*100;
                         RxMemoryDataCost.FieldByName('RxMemoryDataCostId').AsInteger     := ID;
                         RxMemoryDataCost.Post;
                     END;
