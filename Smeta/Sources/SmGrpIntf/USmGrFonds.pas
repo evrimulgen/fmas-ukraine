@@ -28,6 +28,16 @@ type
     Label4: TLabel;
     cxButtonEdit4: TcxButtonEdit;
     Label5: TLabel;
+    lbl1: TLabel;
+    lbl2: TLabel;
+    lbl3: TLabel;
+    lbl4: TLabel;
+    lbl5: TLabel;
+    cxButtonEdit5: TcxButtonEdit;
+    cxButtonEdit6: TcxButtonEdit;
+    cxButtonEdit7: TcxButtonEdit;
+    cxButtonEdit8: TcxButtonEdit;
+    cxButtonEdit9: TcxButtonEdit;
     procedure FormShow(Sender: TObject);
     procedure cxButtonEdit2PropertiesButtonClick(Sender: TObject;
       AButtonIndex: Integer);
@@ -39,6 +49,16 @@ type
     procedure cxButtonEdit3PropertiesButtonClick(Sender: TObject;
       AButtonIndex: Integer);
     procedure cxButtonEdit4PropertiesButtonClick(Sender: TObject;
+      AButtonIndex: Integer);
+    procedure cxButtonEdit5PropertiesButtonClick(Sender: TObject;
+      AButtonIndex: Integer);
+    procedure cxButtonEdit6PropertiesButtonClick(Sender: TObject;
+      AButtonIndex: Integer);
+    procedure cxButtonEdit7PropertiesButtonClick(Sender: TObject;
+      AButtonIndex: Integer);
+    procedure cxButtonEdit8PropertiesButtonClick(Sender: TObject;
+      AButtonIndex: Integer);
+    procedure cxButtonEdit9PropertiesButtonClick(Sender: TObject;
       AButtonIndex: Integer);
   private
     { Private declarations }
@@ -54,6 +74,13 @@ type
     id_sch_ll_nv:Variant;
     date_beg:TDateTime;
     date_end:TDateTime;
+    
+    ID_SCH_RASH_FOND_ZP:Variant;
+    ID_SCH_RASH_SOC:Variant;
+    ID_SCH_RASH_MATERIAL:Variant;
+    ID_SCH_RASH_AMORTIZ:Variant;
+    ID_SCH_RASH_OTHER:Variant;
+
     function CheckData:Boolean;
   end;
 
@@ -255,6 +282,67 @@ begin
              cxButtonEdit4.Text:='¹ '+VarToStr(RES[0][3])+' "'+VarToStr(RES[0][1])+'"';
        end;
 
+end;
+
+procedure TfrmSmGrFonds.cxButtonEdit5PropertiesButtonClick(Sender: TObject;
+  AButtonIndex: Integer);
+   var Res:Variant;
+begin
+       Res:=GlobalSpr.GetSch(self,TfrmSmetaGroup(owner).WorkDatabase.handle,fsNormal, date  ,DEFAULT_ROOT_ID,0,0);
+       if (VarArrayDimCount(RES)>0)
+       then begin
+             ID_SCH_RASH_FOND_ZP:=RES[0][0];
+             cxButtonEdit5.Text:='¹ '+VarToStr(RES[0][3])+' "'+VarToStr(RES[0][1])+'"';
+       end;
+end;
+
+procedure TfrmSmGrFonds.cxButtonEdit6PropertiesButtonClick(Sender: TObject;
+  AButtonIndex: Integer);
+ var Res:Variant;
+begin
+       Res:=GlobalSpr.GetSch(self,TfrmSmetaGroup(owner).WorkDatabase.handle,fsNormal, date  ,DEFAULT_ROOT_ID,0,0);
+       if (VarArrayDimCount(RES)>0)
+       then begin
+             ID_SCH_RASH_SOC:=RES[0][0];
+             cxButtonEdit6.Text:='¹ '+VarToStr(RES[0][3])+' "'+VarToStr(RES[0][1])+'"';
+       end;
+end;
+
+procedure TfrmSmGrFonds.cxButtonEdit7PropertiesButtonClick(Sender: TObject;
+  AButtonIndex: Integer);
+   var Res:Variant;
+begin
+       Res:=GlobalSpr.GetSch(self,TfrmSmetaGroup(owner).WorkDatabase.handle,fsNormal, date  ,DEFAULT_ROOT_ID,0,0);
+       if (VarArrayDimCount(RES)>0)
+       then begin
+             ID_SCH_RASH_MATERIAL:=RES[0][0];
+             cxButtonEdit7.Text:='¹ '+VarToStr(RES[0][3])+' "'+VarToStr(RES[0][1])+'"';
+       end;
+end;
+
+procedure TfrmSmGrFonds.cxButtonEdit8PropertiesButtonClick(Sender: TObject;
+  AButtonIndex: Integer);
+   var Res:Variant;
+begin
+       Res:=GlobalSpr.GetSch(self,TfrmSmetaGroup(owner).WorkDatabase.handle,fsNormal, date  ,DEFAULT_ROOT_ID,0,0);
+       if (VarArrayDimCount(RES)>0)
+       then begin
+             ID_SCH_RASH_AMORTIZ:=RES[0][0];
+             cxButtonEdit8.Text:='¹ '+VarToStr(RES[0][3])+' "'+VarToStr(RES[0][1])+'"';
+       end;
+
+end;
+
+procedure TfrmSmGrFonds.cxButtonEdit9PropertiesButtonClick(Sender: TObject;
+  AButtonIndex: Integer);
+   var Res:Variant;
+begin
+       Res:=GlobalSpr.GetSch(self,TfrmSmetaGroup(owner).WorkDatabase.handle,fsNormal, date  ,DEFAULT_ROOT_ID,0,0);
+       if (VarArrayDimCount(RES)>0)
+       then begin
+             ID_SCH_RASH_OTHER:=RES[0][0];
+             cxButtonEdit9.Text:='¹ '+VarToStr(RES[0][3])+' "'+VarToStr(RES[0][1])+'"';
+       end;
 end;
 
 end.
