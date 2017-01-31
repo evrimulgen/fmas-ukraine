@@ -1,6 +1,6 @@
 object fmNormIznos: TfmNormIznos
-  Left = 315
-  Top = 235
+  Left = 752
+  Top = 295
   Width = 611
   Height = 399
   Caption = 'fmNormIznos'
@@ -18,19 +18,19 @@ object fmNormIznos: TfmNormIznos
   object CoolBar1: TCoolBar
     Left = 0
     Top = 0
-    Width = 603
+    Width = 595
     Height = 33
     Bands = <
       item
         Control = ToolBar1
         ImageIndex = -1
         MinHeight = 29
-        Width = 599
+        Width = 591
       end>
     object ToolBar1: TToolBar
       Left = 9
       Top = 0
-      Width = 586
+      Width = 578
       Height = 29
       ButtonHeight = 25
       ButtonWidth = 65
@@ -219,15 +219,16 @@ object fmNormIznos: TfmNormIznos
         UseSystemPaint = False
       end
       object ToolButton1: TToolButton
-        Left = 353
+        Left = 0
         Top = 2
         Width = 62
         Caption = 'ToolButton1'
+        Wrap = True
         Style = tbsSeparator
       end
       object cxButtonOk: TcxButton
-        Left = 415
-        Top = 2
+        Left = 0
+        Top = 68
         Width = 88
         Height = 25
         Hint = 'F10'
@@ -313,8 +314,8 @@ object fmNormIznos: TfmNormIznos
         UseSystemPaint = False
       end
       object cxButtonCansel: TcxButton
-        Left = 503
-        Top = 2
+        Left = 88
+        Top = 68
         Width = 80
         Height = 25
         Hint = 'Esc'
@@ -404,8 +405,8 @@ object fmNormIznos: TfmNormIznos
   object cxGridNorma: TcxGrid
     Left = 0
     Top = 33
-    Width = 603
-    Height = 238
+    Width = 595
+    Height = 226
     Align = alClient
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
@@ -468,8 +469,8 @@ object fmNormIznos: TfmNormIznos
   end
   object Panel1: TPanel
     Left = 0
-    Top = 279
-    Width = 603
+    Top = 267
+    Width = 595
     Height = 93
     Align = alBottom
     TabOrder = 2
@@ -562,8 +563,8 @@ object fmNormIznos: TfmNormIznos
   end
   object cxSplitter1: TcxSplitter
     Left = 0
-    Top = 271
-    Width = 603
+    Top = 259
+    Width = 595
     Height = 8
     HotZoneClassName = 'TcxXPTaskBarStyle'
     HotZone.SizePercent = 100

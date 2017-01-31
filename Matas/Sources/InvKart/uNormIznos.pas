@@ -164,6 +164,7 @@ end;
 
 procedure TfmNormIznos.FormCreate(Sender: TObject);
 begin
+
      cxButtonAdd.Caption                      := MAT_INV_Add;
      cxButtonChange.Caption                   := MAT_INV_Change;
      cxButtonDel.Caption                      := MAT_INV_Delete;

@@ -141,14 +141,10 @@ Item0=WinTypes=Windows;WinProcs=Windows;DbiTypes=BDE;DbiProcs=BDE;DbiErrs=BDE;
 Count=1
 Item0=..\..\..\
 [HistoryLists\hlOutputDirectorry]
-Count=3
-Item0=..\..\
-Item1=D:\DonnU\SourcesSVN\FMAS-WIN
-Item2=D:\ймсрд\RELEASE\Applications
+Count=2
+Item0=D:\DonnU\SourcesSVN\FMAS-WIN
+Item1=D:\ймсрд\RELEASE\Applications
 [HistoryLists\hlBPLOutput]
 Count=2
 Item0=..\..\..\
 Item1=..\..\
-[HistoryLists\hlDCPOutput]
-Count=1
-Item0=..\..\

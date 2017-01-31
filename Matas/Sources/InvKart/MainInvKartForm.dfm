@@ -1,6 +1,6 @@
 object fmMainIvKartForm: TfmMainIvKartForm
-  Left = 232
-  Top = 391
+  Left = 230
+  Top = 334
   Width = 1044
   Height = 545
   Color = clBtnFace
@@ -20,14 +20,14 @@ object fmMainIvKartForm: TfmMainIvKartForm
     Left = 201
     Top = 109
     Width = 827
-    Height = 398
+    Height = 397
     Align = alClient
     TabOrder = 0
     object cxGridInvKart: TcxGrid
       Left = 2
       Top = 15
       Width = 823
-      Height = 161
+      Height = 160
       Align = alClient
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWindowText
@@ -153,7 +153,7 @@ object fmMainIvKartForm: TfmMainIvKartForm
     end
     object cxSplitter1: TcxSplitter
       Left = 2
-      Top = 176
+      Top = 175
       Width = 823
       Height = 8
       HotZoneClassName = 'TcxSimpleStyle'
@@ -168,7 +168,7 @@ object fmMainIvKartForm: TfmMainIvKartForm
     end
     object Panel1: TPanel
       Left = 2
-      Top = 184
+      Top = 183
       Width = 823
       Height = 212
       Align = alBottom
@@ -1936,14 +1936,14 @@ object fmMainIvKartForm: TfmMainIvKartForm
     Left = 0
     Top = 109
     Width = 193
-    Height = 398
+    Height = 397
     Align = alLeft
     TabOrder = 1
     object cxDBTreeListPapka: TcxDBTreeList
       Left = 2
       Top = 15
       Width = 189
-      Height = 381
+      Height = 380
       Styles.Background = cxStyleYellow
       Styles.Content = cxStyleYellow
       Styles.Inactive = AfterSelection
@@ -1993,7 +1993,7 @@ object fmMainIvKartForm: TfmMainIvKartForm
     Left = 193
     Top = 109
     Width = 8
-    Height = 398
+    Height = 397
     HotZoneClassName = 'TcxSimpleStyle'
     HotZone.SizePercent = 100
     Control = GroupBox2

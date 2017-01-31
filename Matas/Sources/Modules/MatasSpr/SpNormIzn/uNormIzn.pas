@@ -66,11 +66,14 @@ type
     ds_iznosPERCENT_ST: TFIBStringField;
     ds_iznosS_YEAR_ST: TFIBStringField;
     ds_iznosS_MONTH_ST: TFIBStringField;
+    cxButtonRefresh: TcxButton;
+    actRefresh: TAction;
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
     procedure actAddGrupTMCExecute(Sender: TObject);
     procedure actAddGrupAmortExecute(Sender: TObject);
     procedure actDeleteExecute(Sender: TObject);
     procedure actCloseExecute(Sender: TObject);
+    procedure actRefreshExecute(Sender: TObject);
     procedure actEditGrpAmortExecute(Sender: TObject);
   private
     DB_HANDLE:TISC_DB_HANDLE;
@@ -262,8 +265,13 @@ begin
     Exit;
    end;
   end;
-  
+      ds_iznos.CloseOpen(false);
 end;
+end;
+
+procedure TNormIznForm.actRefreshExecute(Sender: TObject);
+begin
+ ds_iznos.CloseOpen(false);
 end;
 
 end.

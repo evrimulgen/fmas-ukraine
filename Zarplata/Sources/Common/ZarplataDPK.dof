@@ -138,12 +138,23 @@ Comments=
 C:\Program Files\FastReports\FastReport 3\LibD7\dclfrx7.bpl=FastReport 3.0 Components
 c:\program files\borland\delphi7\Projects\Bpl\FIBDBMidas7.bpl=FIBPlus ClientDataSet
 c:\program files\borland\delphi7\Projects\Bpl\dclrxbd7.bpl=RX Library BDE Database Components
+[HistoryLists\hlDebugSourcePath]
+Count=1
+Item0=C:\Program Files\FastReports\FastReport\Source\;E:\private\qizz\FMAS-WIN\ASUP\Sources\SpLib\
 [HistoryLists\hlUnitAliases]
 Count=1
 Item0=WinTypes=Windows;WinProcs=Windows;DbiTypes=BDE;DbiProcs=BDE;DbiErrs=BDE;
-[HistoryLists\hlBPLOutput]
+[HistoryLists\hlSearchPath]
+Count=2
+Item0=$(DELPHI)\Lib\Debug
+Item1=$(DELPHI)\Lib\Debug;AddKosht;Address;Buffer;Check;CommonDB;CommonDB\FIBCommonDB;CommonSp;Exporter;ProcessForm;Pwd;qFControls;qFControls\qFEditForm;ShowNagScreen;SpDepartment;TimeTable;Vilki;WorkMode;SpLib;CommanPrint;
+[HistoryLists\hlOutputDirectorry]
 Count=1
 Item0=..\..\
+[HistoryLists\hlBPLOutput]
+Count=2
+Item0=..\..\
+Item1=..\..\..\
 [HistoryLists\hlDCPOutput]
 Count=1
 Item0=..\..\

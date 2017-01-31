@@ -101,7 +101,7 @@ DebugSourceDirs=
 UsePackages=0
 [Parameters]
 RunParams=
-HostApplication=D:\Hunter\Applications\Matas.exe
+HostApplication=D:\PROJECT\HAI\WorkApp\fmas-ukraine\Matas.exe
 Launcher=
 UseLauncher=0
 DebugCWD=
