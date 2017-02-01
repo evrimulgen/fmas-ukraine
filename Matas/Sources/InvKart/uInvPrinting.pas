@@ -187,7 +187,7 @@ var
     god_amort, mesyac_amort : string;
     tip_uchet, primochka, grp_flag : integer;
 begin
-
+   
     if ((Kod_shab = '1') or (Kod_shab = '2') or (Kod_shab = '0')) then
     begin
         frDBDataSetShab.Dataset := pFIBDataSet_All_Selection_For_shab;
@@ -236,8 +236,17 @@ begin
              end;
              if MonthOf(pFIBDataSet_All_Selection_For_shab.FieldByName('DATE_AMORT').AsDateTime) = 1 then
              begin
+             if Kod_shab = '2' then
+             begin
+               frVariables['period_nachisl']  := ' ' + god_amort + ' p.';
+               frVariables['godok']           := ' ';
+             end
+             else
+             begin
                frVariables['period_nachisl']  := ' 4 квартал ' + god_amort;
                frVariables['godok']           := ' 4 квартал ';
+             end;
+               
              end;
         end;
         If (tip_uchet = 1) or (tip_uchet = 0) then
@@ -311,8 +320,8 @@ begin
              end;
              if MonthOf(pFIBDataSet_All_Selection_For_shab.FieldByName('DATE_AMORT').AsDateTime) = 1 then
              begin
-               frVariables['period_nachisl']  := ' 4 квартал ' + god_amort;
-               frVariables['godok']           := ' 4 квартал ';
+               frVariables['period_nachisl']  := ' ' + god_amort+ ' p.';
+               frVariables['godok']           := ' ';
              end;
         end;
         If (tip_uchet = 1) or (tip_uchet = 0) then
@@ -698,7 +707,7 @@ begin
     if Kod_shab <> '9' then
     begin
         frReportShab_Amort.LoadFromFile(ExtractFilePath(Application.ExeName)+ _PATH_REPORTS + '\' + path_to_shablon);
-       //  ShowMEssage(ExtractFilePath(Application.ExeName)+';'+ _PATH_REPORTS+';' + '\' + path_to_shablon);
+
         _ON_PRINTER    := cxCheckOnPrinter.Checked;
         _SEL_PRINTER   := cxSelectPrinter.Checked;
         _EDIT_TEMPLATE := CheckBoxDoc.Checked;
