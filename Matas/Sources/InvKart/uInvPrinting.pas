@@ -698,7 +698,7 @@ begin
     if Kod_shab <> '9' then
     begin
         frReportShab_Amort.LoadFromFile(ExtractFilePath(Application.ExeName)+ _PATH_REPORTS + '\' + path_to_shablon);
-
+       //  ShowMEssage(ExtractFilePath(Application.ExeName)+';'+ _PATH_REPORTS+';' + '\' + path_to_shablon);
         _ON_PRINTER    := cxCheckOnPrinter.Checked;
         _SEL_PRINTER   := cxSelectPrinter.Checked;
         _EDIT_TEMPLATE := CheckBoxDoc.Checked;
@@ -718,12 +718,15 @@ begin
             end;
         end else
         begin
+
            frReportShab_Amort.ShowReport;
+
         end;
         if CheckBoxDoc.Checked then
         begin
            frReportShab_Amort.DesignReport;
         end;
+
         close;
     end else
     begin

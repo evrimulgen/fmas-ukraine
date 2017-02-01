@@ -1,6 +1,6 @@
 object fmShowAmVedomost: TfmShowAmVedomost
-  Left = 348
-  Top = 238
+  Left = 153
+  Top = 133
   BorderStyle = bsDialog
   Caption = 'fmShowAmVedomost'
   ClientHeight = 246
@@ -13,6 +13,7 @@ object fmShowAmVedomost: TfmShowAmVedomost
   Font.Style = []
   OldCreateOrder = False
   Position = poScreenCenter
+  OnClose = FormClose
   PixelsPerInch = 96
   TextHeight = 13
   object PanelBotton: TPanel

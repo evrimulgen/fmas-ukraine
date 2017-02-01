@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TfrxReport Name="" Version="3.15" DotMatrixReport="False" IniFile="\Software\Fast Reports" PreviewOptions.Buttons="2047" PreviewOptions.Zoom="1" PrintOptions.Printer="Default" ReportOptions.CreateDate="40016,585660081" ReportOptions.Description.Text="" ReportOptions.LastChange="40371,3968004861" ScriptLanguage="PascalScript" ScriptText.Text="begin&#13;&#10;&#13;&#10;end." StoreInDFM="False" PropData="044C65667403000103546F7003A80008446174617365747301010C3400000020446174615365743D22667278444244617461736574312220446174615365744E616D653D2266727844424461746173657431220000095661726961626C65730100055374796C650100">
+  <TfrxReportPage Name="Page1" PaperWidth="210" PaperHeight="297" PaperSize="9" LeftMargin="10" RightMargin="10" TopMargin="10" BottomMargin="10" ColumnWidth="0" ColumnPositions.Text="" HGuides.Text="" VGuides.Text="">
+    <TfrxGroupHeader Name="GroupHeader1" Height="24" Left="0" Top="148" Width="718,1107" Condition="frxDBDataset1.&#34;NAME_FACULT&#34;">
+      <TfrxMemoView Name="Memo1" Left="0" Top="0" Width="720" Height="24" DataField="NAME_FACULT" DataSet="frxDBDataset1" DataSetName="frxDBDataset1" Font.Charset="1" Font.Color="0" Font.Height="-16" Font.Name="Arial" Font.Style="1" Frame.Typ="15" Memo.Text="[frxDBDataset1.&#34;NAME_FACULT&#34;]" ParentFont="False"/>
+    </TfrxGroupHeader>
+    <TfrxGroupHeader Name="GroupHeader2" Height="20" Left="0" Top="192" Width="718,1107" Condition="frxDBDataset1.&#34;NAME_SPEC&#34;">
+      <TfrxMemoView Name="Memo5" Left="0" Top="0" Width="720" Height="20" DataField="NAME_SPEC" DataSet="frxDBDataset1" DataSetName="frxDBDataset1" Font.Charset="1" Font.Color="0" Font.Height="-13" Font.Name="Arial" Font.Style="1" Frame.Typ="15" HAlign="haCenter" Memo.Text="[frxDBDataset1.&#34;NAME_SPEC&#34;]" ParentFont="False"/>
+    </TfrxGroupHeader>
+    <TfrxGroupHeader Name="GroupHeader3" Height="20" Left="0" Top="232" Width="718,1107" Condition="frxDBDataset1.&#34;NAME_FORM_STUD&#34;">
+      <TfrxMemoView Name="Memo6" Left="0" Top="0" Width="720" Height="20" DataField="NAME_FORM_STUD" DataSet="frxDBDataset1" DataSetName="frxDBDataset1" Font.Charset="1" Font.Color="0" Font.Height="-13" Font.Name="Arial" Font.Style="3" Frame.Typ="15" HAlign="haCenter" Memo.Text="[frxDBDataset1.&#34;NAME_FORM_STUD&#34;]" ParentFont="False"/>
+    </TfrxGroupHeader>
+    <TfrxGroupHeader Name="GroupHeader4" Height="20" Left="0" Top="272" Width="718,1107" Condition="frxDBDataset1.&#34;NAME_KAT_STUD&#34;">
+      <TfrxMemoView Name="Memo7" Left="0" Top="0" Width="720" Height="20" DataField="NAME_KAT_STUD" DataSet="frxDBDataset1" DataSetName="frxDBDataset1" Font.Charset="1" Font.Color="0" Font.Height="-13" Font.Name="Arial" Font.Style="1" Frame.Typ="15" HAlign="haCenter" Memo.Text="[frxDBDataset1.&#34;NAME_KAT_STUD&#34;]" ParentFont="False"/>
+    </TfrxGroupHeader>
+    <TfrxMasterData Name="MasterData1" Height="16" Left="0" Top="312" Width="718,1107" ColumnWidth="0" ColumnGap="0" DataSet="frxDBDataset1" DataSetName="frxDBDataset1" RowCount="0">
+      <TfrxMemoView Name="Memo2" Left="0" Top="0" Width="460" Height="16" DataSet="frxDBDataset1" DataSetName="frxDBDataset1" Font.Charset="1" Font.Color="0" Font.Height="-11" Font.Name="Arial" Font.Style="0" Frame.Typ="15" Memo.Text=" [frxDBDataset1.&#34;FIO&#34;]" ParentFont="False"/>
+      <TfrxMemoView Name="Memo3" Left="460" Top="0" Width="136" Height="16" DataField="NUM_DOG" DataSet="frxDBDataset1" DataSetName="frxDBDataset1" Font.Charset="1" Font.Color="0" Font.Height="-11" Font.Name="Arial" Font.Style="0" Frame.Typ="15" HAlign="haCenter" Memo.Text="[frxDBDataset1.&#34;NUM_DOG&#34;]" ParentFont="False"/>
+      <TfrxMemoView Name="Memo4" Left="596" Top="0" Width="124" Height="16" DataField="SUMMA_F_PERE" DataSet="frxDBDataset1" DataSetName="frxDBDataset1" DisplayFormat.DecimalSeparator="," DisplayFormat.FormatStr="%2.2n" DisplayFormat.Kind="fkNumeric" Font.Charset="1" Font.Color="0" Font.Height="-11" Font.Name="Arial" Font.Style="0" Frame.Typ="15" HAlign="haRight" Memo.Text="[frxDBDataset1.&#34;SUMMA_F_PERE&#34;]" ParentFont="False"/>
+    </TfrxMasterData>
+    <TfrxGroupHeader Name="GroupHeader5" Height="32" Left="0" Top="96" Width="718,1107" Condition="frxDBDataset1.&#34;SMETA_KOD&#34;" StartNewPage="True">
+      <TfrxMemoView Name="Memo9" Left="0" Top="0" Width="720" Height="20" DataSet="frxDBDataset1" DataSetName="frxDBDataset1" Font.Charset="1" Font.Color="0" Font.Height="-16" Font.Name="Arial" Font.Style="3" Memo.Text="Бюджет: [frxDBDataset1.&#34;SMETA_KOD&#34;] [frxDBDataset1.&#34;SMETA_TITLE&#34;]" ParentFont="False"/>
+    </TfrxGroupHeader>
+    <TfrxGroupFooter Name="GroupFooter1" Height="20" Left="0" Top="348" Width="718,1107">
+      <TfrxMemoView Name="Memo12" Left="596" Top="0" Width="124" Height="20" DisplayFormat.DecimalSeparator="," DisplayFormat.FormatStr="%2.2n" DisplayFormat.Kind="fkNumeric" Font.Charset="1" Font.Color="0" Font.Height="-13" Font.Name="Arial" Font.Style="1" Frame.Typ="15" HAlign="haRight" Memo.Text="[SUM(&#60;frxDBDataset1.&#34;SUMMA_F_PERE&#34;&#62;,MasterData1)]" ParentFont="False"/>
+      <TfrxMemoView Name="Memo13" Left="0" Top="0" Width="596" Height="20" Font.Charset="1" Font.Color="0" Font.Height="-13" Font.Name="Arial" Font.Style="1" Frame.Typ="15" HAlign="haRight" Memo.Text="Всього по [frxDBDataset1.&#34;NAME_KAT_STUD&#34;]" ParentFont="False"/>
+    </TfrxGroupFooter>
+    <TfrxGroupFooter Name="GroupFooter2" Height="20" Left="0" Top="388" Width="718,1107">
+      <TfrxMemoView Name="Memo14" Left="596" Top="0" Width="124" Height="20" DisplayFormat.DecimalSeparator="," DisplayFormat.FormatStr="%2.2n" DisplayFormat.Kind="fkNumeric" Font.Charset="1" Font.Color="0" Font.Height="-13" Font.Name="Arial" Font.Style="3" Frame.Typ="15" HAlign="haRight" Memo.Text="[SUM(&#60;frxDBDataset1.&#34;SUMMA_F_PERE&#34;&#62;,MasterData1)]" ParentFont="False"/>
+      <TfrxMemoView Name="Memo15" Left="0" Top="0" Width="596" Height="20" Font.Charset="1" Font.Color="0" Font.Height="-13" Font.Name="Arial" Font.Style="3" Frame.Typ="15" HAlign="haRight" Memo.Text="Всього по [frxDBDataset1.&#34;NAME_FORM_STUD&#34;]" ParentFont="False"/>
+    </TfrxGroupFooter>
+    <TfrxGroupFooter Name="GroupFooter3" Height="20" Left="0" Top="428" Width="718,1107">
+      <TfrxMemoView Name="Memo16" Left="596" Top="0" Width="124" Height="20" DisplayFormat.DecimalSeparator="," DisplayFormat.FormatStr="%2.2n" DisplayFormat.Kind="fkNumeric" Font.Charset="1" Font.Color="0" Font.Height="-13" Font.Name="Arial" Font.Style="1" Frame.Typ="15" HAlign="haRight" Memo.Text="[SUM(&#60;frxDBDataset1.&#34;SUMMA_F_PERE&#34;&#62;,MasterData1)]" ParentFont="False"/>
+      <TfrxMemoView Name="Memo17" Left="0" Top="0" Width="596" Height="20" Font.Charset="1" Font.Color="0" Font.Height="-13" Font.Name="Arial" Font.Style="1" Frame.Typ="15" HAlign="haRight" Memo.Text="Всього по [frxDBDataset1.&#34;NAME_SPEC&#34;]" ParentFont="False"/>
+    </TfrxGroupFooter>
+    <TfrxGroupFooter Name="GroupFooter4" Height="20" Left="0" Top="468" Width="718,1107">
+      <TfrxMemoView Name="Memo18" Left="596" Top="0" Width="124" Height="20" DisplayFormat.DecimalSeparator="," DisplayFormat.FormatStr="%2.2n" DisplayFormat.Kind="fkNumeric" Font.Charset="1" Font.Color="0" Font.Height="-16" Font.Name="Arial" Font.Style="1" Frame.Typ="15" HAlign="haRight" Memo.Text="[SUM(&#60;frxDBDataset1.&#34;SUMMA_F_PERE&#34;&#62;,MasterData1)]" ParentFont="False"/>
+      <TfrxMemoView Name="Memo19" Left="0" Top="0" Width="596" Height="20" Font.Charset="1" Font.Color="0" Font.Height="-16" Font.Name="Arial" Font.Style="1" Frame.Typ="15" HAlign="haRight" Memo.Text="Всього по [frxDBDataset1.&#34;NAME_FACULT&#34;]" ParentFont="False"/>
+    </TfrxGroupFooter>
+    <TfrxGroupFooter Name="GroupFooter5" Height="20" Left="0" Top="508" Width="718,1107">
+      <TfrxMemoView Name="Memo8" Left="596" Top="0" Width="124" Height="20" DisplayFormat.DecimalSeparator="," DisplayFormat.FormatStr="%2.2n" DisplayFormat.Kind="fkNumeric" Font.Charset="1" Font.Color="0" Font.Height="-16" Font.Name="Arial" Font.Style="3" Frame.Typ="15" HAlign="haRight" Memo.Text="[SUM(&#60;frxDBDataset1.&#34;SUMMA_F_PERE&#34;&#62;,MasterData1)]" ParentFont="False"/>
+      <TfrxMemoView Name="Memo10" Left="0" Top="0" Width="596" Height="20" Font.Charset="1" Font.Color="0" Font.Height="-16" Font.Name="Arial" Font.Style="3" Frame.Typ="15" HAlign="haRight" Memo.Text="Всього по бюджету" ParentFont="False"/>
+    </TfrxGroupFooter>
+    <TfrxPageHeader Name="PageHeader1" Height="20" Left="0" Top="16" Width="718,1107" PrintOnFirstPage="False">
+      <TfrxMemoView Name="Memo11" Left="592" Top="0" Width="128" Height="16" HAlign="haRight" Memo.Text="стор. [Page#]"/>
+    </TfrxPageHeader>
+    <TfrxPageFooter Name="PageFooter1" Height="20" Left="0" Top="588" Width="718,1107">
+      <TfrxMemoView Name="Memo20" Left="0" Top="0" Width="148" Height="16" Memo.Text="[&#60;Date&#62;] [&#60;Time&#62;]"/>
+    </TfrxPageFooter>
+  </TfrxReportPage>
+</TfrxReport>

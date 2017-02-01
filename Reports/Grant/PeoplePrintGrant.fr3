@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TfrxReport Name="" Version="3.15" DotMatrixReport="False" IniFile="\Software\Fast Reports" PreviewOptions.Buttons="2047" PreviewOptions.Zoom="1" PrintOptions.Printer="За замовчуванням" ReportOptions.CreateDate="39825,7349491898" ReportOptions.Description.Text="" ReportOptions.LastChange="41179,3859096759" ScriptLanguage="PascalScript" ScriptText.Text="begin&#13;&#10;&#13;&#10;end." PropData="044C65667403000203546F7003E00008446174617365747301010C2C00000020446174615365743D224442446174617365742220446174615365744E616D653D22444244617461736574220000095661726961626C657301010C15000000204E616D653D22205573657243617465676F72792200010C0D000000204E616D653D224344617465220000055374796C650100">
+  <TfrxReportPage Name="Page1" PaperWidth="210" PaperHeight="297" PaperSize="9" LeftMargin="10" RightMargin="10" TopMargin="10" BottomMargin="10" ColumnWidth="0" ColumnPositions.Text="" HGuides.Text="" VGuides.Text="">
+    <TfrxMasterData Name="MasterData1" Height="18,89765" Left="0" Top="200,31509" Width="718,1107" ColumnWidth="0" ColumnGap="0" DataSet="DBDataset" DataSetName="DBDataset" RowCount="0">
+      <TfrxMemoView Name="Memo1" Left="37,7953" Top="0" Width="340,1577" Height="18,89765" Font.Charset="1" Font.Color="0" Font.Height="-13" Font.Name="Courier New" Font.Style="0" Frame.Typ="15" Memo.Text="[DBDataset.&#34;VIDOPL_NAME&#34;]" ParentFont="False"/>
+      <TfrxMemoView Name="Memo2" Left="377,953" Top="0" Width="86,92919" Height="18,89765" Font.Charset="1" Font.Color="0" Font.Height="-13" Font.Name="Courier New" Font.Style="0" Frame.Typ="15" HAlign="haCenter" Memo.Text="[DBDataset.&#34;GRANT_COUNT&#34;]" ParentFont="False"/>
+      <TfrxMemoView Name="Memo3" Left="464,88219" Top="0" Width="132,28355" Height="18,89765" DataSet="DBDataset" DataSetName="DBDataset" DisplayFormat.DecimalSeparator="," DisplayFormat.FormatStr="%2.2f" DisplayFormat.Kind="fkNumeric" Font.Charset="1" Font.Color="0" Font.Height="-13" Font.Name="Courier New" Font.Style="0" Frame.Typ="15" HAlign="haCenter" Memo.Text="[DBDataset.&#34;GRANT_SIZE&#34;]" ParentFont="False"/>
+      <TfrxMemoView Name="Memo4" Left="0" Top="0" Width="37,7953" Height="18,89765" Font.Charset="1" Font.Color="0" Font.Height="-13" Font.Name="Courier New" Font.Style="0" Frame.Typ="15" HAlign="haCenter" Memo.Text="[Line#]" ParentFont="False"/>
+      <TfrxMemoView Name="Memo11" Left="597,16574" Top="0" Width="120,94496" Height="18,89765" DataSet="DBDataset" DataSetName="DBDataset" DisplayFormat.DecimalSeparator="," DisplayFormat.FormatStr="%2.2f" DisplayFormat.Kind="fkNumeric" Font.Charset="1" Font.Color="0" Font.Height="-13" Font.Name="Courier New" Font.Style="0" Frame.Typ="15" HAlign="haCenter" Memo.Text="[DBDataset.&#34;SUMMA&#34;]" ParentFont="False"/>
+    </TfrxMasterData>
+    <TfrxPageHeader Name="PageHeader1" Height="18,89765" Left="0" Top="79,37013" Width="718,1107">
+      <TfrxMemoView Name="Memo6" Left="604,7248" Top="0" Width="113,3859" Height="18,89765" Font.Charset="1" Font.Color="0" Font.Height="-13" Font.Name="Courier New" Font.Style="0" Memo.Text="стор. [Page#] з [TotalPages#]" ParentFont="False"/>
+    </TfrxPageHeader>
+    <TfrxHeader Name="Header1" Height="18,89765" Left="0" Top="158,74026" Width="718,1107" ReprintOnNewPage="True">
+      <TfrxMemoView Name="Memo5" Left="37,7953" Top="0" Width="340,1577" Height="18,89765" Font.Charset="1" Font.Color="0" Font.Height="-13" Font.Name="Courier New" Font.Style="0" Frame.Typ="15" HAlign="haCenter" Memo.Text="Назва" ParentFont="False"/>
+      <TfrxMemoView Name="Memo7" Left="377,953" Top="0" Width="86,92919" Height="18,89765" Font.Charset="1" Font.Color="0" Font.Height="-13" Font.Name="Courier New" Font.Style="0" Frame.Typ="15" HAlign="haCenter" Memo.Text="Кількість" ParentFont="False"/>
+      <TfrxMemoView Name="Memo8" Left="464,88219" Top="0" Width="132,28355" Height="18,89765" Font.Charset="1" Font.Color="0" Font.Height="-13" Font.Name="Courier New" Font.Style="0" Frame.Typ="15" HAlign="haCenter" Memo.Text="Розмір стипендії" ParentFont="False"/>
+      <TfrxMemoView Name="Memo9" Left="0" Top="0" Width="37,7953" Height="18,89765" Font.Charset="1" Font.Color="0" Font.Height="-13" Font.Name="Courier New" Font.Style="0" Frame.Typ="15" HAlign="haCenter" Memo.Text="№" ParentFont="False"/>
+      <TfrxMemoView Name="Memo10" Left="597,16574" Top="0" Width="120,94496" Height="18,89765" Font.Charset="1" Font.Color="0" Font.Height="-13" Font.Name="Courier New" Font.Style="0" Frame.Typ="15" HAlign="haCenter" Memo.Text="Місячний фонд" ParentFont="False"/>
+    </TfrxHeader>
+    <TfrxReportTitle Name="ReportTitle1" Height="37,7953" Left="0" Top="18,89765" Width="718,1107">
+      <TfrxMemoView Name="Memo12" Left="0" Top="0" Width="718,1107" Height="18,89765" Font.Charset="1" Font.Color="0" Font.Height="-16" Font.Name="Courier New" Font.Style="1" HAlign="haCenter" Memo.Text="Розрахунок стипендіального фонду за результатами сесії на [CDate] р" ParentFont="False"/>
+      <TfrxMemoView Name="Memo13" Left="0" Top="18,89765" Width="718,1107" Height="18,89765" Font.Charset="1" Font.Color="0" Font.Height="-16" Font.Name="Courier New" Font.Style="1" HAlign="haCenter" Memo.Text="[FIRM]" ParentFont="False"/>
+    </TfrxReportTitle>
+    <TfrxFooter Name="Footer1" Height="18,89765" Left="0" Top="241,88992" Width="718,1107">
+      <TfrxMemoView Name="Memo14" Left="377,953" Top="0" Width="86,92919" Height="18,89765" Font.Charset="1" Font.Color="0" Font.Height="-13" Font.Name="Courier New" Font.Style="0" Frame.Typ="15" HAlign="haCenter" Memo.Text="[SUM(&#60;DBDataset.&#34;GRANT_COUNT&#34;&#62;)]" ParentFont="False"/>
+      <TfrxMemoView Name="Memo15" Left="464,88219" Top="0" Width="132,28355" Height="18,89765" Font.Charset="1" Font.Color="0" Font.Height="-13" Font.Name="Courier New" Font.Style="0" Frame.Typ="15" HAlign="haCenter" Memo.Text="[SUM(&#60;DBDataset.&#34;GRANT_SIZE&#34;&#62;)]" ParentFont="False"/>
+      <TfrxMemoView Name="Memo16" Left="597,16574" Top="0" Width="120,94496" Height="18,89765" DataSet="DBDataset" DataSetName="DBDataset" DisplayFormat.DecimalSeparator="," DisplayFormat.FormatStr="%2.2f" DisplayFormat.Kind="fkNumeric" Font.Charset="1" Font.Color="0" Font.Height="-13" Font.Name="Courier New" Font.Style="0" Frame.Typ="15" HAlign="haCenter" Memo.Text="[SUM(&#60;DBDataset.&#34;SUMMA&#34;&#62;,MasterData1)]" ParentFont="False"/>
+      <TfrxLineView Name="Line1" Left="0" Top="0" Width="718,1107" Height="0" Frame.Typ="4" Frame.Width="1,5"/>
+    </TfrxFooter>
+  </TfrxReportPage>
+</TfrxReport>

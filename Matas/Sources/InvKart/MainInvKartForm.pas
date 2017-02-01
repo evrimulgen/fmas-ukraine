@@ -837,6 +837,7 @@ var
  w: TForm;
  TR : TfmWaite;
 begin
+
     inherited Create (AOwner);
     w:=ShowWaitWindow(AOwner);
     DBHANDLE:= Datab;
@@ -1118,8 +1119,10 @@ end;
 
 procedure TfmMainIvKartForm.ActionCloseExecute(Sender: TObject);
 begin
-    FormStorage1.StoredValue['save_pos_in_the_tree']:= DataSetPapka['ID_INV_GRP'];
-    FormStorage1.StoredValue['save_pos_in_grid']    := DataSetKart['R_ID_KART'];
+         
+   FormStorage1.StoredValue['save_pos_in_the_tree']:= DataSetPapka['ID_INV_GRP'];
+   FormStorage1.StoredValue['save_pos_in_grid']    := DataSetKart['R_ID_KART'];
+    
     Close;
 end;
 
@@ -4743,7 +4746,9 @@ procedure TfmMainIvKartForm.ActionLookSroo_VedExecute(Sender: TObject);
 var
    res : Variant;
 begin
+
     res := UShowAmVed.ShowAm_OstAmVed(DatabaseMain.Handle);
+
     if VarArrayDimCount(res) > 0 then
     begin
         if (res[0]<>null) then

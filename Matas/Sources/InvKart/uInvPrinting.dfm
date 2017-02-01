@@ -1,6 +1,6 @@
 object fmPrinting: TfmPrinting
-  Left = 303
-  Top = 376
+  Left = -7
+  Top = 356
   BorderStyle = bsDialog
   Caption = 'fmPrinting'
   ClientHeight = 123

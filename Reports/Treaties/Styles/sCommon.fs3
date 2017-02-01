@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<style Name="">
+  <item Name="ReportTitle1" Color="536870911" Font.Charset="204" Font.Color="-16777208" Font.Height="-19" Font.Name="Times New Roman" Font.Style="1" Frame.DropShadow="True" Frame.Typ="15"/>
+  <item Name="MasterData1" Color="536870911" Font.Charset="204" Font.Color="-16777208" Font.Height="-13" Font.Name="Times New Roman" Font.Style="0" Frame.Typ="15"/>
+  <item Name="Header1" Color="16777215" Font.Charset="204" Font.Color="-16777208" Font.Height="-13" Font.Name="Times New Roman" Font.Style="1" Frame.Typ="15"/>
+  <item Name="sFooter1" Color="536870911" Font.Charset="204" Font.Color="-16777208" Font.Height="-13" Font.Name="Times New Roman" Font.Style="1" Frame.Typ="15"/>
+</style>

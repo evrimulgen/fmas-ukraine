@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TfrxReport Name="" Version="3.15" DotMatrixReport="False" EngineOptions.DoublePass="True" IniFile="\Software\Fast Reports" PreviewOptions.Buttons="2047" PreviewOptions.Zoom="1" PrintOptions.Printer="Default" ReportOptions.CreateDate="38706,4621719444" ReportOptions.Description.Text="" ReportOptions.LastChange="41298,721856412" ScriptLanguage="PascalScript" ScriptText.Text="var PLine:integer=0;&#13;&#10;&#13;&#10;procedure ReportTitle1OnBeforePrint(Sender: TfrxComponent);&#13;&#10;begin&#13;&#10;  PLine:=0;&#13;&#10;end;&#13;&#10;&#13;&#10;procedure Memo25OnBeforePrint(Sender: TfrxComponent);&#13;&#10;begin&#13;&#10;  inc(PLine);&#13;&#10;end;&#13;&#10;&#13;&#10;begin&#13;&#10;&#13;&#10;end." PropData="044C65667403C80008446174617365747301010C3600000020446174615365743D225265706F727444736574446174612220446174615365744E616D653D225265706F727444736574446174612200010C3800000020446174615365743D225265706F7274447350656E73696F6E2220446174615365744E616D653D225265706F7274447350656E73696F6E220000095661726961626C65730100055374796C650100">
+  <TfrxReportPage Name="Page1" PaperWidth="210" PaperHeight="297" PaperSize="9" LeftMargin="10" RightMargin="10" TopMargin="10" BottomMargin="10" ColumnWidth="0" ColumnPositions.Text="" HGuides.Text="" VGuides.Text="">
+    <TfrxReportTitle Name="ReportTitle1" Height="103,5906" Left="0" Top="18,89765" Width="718,1107" OnBeforePrint="ReportTitle1OnBeforePrint">
+      <TfrxMemoView Name="Memo17" Left="0" Top="71,81107" Width="718,11023622" Height="28" Font.Charset="1" Font.Color="0" Font.Height="-19" Font.Name="Times New Roman" Font.Style="1" HAlign="haCenter" Memo.Text="Кількість працівників за якісним складом на [CUR_DATE]" ParentFont="False"/>
+      <TfrxMemoView Name="Memo16" Left="0" Top="7,33859" Width="718,11023622" Height="52,91342" DataSetName="ReportDsetGlobalData" Font.Charset="1" Font.Color="0" Font.Height="-13" Font.Name="Times New Roman" Font.Style="1" HAlign="haCenter" Memo.Text="[ReportDsetData.&#34;FIRM_NAME&#34;]" ParentFont="False"/>
+    </TfrxReportTitle>
+    <TfrxPageFooter Name="PageFooter1" Height="20" Left="0" Top="918,42579" Width="718,1107">
+      <TfrxMemoView Name="Memo10" Left="992" Top="0" Width="52" Height="16" Font.Charset="1" Font.Color="0" Font.Height="-13" Font.Name="Times New Roman" Font.Style="0" HAlign="haRight" Memo.Text="[Page#]" ParentFont="False"/>
+    </TfrxPageFooter>
+    <TfrxMasterData Name="MasterData1" Font.Charset="1" Font.Color="0" Font.Height="-13" Font.Name="Times New Roman" Font.Style="0" Height="631,18151" Left="0" ParentFont="False" Top="226,7718" Width="718,1107" ColumnWidth="0" ColumnGap="0" DataSet="ReportDsetData" DataSetName="ReportDsetData" RowCount="0">
+      <TfrxMemoView Name="Memo4" Left="0" Top="0" Width="491,3389" Height="22,67718" Frame.Typ="15" Memo.Text="1. Облікова кількість штатних працівників на кінець року, усього" VAlign="vaBottom"/>
+      <TfrxMemoView Name="Memo5" Left="0" Top="22,67718" Width="491,3389" Height="34,01577" Frame.Typ="15" Memo.Text="з них:&#13;&#10;1.2. Кількість працівників, які прийняті на умовах неповного робочого дня (тижня)" VAlign="vaBottom"/>
+      <TfrxMemoView Name="Memo6" Left="0" Top="56,69295" Width="491,3389" Height="34,01577" Frame.Typ="15" Memo.Text="1.3. Кількість працюючих у віці (років):&#13;&#10;     -15-35" VAlign="vaBottom"/>
+      <TfrxMemoView Name="Memo7" Left="0" Top="90,70872" Width="491,3389" Height="22,67718" Frame.Typ="15" Memo.Text="     -51-55" VAlign="vaBottom"/>
+      <TfrxMemoView Name="Memo8" Left="0" Top="113,3859" Width="491,3389" Height="22,67718" Frame.Typ="15" Memo.Text="     -55-59" VAlign="vaBottom"/>
+      <TfrxMemoView Name="Memo9" Left="0" Top="136,06308" Width="491,3389" Height="34,01577" Frame.Typ="15" Memo.Text="1.4. Кількість працівників, які маюсть вищу освіту за освітніми  рівнями:&#13;&#10;     - неповна та базова вища освіта" VAlign="vaBottom"/>
+      <TfrxMemoView Name="Memo11" Left="0" Top="170,07885" Width="491,3389" Height="22,67716535" Frame.Typ="15" Memo.Text="     - повна вища освіта" VAlign="vaBottom"/>
+      <TfrxMemoView Name="Memo12" Left="0" Top="192,75603" Width="491,3389" Height="22,67716535" Frame.Typ="15" Memo.Text="1.5. Кількість працівників, які отримують пенсію, усього" VAlign="vaBottom"/>
+      <TfrxMemoView Name="Memo13" Left="0" Top="215,43321" Width="491,3389" Height="34,01577" Frame.Typ="15" Memo.Text="у тому числі:&#13;&#10;     - за вислугу років" VAlign="vaBottom"/>
+      <TfrxMemoView Name="Memo14" Left="0" Top="249,44898" Width="491,3389" Height="22,67718" Frame.Typ="15" Memo.Text="     - за віком" VAlign="vaBottom"/>
+      <TfrxMemoView Name="Memo15" Left="0" Top="272,12616" Width="491,3389" Height="22,67718" Frame.Typ="15" Memo.Text="     - по інвалідності, усього" VAlign="vaBottom"/>
+      <TfrxMemoView Name="Memo18" Left="0" Top="294,80334" Width="491,3389" Height="22,67718" Frame.Typ="15" Memo.Text="            з них ІІІ групи" VAlign="vaBottom"/>
+      <TfrxMemoView Name="Memo19" Left="0" Top="408,18924" Width="718,1107" Height="22,67718" Frame.Typ="15" Memo.Text="2. Із загальної кількості працівників:" VAlign="vaBottom"/>
+      <TfrxMemoView Name="Memo20" Left="0" Top="430,86642" Width="491,3389" Height="22,67716535" Frame.Typ="15" Memo.Text="2.1. Знаходяться у відпустці у зв'язку з вагітністю та пологами, усього" VAlign="vaBottom"/>
+      <TfrxMemoView Name="Memo21" Left="0" Top="453,5436" Width="491,3389" Height="34,01574803" Frame.Typ="15" Memo.Text="2.2. Знаходяться у відпустці по догляду за дитиною до досягнення нею віку, &#13;&#10;встановленого чинним законодавством, усього:" VAlign="vaBottom"/>
+      <TfrxMemoView Name="Memo22" Left="0" Top="487,55937" Width="491,3389" Height="34,01574803" Frame.Typ="15" Memo.Text="2.3. Проживають на території інших регіонів (АР Крим, областей, м.Києва, &#13;&#10;м. Севастополя, поза межами України):" VAlign="vaBottom"/>
+      <TfrxMemoView Name="Memo24" Left="0" Top="521,57514" Width="491,3389" Height="22,67716535" Frame.Typ="15" Memo.Text="2.4. Мають науковий ступінь" VAlign="vaBottom"/>
+      <TfrxMemoView Name="Memo25" Left="491,3389" Top="0" Width="113,3859" Height="22,67718" Frame.Typ="15" HAlign="haCenter" Memo.Text="[ReportDsetData.&#34;ALL_MAN&#34;]" VAlign="vaBottom"/>
+      <TfrxMemoView Name="Memo26" Left="491,3389" Top="22,67718" Width="113,3859" Height="34,01577" Frame.Typ="15" HAlign="haCenter" Memo.Text="[ReportDsetData.&#34;ALL_NEPOLN&#34;]" VAlign="vaBottom"/>
+      <TfrxMemoView Name="Memo27" Left="491,3389" Top="56,69295" Width="113,3859" Height="34,01577" Frame.Typ="15" HAlign="haCenter" Memo.Text="[ReportDsetData.&#34;ALL_YEARS_1&#34;]" VAlign="vaBottom"/>
+      <TfrxMemoView Name="Memo29" Left="491,3389" Top="113,3859" Width="113,3859" Height="22,67718" Frame.Typ="15" HAlign="haCenter" Memo.Text="[ReportDsetData.&#34;ALL_YEARS_3&#34;]" VAlign="vaBottom"/>
+      <TfrxMemoView Name="Memo30" Left="491,3389" Top="136,06308" Width="113,3859" Height="34,01577" Frame.Typ="15" HAlign="haCenter" Memo.Text="[ReportDsetData.&#34;ALL_NOTFULL_EDUC&#34;]" VAlign="vaBottom"/>
+      <TfrxMemoView Name="Memo31" Left="491,3389" Top="170,07885" Width="113,3859" Height="22,67718" Frame.Typ="15" HAlign="haCenter" Memo.Text="[ReportDsetData.&#34;ALL_FULL_EDUC&#34;]" VAlign="vaBottom"/>
+      <TfrxMemoView Name="Memo32" Left="491,3389" Top="192,75603" Width="113,3859" Height="22,67718" Frame.Typ="15" HAlign="haCenter" Memo.Text="[ReportDsetData.&#34;ALL_PENSION&#34;]" VAlign="vaBottom"/>
+      <TfrxMemoView Name="Memo33" Left="491,3389" Top="215,43321" Width="113,3859" Height="34,01577" Frame.Typ="15" HAlign="haCenter" Memo.Text="[ReportDsetData.&#34;ALL_PENSION_VISLUGA&#34;]" VAlign="vaBottom"/>
+      <TfrxMemoView Name="Memo34" Left="491,3389" Top="249,44898" Width="113,3859" Height="22,67718" Frame.Typ="15" HAlign="haCenter" Memo.Text="[ReportDsetData.&#34;ALL_PENSION_VOZRAST&#34;]" VAlign="vaBottom"/>
+      <TfrxMemoView Name="Memo35" Left="491,3389" Top="272,12616" Width="113,3859" Height="22,67718" Frame.Typ="15" HAlign="haCenter" Memo.Text="[ReportDsetData.&#34;ALL_PENSION_INVALID&#34;]" VAlign="vaBottom"/>
+      <TfrxMemoView Name="Memo36" Left="491,3389" Top="294,80334" Width="113,3859" Height="22,67718" Frame.Typ="15" HAlign="haCenter" Memo.Text="[ReportDsetData.&#34;ALL_PENSION_INVAL_3&#34;]" VAlign="vaBottom"/>
+      <TfrxMemoView Name="Memo37" Left="491,3389" Top="430,86642" Width="113,3859" Height="22,67718" Frame.Typ="15" HAlign="haCenter" Memo.Text="X" VAlign="vaBottom"/>
+      <TfrxMemoView Name="Memo38" Left="491,3389" Top="453,5436" Width="113,3859" Height="34,01577" Frame.Typ="15" HAlign="haCenter" Memo.Text="[ReportDsetData.&#34;ALL_DEKRET&#34;]" VAlign="vaBottom"/>
+      <TfrxMemoView Name="Memo39" Left="491,3389" Top="487,55937" Width="113,3859" Height="34,01577" Frame.Typ="15" HAlign="haCenter" Memo.Text="[ReportDsetData.&#34;ALL_MIGR&#34;]" VAlign="vaBottom"/>
+      <TfrxMemoView Name="Memo40" Left="491,3389" Top="521,57514" Width="113,3859" Height="22,67718" Frame.Typ="15" HAlign="haCenter" Memo.Text="[ReportDsetData.&#34;ALL_STEPEN&#34;]" VAlign="vaBottom"/>
+      <TfrxMemoView Name="Memo41" Left="604,7248" Top="0" Width="113,3859" Height="22,67718" Frame.Typ="15" HAlign="haCenter" Memo.Text="[ReportDsetData.&#34;ALL_WOMAN&#34;]" VAlign="vaBottom"/>
+      <TfrxMemoView Name="Memo42" Left="604,7248" Top="22,67718" Width="113,3859" Height="34,01577" Frame.Typ="15" HAlign="haCenter" Memo.Text="[ReportDsetData.&#34;ALL_WOMAN_NEPOLN&#34;]" VAlign="vaBottom"/>
+      <TfrxMemoView Name="Memo43" Left="604,7248" Top="56,69295" Width="113,3859" Height="34,01577" Frame.Typ="15" HAlign="haCenter" Memo.Text="[ReportDsetData.&#34;WOMAN_YEARS_1&#34;]" VAlign="vaBottom"/>
+      <TfrxMemoView Name="Memo44" Left="604,7248" Top="90,70872" Width="113,3859" Height="22,67718" Frame.Typ="15" HAlign="haCenter" Memo.Text="[ReportDsetData.&#34;WOMAN_YEARS_2&#34;]" VAlign="vaBottom"/>
+      <TfrxMemoView Name="Memo46" Left="604,7248" Top="136,06308" Width="113,3859" Height="34,01577" Frame.Typ="15" HAlign="haCenter" Memo.Text="[ReportDsetData.&#34;WOMAN_NOTFULL_EDUC&#34;]" VAlign="vaBottom"/>
+      <TfrxMemoView Name="Memo47" Left="604,7248" Top="170,07885" Width="113,3859" Height="22,67718" Frame.Typ="15" HAlign="haCenter" Memo.Text="[ReportDsetData.&#34;WOMAN_FULL_EDUC&#34;]" VAlign="vaBottom"/>
+      <TfrxMemoView Name="Memo48" Left="604,7248" Top="192,75603" Width="113,3859" Height="22,67718" Frame.Typ="15" HAlign="haCenter" Memo.Text="[ReportDsetData.&#34;WOMAN_PENSION&#34;]" VAlign="vaBottom"/>
+      <TfrxMemoView Name="Memo49" Left="604,7248" Top="215,43321" Width="113,3859" Height="34,01577" Frame.Typ="15" HAlign="haCenter" Memo.Text="[ReportDsetData.&#34;WOMAN_PENSION_VISLUGA&#34;]" VAlign="vaBottom"/>
+      <TfrxMemoView Name="Memo50" Left="604,7248" Top="249,44898" Width="113,3859" Height="22,67718" Frame.Typ="15" HAlign="haCenter" Memo.Text="[ReportDsetData.&#34;WOMAN_PENSION_VOZRAST&#34;]" VAlign="vaBottom"/>
+      <TfrxMemoView Name="Memo51" Left="604,7248" Top="272,12616" Width="113,3859" Height="22,67718" Frame.Typ="15" HAlign="haCenter" Memo.Text="[ReportDsetData.&#34;WOMAN_PENSION_INVALID&#34;]" VAlign="vaBottom"/>
+      <TfrxMemoView Name="Memo52" Left="604,7248" Top="294,80334" Width="113,3859" Height="22,67718" Frame.Typ="15" HAlign="haCenter" Memo.Text="[ReportDsetData.&#34;WOMAN_PENSION_INVAL_3&#34;]" VAlign="vaBottom"/>
+      <TfrxMemoView Name="Memo53" Left="604,7248" Top="430,86642" Width="113,3859" Height="22,67718" Frame.Typ="15" HAlign="haCenter" Memo.Text="[ReportDsetData.&#34;WOMAN_RODY&#34;]" VAlign="vaBottom"/>
+      <TfrxMemoView Name="Memo54" Left="604,7248" Top="453,5436" Width="113,3859" Height="34,01577" Frame.Typ="15" HAlign="haCenter" Memo.Text="[ReportDsetData.&#34;WOMAN_DEKRET&#34;]" VAlign="vaBottom"/>
+      <TfrxMemoView Name="Memo55" Left="604,7248" Top="487,55937" Width="113,3859" Height="34,01577" Frame.Typ="15" HAlign="haCenter" Memo.Text="[ReportDsetData.&#34;ALL_WOMEN_MIGR&#34;]" VAlign="vaBottom"/>
+      <TfrxMemoView Name="Memo56" Left="604,7248" Top="521,57514" Width="113,3859" Height="22,67718" Frame.Typ="15" HAlign="haCenter" Memo.Text="X" VAlign="vaBottom"/>
+      <TfrxMemoView Name="Memo23" Left="0" Top="317,48052" Width="718,1107" Height="22,67718" Frame.Typ="15" Memo.Text="1.5а. Кількість працівників, які отримують пенсію" VAlign="vaBottom"/>
+      <TfrxMemoView Name="Memo57" Left="0" Top="340,1577" Width="491,3389" Height="22,67718" Frame.Typ="15" Memo.Text="     - за віком (за даними про вік)" VAlign="vaBottom"/>
+      <TfrxMemoView Name="Memo58" Left="491,3389" Top="340,1577" Width="113,3859" Height="22,67718" Frame.Typ="15" HAlign="haCenter" Memo.Text="[ReportDsetData.&#34;ALL_PENSION_VOZRAST_2&#34;]" VAlign="vaBottom"/>
+      <TfrxMemoView Name="Memo59" Left="604,7248" Top="340,1577" Width="113,3859" Height="22,67718" Frame.Typ="15" HAlign="haCenter" Memo.Text="[ReportDsetData.&#34;WOMAN_PENSION_VOZRAST_2&#34;]" VAlign="vaBottom"/>
+      <TfrxMemoView Name="Memo60" Left="0" Top="362,83488" Width="491,3389" Height="22,67718" Frame.Typ="15" Memo.Text="     - по інвалідності, усього (за даними про інвалідність)" VAlign="vaBottom"/>
+      <TfrxMemoView Name="Memo61" Left="0" Top="385,51206" Width="491,3389" Height="22,67718" Frame.Typ="15" Memo.Text="            з них ІІІ групи" VAlign="vaBottom"/>
+      <TfrxMemoView Name="Memo62" Left="491,3389" Top="362,83488" Width="113,3859" Height="22,67718" Frame.Typ="15" HAlign="haCenter" Memo.Text="[ReportDsetData.&#34;ALL_PENSION_INVALID_I&#34;]" VAlign="vaBottom"/>
+      <TfrxMemoView Name="Memo63" Left="491,3389" Top="385,51206" Width="113,3859" Height="22,67718" Frame.Typ="15" HAlign="haCenter" Memo.Text="[ReportDsetData.&#34;ALL_PENSION_INVALID_3_I&#34;]" VAlign="vaBottom"/>
+      <TfrxMemoView Name="Memo64" Left="604,7248" Top="362,83488" Width="113,3859" Height="22,67718" Frame.Typ="15" HAlign="haCenter" Memo.Text="[ReportDsetData.&#34;WOMAN_PENSION_INVALID_I&#34;]" VAlign="vaBottom"/>
+      <TfrxMemoView Name="Memo65" Left="604,7248" Top="385,51206" Width="113,3859" Height="22,67718" Frame.Typ="15" HAlign="haCenter" Memo.Text="[ReportDsetData.&#34;WOMAN_PENSION_INVALID_3_I&#34;]" VAlign="vaBottom"/>
+      <TfrxMemoView Name="Memo28" Left="491,3389" Top="90,70872" Width="113,3859" Height="22,67718" Frame.Typ="15" HAlign="haCenter" Memo.Text="X" VAlign="vaBottom"/>
+      <TfrxMemoView Name="Memo45" Left="604,7248" Top="113,3859" Width="113,3859" Height="22,67718" Frame.Typ="15" HAlign="haCenter" Memo.Text="X" VAlign="vaBottom"/>
+    </TfrxMasterData>
+    <TfrxHeader Name="Header1" Font.Charset="1" Font.Color="0" Font.Height="-13" Font.Name="Times New Roman" Font.Style="0" Height="22,67718" Left="0" ParentFont="False" Top="181,41744" Width="718,1107" ReprintOnNewPage="True">
+      <TfrxMemoView Name="Memo1" Left="0" Top="0" Width="491,3389" Height="22,67718" Frame.Typ="15" HAlign="haCenter" Memo.Text="Назва показників" VAlign="vaCenter"/>
+      <TfrxMemoView Name="Memo2" Left="491,3389" Top="0" Width="113,3859" Height="22,67718" Frame.Typ="15" HAlign="haCenter" Memo.Text="Усього, осіб" VAlign="vaCenter"/>
+      <TfrxMemoView Name="Memo3" Left="604,7248" Top="0" Width="113,3859" Height="22,67718" Frame.Typ="15" HAlign="haCenter" Memo.Text="з них жінки" VAlign="vaCenter"/>
+    </TfrxHeader>
+  </TfrxReportPage>
+  <TfrxReportPage Name="Page2" PaperWidth="209,973333333333" PaperHeight="296,926" PaperSize="9" LeftMargin="10" RightMargin="10" TopMargin="10" BottomMargin="10" ColumnWidth="0" ColumnPositions.Text="" HGuides.Text="" VGuides.Text="">
+    <TfrxPageHeader Name="PageHeader1" Height="35,55906" Left="0" Top="18,89765" Width="718,009912533333">
+      <TfrxMemoView Name="Memo75" Left="0" Top="7,55906" Width="718,11023622" Height="28" Font.Charset="1" Font.Color="0" Font.Height="-16" Font.Name="Times New Roman" Font.Style="1" HAlign="haCenter" Memo.Text="Кількість працівників у розрізі типів пенсій" ParentFont="False"/>
+    </TfrxPageHeader>
+    <TfrxHeader Name="Header2" Font.Charset="1" Font.Color="0" Font.Height="-13" Font.Name="Times New Roman" Font.Style="1" Height="26,45671" Left="0" ParentFont="False" Top="113,3859" Width="718,009912533333" ReprintOnNewPage="True">
+      <TfrxMemoView Name="Memo66" Left="0" Top="0" Width="491,3389" Height="22,67718" Frame.Typ="15" HAlign="haCenter" Memo.Text="Назва типу пенсії" VAlign="vaCenter"/>
+      <TfrxMemoView Name="Memo67" Left="491,3389" Top="0" Width="113,3859" Height="22,67718" Frame.Typ="15" HAlign="haCenter" Memo.Text="Усього, осіб" VAlign="vaCenter"/>
+      <TfrxMemoView Name="Memo68" Left="604,7248" Top="0" Width="113,3859" Height="22,67718" Frame.Typ="15" HAlign="haCenter" Memo.Text="з них жінки" VAlign="vaCenter"/>
+    </TfrxHeader>
+    <TfrxFooter Name="Footer1" Font.Charset="1" Font.Color="0" Font.Height="-13" Font.Name="Times New Roman" Font.Style="0" Height="22,67718" Left="0" ParentFont="False" Top="207,87415" Width="718,009912533333">
+      <TfrxMemoView Name="Memo69" Left="0" Top="0" Width="491,3389" Height="22,67718" Frame.Typ="15" HAlign="haRight" Memo.Text="Всього: " VAlign="vaCenter"/>
+      <TfrxMemoView Name="Memo70" Left="491,3389" Top="0" Width="113,3859" Height="22,67718" Frame.Typ="15" HAlign="haCenter" Memo.Text="[Sum(&#60;ReportDSPension.&#34;ALL_PENSION&#34;&#62;, MasterData2)]" VAlign="vaBottom"/>
+      <TfrxMemoView Name="Memo71" Left="604,7248" Top="0" Width="113,3859" Height="22,67718" Frame.Typ="15" HAlign="haCenter" Memo.Text="[Sum(&#60;ReportDSPension.&#34;WOMAN_PENSION&#34;&#62;, MasterData2)]" VAlign="vaBottom"/>
+    </TfrxFooter>
+    <TfrxMasterData Name="MasterData2" Font.Charset="1" Font.Color="0" Font.Height="-13" Font.Name="Times New Roman" Font.Style="0" Height="22,67718" Left="0" ParentFont="False" Top="162,51979" Width="718,009912533333" ColumnWidth="0" ColumnGap="0" DataSet="ReportDsPension" DataSetName="ReportDsPension" RowCount="0">
+      <TfrxMemoView Name="Memo72" Left="0" Top="0" Width="491,3389" Height="22,67718" Frame.Typ="15" Memo.Text="[ReportDSPension.&#34;Name_Pension_Type&#34;]" VAlign="vaBottom"/>
+      <TfrxMemoView Name="Memo73" Left="491,3389" Top="0" Width="113,3859" Height="22,67718" Frame.Typ="15" HAlign="haCenter" Memo.Text="[ReportDSPension.&#34;ALL_PENSION&#34;]" VAlign="vaBottom"/>
+      <TfrxMemoView Name="Memo74" Left="604,7248" Top="0" Width="113,3859" Height="22,67718" Frame.Typ="15" HAlign="haCenter" Memo.Text="[ReportDSPension.&#34;WOMAN_PENSION&#34;]" VAlign="vaBottom"/>
+    </TfrxMasterData>
+    <TfrxPageFooter Name="PageFooter2" Height="20" Left="0" Top="291,02381" Width="718,009912533333">
+      <TfrxMemoView Name="Memo76" Left="992" Top="0" Width="52" Height="16" Font.Charset="1" Font.Color="0" Font.Height="-13" Font.Name="Times New Roman" Font.Style="0" HAlign="haRight" Memo.Text="[Page#]" ParentFont="False"/>
+    </TfrxPageFooter>
+  </TfrxReportPage>
+</TfrxReport>

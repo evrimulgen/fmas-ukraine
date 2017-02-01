@@ -66,6 +66,7 @@ type
     procedure ActionLetsDoExecute(Sender: TObject);
     procedure cxGridPokazDblClick(Sender: TObject);
     procedure cxGridPokazDBTableView1DblClick(Sender: TObject);
+    procedure FormClose(Sender: TObject; var Action: TCloseAction);
   private
     { Private declarations }
     FormaSBasoy : TfmMainIvKartForm;
@@ -101,9 +102,9 @@ begin
     W.pFIBDataSetPodano.Open;
 
     W.ShowModal;
-    ShowAm_OstAmVed := W.ResultArray;
-    W.Free;
 
+    ShowAm_OstAmVed := W.ResultArray;
+  
 end;
 
 procedure TfmShowAmVedomost.cxButtonGariOnoClick(Sender: TObject);
@@ -161,6 +162,18 @@ begin
         begin
             ShowMessage(MAT_INV_You_must_sel_line);
         end;
+end;
+
+
+
+procedure TfmShowAmVedomost.FormClose(Sender: TObject;
+  var Action: TCloseAction);
+begin
+
+      // pFIBDatabaseMestnaya.Close;
+      // pFIBDataSetPodano.Close;
+
+close;
 end;
 
 end.

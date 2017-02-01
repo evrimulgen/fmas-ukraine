@@ -1,6 +1,6 @@
 object fmAmSelect: TfmAmSelect
-  Left = 320
-  Top = 197
+  Left = 86
+  Top = 279
   Width = 665
   Height = 480
   Caption = 'fmAmSelect'
@@ -18,12 +18,12 @@ object fmAmSelect: TfmAmSelect
   object Panel1: TPanel
     Left = 0
     Top = 0
-    Width = 657
+    Width = 649
     Height = 41
     Align = alTop
     TabOrder = 0
     DesignSize = (
-      657
+      649
       41)
     object cxButtonDruk: TcxButton
       Left = 8
@@ -200,12 +200,12 @@ object fmAmSelect: TfmAmSelect
   object Panel2: TPanel
     Left = 0
     Top = 41
-    Width = 657
+    Width = 649
     Height = 64
     Align = alTop
     TabOrder = 1
     DesignSize = (
-      657
+      649
       64)
     object cxLabelSchName: TcxLabel
       Left = 8
@@ -383,8 +383,8 @@ object fmAmSelect: TfmAmSelect
   object cxGrid1: TcxGrid
     Left = 0
     Top = 105
-    Width = 657
-    Height = 348
+    Width = 649
+    Height = 336
     Align = alClient
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
@@ -2876,5 +2876,34 @@ object fmAmSelect: TfmAmSelect
     Left = 80
     Top = 224
     poSQLINT64ToBCD = True
+  end
+  object frxReport1: TfrxReport
+    Version = '3.15'
+    DotMatrixReport = False
+    IniFile = '\Software\Fast Reports'
+    PreviewOptions.Buttons = [pbPrint, pbLoad, pbSave, pbExport, pbZoom, pbFind, pbOutline, pbPageSetup, pbTools, pbEdit, pbNavigator]
+    PreviewOptions.Zoom = 1.000000000000000000
+    PrintOptions.Printer = 'Default'
+    ReportOptions.CreateDate = 42767.590465231480000000
+    ReportOptions.LastChange = 42767.590465231480000000
+    ScriptLanguage = 'PascalScript'
+    ScriptText.Strings = (
+      'begin'
+      ''
+      'end.')
+    Left = 320
+    Top = 224
+    Datasets = <>
+    Variables = <>
+    Style = <>
+    object Page1: TfrxReportPage
+      PaperWidth = 210.015666666666700000
+      PaperHeight = 297.010666666666700000
+      PaperSize = 9
+      LeftMargin = 10.000000000000000000
+      RightMargin = 10.000000000000000000
+      TopMargin = 10.000000000000000000
+      BottomMargin = 10.000000000000000000
+    end
   end
 end

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TfrxReport Name="" Version="3.15" DotMatrixReport="False" IniFile="\Software\Fast Reports" PreviewOptions.Buttons="2047" PreviewOptions.Zoom="1" PrintOptions.Printer="За замовчуванням" ReportOptions.CreateDate="39825,7349491898" ReportOptions.Description.Text="" ReportOptions.LastChange="39869,4443920949" ScriptLanguage="PascalScript" ScriptText.Text="begin&#13;&#10;&#13;&#10;end." PropData="044C65667403000203546F7003E00008446174617365747301010C2C00000020446174615365743D224442446174617365742220446174615365744E616D653D22444244617461736574220000095661726961626C65730100055374796C650100">
+  <TfrxReportPage Name="Page1" PaperWidth="210" PaperHeight="297" PaperSize="9" LeftMargin="10" RightMargin="10" TopMargin="10" BottomMargin="10" ColumnWidth="0" ColumnPositions.Text="" HGuides.Text="" VGuides.Text="">
+    <TfrxMasterData Name="MasterData1" Height="18,89765" Left="0" Top="158,74026" Width="718,1107" ColumnWidth="0" ColumnGap="0" DataSet="DBDataset" DataSetName="DBDataset" RowCount="0">
+      <TfrxMemoView Name="Memo1" Left="37,7953" Top="0" Width="340,1577" Height="18,89765" Font.Charset="1" Font.Color="0" Font.Height="-13" Font.Name="Courier New" Font.Style="0" Frame.Typ="15" Memo.Text="[DBDataset.&#34;FIO&#34;]" ParentFont="False"/>
+      <TfrxMemoView Name="Memo2" Left="377,953" Top="0" Width="188,9765" Height="18,89765" Font.Charset="1" Font.Color="0" Font.Height="-13" Font.Name="Courier New" Font.Style="0" Frame.Typ="15" HAlign="haCenter" Memo.Text="[DBDataset.&#34;TIN&#34;]" ParentFont="False"/>
+      <TfrxMemoView Name="Memo3" Left="566,9295" Top="0" Width="151,1812" Height="18,89765" DataField="ACCT_CARD" DataSet="DBDataset" DataSetName="DBDataset" Font.Charset="1" Font.Color="0" Font.Height="-13" Font.Name="Courier New" Font.Style="0" Frame.Typ="15" HAlign="haCenter" Memo.Text="[DBDataset.&#34;ACCT_CARD&#34;]" ParentFont="False"/>
+      <TfrxMemoView Name="Memo4" Left="0" Top="0" Width="37,7953" Height="18,89765" Font.Charset="1" Font.Color="0" Font.Height="-13" Font.Name="Courier New" Font.Style="0" Frame.Typ="15" HAlign="haCenter" Memo.Text="[Line#]" ParentFont="False"/>
+    </TfrxMasterData>
+    <TfrxPageHeader Name="PageHeader1" Height="18,89765" Left="0" Top="18,89765" Width="718,1107">
+      <TfrxMemoView Name="Memo6" Left="604,7248" Top="0" Width="113,3859" Height="18,89765" Font.Charset="1" Font.Color="0" Font.Height="-13" Font.Name="Courier New" Font.Style="0" Memo.Text="стор. [Page#] з [TotalPages#]" ParentFont="False"/>
+    </TfrxPageHeader>
+    <TfrxGroupHeader Name="GroupHeader1" Height="37,7953" Left="0" Top="98,26778" Width="718,1107" Condition="DBDataset.&#34;NAME_DEPARTMENT&#34;">
+      <TfrxMemoView Name="Memo12" Left="0" Top="0" Width="718,1107" Height="18,89765" Font.Charset="1" Font.Color="0" Font.Height="-13" Font.Name="Courier New" Font.Style="0" Frame.Typ="8" HAlign="haCenter" Memo.Text="Группа: [DBDataset.&#34;NAME_DEPARTMENT&#34;]" ParentFont="False"/>
+      <TfrxMemoView Name="Memo5" Left="37,7953" Top="18,89765" Width="340,1577" Height="18,89765" Font.Charset="1" Font.Color="0" Font.Height="-13" Font.Name="Courier New" Font.Style="0" Frame.Typ="15" HAlign="haCenter" Memo.Text="ФИО" ParentFont="False"/>
+      <TfrxMemoView Name="Memo7" Left="377,953" Top="18,89765" Width="188,9765" Height="18,89765" Font.Charset="1" Font.Color="0" Font.Height="-13" Font.Name="Courier New" Font.Style="0" Frame.Typ="15" HAlign="haCenter" Memo.Text="Налоговый номер" ParentFont="False"/>
+      <TfrxMemoView Name="Memo8" Left="566,9295" Top="18,89765" Width="151,1812" Height="18,89765" Font.Charset="1" Font.Color="0" Font.Height="-13" Font.Name="Courier New" Font.Style="0" Frame.Typ="15" HAlign="haCenter" Memo.Text="Тип выплаты" ParentFont="False"/>
+      <TfrxMemoView Name="Memo9" Left="0" Top="18,89765" Width="37,7953" Height="18,89765" Font.Charset="1" Font.Color="0" Font.Height="-13" Font.Name="Courier New" Font.Style="0" Frame.Typ="15" HAlign="haCenter" Memo.Text="№" ParentFont="False"/>
+    </TfrxGroupHeader>
+  </TfrxReportPage>
+</TfrxReport>

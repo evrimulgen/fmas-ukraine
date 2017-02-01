@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TfrxReport Name="" DotMatrixReport="False" EngineOptions.MaxMemSize="10000000" IniFile="\Software\Fast Reports" PreviewOptions.Buttons="1073" PreviewOptions.Zoom="1" PrintOptions.Printer="Default" ReportOptions.CreateDate="38505,9372707176" ReportOptions.Description.Text="" ReportOptions.LastChange="38505,9676967593" ScriptLanguage="PascalScript" ScriptText.Text="begin&#13;&#10;&#13;&#10;end." PropData="044C65667403A8000844617461736574730E0107446174615365740712444D2E5265706F7274444244536574464F440B446174615365744E616D65060F5265706F7274444244536574464F440000095661726961626C65730E01044E616D65060E20557365722043617465676F72790556616C7565000001044E616D6506075053756D416C6C0556616C75650500E07A14AE47C19D08400001044E616D65060750506572696F640556616C7565061527014B017E01720168016920323030352001702E270000055374796C650E00">
+  <TfrxReportPage Name="Page1" PaperWidth="210" PaperHeight="297" PaperSize="9" LeftMargin="10" RightMargin="10" TopMargin="10" BottomMargin="10" ColumnWidth="0" ColumnPositions.Text="" HGuides.Text="" VGuides.Text="">
+    <TfrxMasterData Name="MasterData1" Height="22,67718" Left="0" Top="143,62214" Width="718,1107" ColumnWidth="0" ColumnGap="0" DataSet="ReportDBDSetFOD" DataSetName="ReportDBDSetFOD" RowCount="0" Stretched="True">
+      <TfrxMemoView Name="Memo1" Left="0" Top="0" Width="555,59091" Height="18,89765" GroupIndex="0" StretchMode="smMaxHeight" DataField="NAME_DEPARTMENT" DataSet="ReportDBDSetFOD" DataSetName="ReportDBDSetFOD" Frame.Typ="13" Memo.Text="[ReportDBDSetFOD.&#34;NAME_DEPARTMENT&#34;]"/>
+      <TfrxMemoView Name="Memo2" Left="555,59091" Top="0" Width="79,37013" Height="18,89765" GroupIndex="0" DataField="SUMMA_ALL" DataSet="ReportDBDSetFOD" DataSetName="ReportDBDSetFOD" DisplayFormat.DecimalSeparator="," DisplayFormat.FormatStr="%2.2f" DisplayFormat.Kind="fkNumeric" Frame.Typ="12" HAlign="haRight" Memo.Text="[ReportDBDSetFOD.&#34;SUMMA_ALL&#34;]"/>
+      <TfrxMemoView Name="Memo3" Left="634,96104" Top="0" Width="79,37013" Height="18,89765" GroupIndex="0" DataSet="ReportDBDSetFOD" DataSetName="ReportDBDSetFOD" Frame.Typ="14" HAlign="haRight" Memo.Text="[P_SUM]"/>
+    </TfrxMasterData>
+    <TfrxReportTitle Name="ReportTitle1" Height="64,25201" Left="0" Top="18,89765" Width="718,1107">
+      <TfrxMemoView Name="Memo4" Left="0" Top="23,77953" Width="714,33117" Height="22,67718" GroupIndex="0" Font.Charset="1" Font.Color="0" Font.Height="-19" Font.Name="Arial" Font.Style="1" HAlign="haCenter" Memo.Text="Фактичний місячний фонд оплати доходу за [PPeriod]" ParentFont="False"/>
+      <TfrxLineView Name="Line1" Left="0" Top="50,23624" Width="718,1107" Height="0" GroupIndex="0" Frame.Typ="4" Frame.Width="2"/>
+      <TfrxSysMemoView Name="SysMemo1" Left="619,84292" Top="0" Width="94,48825" Height="18,89765" GroupIndex="0" HAlign="haRight" Memo.Text="[DATE]"/>
+    </TfrxReportTitle>
+    <TfrxFooter Name="Footer1" Height="22,67718" Left="0" Top="188,9765" Width="718,1107">
+      <TfrxMemoView Name="Memo5" Left="0" Top="0" Width="555,59091" Height="19,89765" GroupIndex="0" StretchMode="smMaxHeight" DataSet="ReportDBDSetFOD" DataSetName="ReportDBDSetFOD" Font.Charset="1" Font.Color="0" Font.Height="-16" Font.Name="Arial" Font.Style="1" Frame.Typ="15" Memo.Text="Загалом:" ParentFont="False"/>
+      <TfrxMemoView Name="Memo6" Left="555,59091" Top="0" Width="79,37013" Height="20,89765" GroupIndex="0" DataSet="ReportDBDSetFOD" DataSetName="ReportDBDSetFOD" DisplayFormat.DecimalSeparator="," DisplayFormat.FormatStr="%2.2f" DisplayFormat.Kind="fkNumeric" Frame.Typ="14" HAlign="haRight" Memo.Text="[SUM(&#60;ReportDBDSetFOD.&#34;SUMMA_ALL&#34;&#62;,MasterData1)]"/>
+      <TfrxMemoView Name="Memo7" Left="634,96104" Top="0" Width="79,37013" Height="20,89765" GroupIndex="0" Frame.Typ="15" HAlign="haRight" Memo.Text="[PSumAll]"/>
+    </TfrxFooter>
+  </TfrxReportPage>
+</TfrxReport>

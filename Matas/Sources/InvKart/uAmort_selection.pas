@@ -17,7 +17,7 @@ uses
   cxButtonEdit, cxContainer, cxLabel, FIBDataSet, pFIBDataSet, Placemnt,
   FIBQuery, pFIBQuery, pFIBStoredProc, FIBDatabase, pFIBDatabase, Ibase,
   UCreateVed, ClassInvKart, GlobalSpr, ActnList, ImgList, FR_DSet,
-  FR_DBSet, FR_Class, uWaite, cxCheckBox, uResources;
+  FR_DBSet, FR_Class, uWaite, cxCheckBox, uResources, frxClass;
 
 type
   TfmAmSelect = class(TForm)
@@ -87,6 +87,7 @@ type
     pFIBDataSetShowAllInfoID_MAN: TFIBBCDField;
     pFIBDataSetShowAllInfoID_SCH: TFIBBCDField;
     cxCheckBoxPrint_znosheni: TcxCheckBox;
+    frxReport1: TfrxReport;
     procedure cxButtonCancelClick(Sender: TObject);
     procedure cxButtonSaveClick(Sender: TObject);
     procedure FormCloseQuery(Sender: TObject; var CanClose: Boolean);
@@ -168,7 +169,7 @@ begin
     end;
     Z.ShowModal;
     ShowAm_Ved := Z.ResultArray;
-    Z.Free;
+   // Z.Free;
 end;
 
 

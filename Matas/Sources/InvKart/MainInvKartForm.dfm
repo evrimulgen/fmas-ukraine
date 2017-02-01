@@ -1,6 +1,6 @@
 object fmMainIvKartForm: TfmMainIvKartForm
-  Left = 230
-  Top = 334
+  Left = 22
+  Top = 156
   Width = 1044
   Height = 545
   Color = clBtnFace
